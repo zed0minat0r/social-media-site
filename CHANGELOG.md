@@ -2,6 +2,13 @@
 
 ## 2026-03-31
 
+### Razor: Dead CSS Purge + Inline Style Consolidation
+- Removed 23 lines of dead mock CSS (mock-header, mock-text, mock-bar, mock-box, mock-hero, mock-cta, mock-grid, and all 6 per-item color themes) — Spark replaced them with project-specific inline art
+- Replaced last mock-text class usage in Meridian card with inline style
+- Extracted 9 inline styles to CSS classes: .trusted-by-bar, .trusted-by-label, .blog-cta-wrap, .blog-cta-inline (with input/btn), .cta-social-proof, .footer-social
+- Inline styles: 24 → 15 (remaining are per-element illustration art — acceptable)
+- Lines: 1048 → 1034. Still over 800 threshold but trending down.
+
 ### Builder: Headline Copy Overhaul — ALL TASKS COMPLETE
 - Rewrote 9 section headings from descriptive to benefit-driven:
   "What I Do" → "How I'll Grow Your Brand"

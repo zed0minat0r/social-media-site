@@ -244,30 +244,7 @@
         .browser-dot.green { background: #28c840; }
         .browser-url { margin-left: 8px; background: var(--card-bg); border-radius: 4px; padding: 2px 8px; font-size: 9px; color: var(--text-secondary); flex: 1; }
         .browser-content { flex: 1; padding: 12px; display: flex; flex-direction: column; gap: 6px; overflow: hidden; }
-        .mock-header { height: 8px; width: 60%; border-radius: 4px; }
-        .mock-text { height: 5px; border-radius: 2px; opacity: 0.6; }
-        .mock-text.w100 { width: 100%; }
-        .mock-text.w80 { width: 80%; }
-        .mock-text.w60 { width: 60%; }
-        .mock-text.w40 { width: 40%; }
-        .mock-bar { height: 24px; border-radius: 4px; opacity: 0.4; margin-top: 4px; }
-        .mock-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; margin-top: 4px; }
-        .mock-box { height: 20px; border-radius: 3px; opacity: 0.3; }
-        .mock-hero { height: 32px; border-radius: 4px; opacity: 0.5; margin-bottom: 4px; }
-        .mock-cta { height: 12px; width: 40%; border-radius: 3px; opacity: 0.7; }
-        /* Color themes per portfolio item */
-        .portfolio-item:nth-child(1) .mock-header, .portfolio-item:nth-child(1) .mock-hero, .portfolio-item:nth-child(1) .mock-cta { background: #667eea; }
-        .portfolio-item:nth-child(1) .mock-text, .portfolio-item:nth-child(1) .mock-bar, .portfolio-item:nth-child(1) .mock-box { background: #667eea; }
-        .portfolio-item:nth-child(2) .mock-header, .portfolio-item:nth-child(2) .mock-hero, .portfolio-item:nth-child(2) .mock-cta { background: #f72585; }
-        .portfolio-item:nth-child(2) .mock-text, .portfolio-item:nth-child(2) .mock-bar, .portfolio-item:nth-child(2) .mock-box { background: #f72585; }
-        .portfolio-item:nth-child(3) .mock-header, .portfolio-item:nth-child(3) .mock-hero, .portfolio-item:nth-child(3) .mock-cta { background: #4361ee; }
-        .portfolio-item:nth-child(3) .mock-text, .portfolio-item:nth-child(3) .mock-bar, .portfolio-item:nth-child(3) .mock-box { background: #4361ee; }
-        .portfolio-item:nth-child(4) .mock-header, .portfolio-item:nth-child(4) .mock-hero, .portfolio-item:nth-child(4) .mock-cta { background: #06d6a0; }
-        .portfolio-item:nth-child(4) .mock-text, .portfolio-item:nth-child(4) .mock-bar, .portfolio-item:nth-child(4) .mock-box { background: #06d6a0; }
-        .portfolio-item:nth-child(5) .mock-header, .portfolio-item:nth-child(5) .mock-hero, .portfolio-item:nth-child(5) .mock-cta { background: #ff6b6b; }
-        .portfolio-item:nth-child(5) .mock-text, .portfolio-item:nth-child(5) .mock-bar, .portfolio-item:nth-child(5) .mock-box { background: #ff6b6b; }
-        .portfolio-item:nth-child(6) .mock-header, .portfolio-item:nth-child(6) .mock-hero, .portfolio-item:nth-child(6) .mock-cta { background: #a29bfe; }
-        .portfolio-item:nth-child(6) .mock-text, .portfolio-item:nth-child(6) .mock-bar, .portfolio-item:nth-child(6) .mock-box { background: #a29bfe; }
+        /* Portfolio mockup inner styles are per-item inline (illustrative art) */
 
         /* Blog / Insights */
         .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -281,6 +258,15 @@
         .blog-meta { font-size: 12px; color: var(--text-secondary); }
         .blog-link { color: var(--primary); font-weight: 600; font-size: 14px; text-decoration: none; }
         .blog-link:hover { text-decoration: underline; }
+        .blog-cta-wrap { text-align: center; margin-top: 32px; }
+        .blog-cta-wrap > p { color: var(--text-secondary); margin-bottom: 12px; }
+        .blog-cta-inline { display: inline-flex; gap: 8px; max-width: 400px; }
+        .blog-cta-inline input { flex: 1; padding: 12px 16px; border: 1px solid var(--border); border-radius: 8px; font-size: 16px; background: var(--input-bg); color: var(--text-primary); font-family: inherit; outline: none; }
+        .blog-cta-inline .btn { padding: 12px 20px; font-size: 14px; white-space: nowrap; }
+        .trusted-by-bar { text-align: center; padding: 24px 16px 0; }
+        .trusted-by-label { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--text-secondary); margin-bottom: 12px; }
+        .cta-social-proof { font-size: 14px; opacity: 0.8; margin-bottom: 16px; }
+        .footer-social { justify-content: center; margin-bottom: 16px; }
 
         /* Hamburger menu */
         .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 12px; flex-direction: column; gap: 5px; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
@@ -441,8 +427,8 @@
             <div class="stat-label">Years Experience</div>
         </div>
     </div>
-    <div style="text-align: center; padding: 24px 16px 0;">
-        <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--text-secondary); margin-bottom: 12px;">Trusted by</div>
+    <div class="trusted-by-bar">
+        <div class="trusted-by-label">Trusted by</div>
         <div class="clients-row" style="padding: 0;">
             <div class="client-logo">TechFlow</div>
             <div class="client-logo">NovaBrand</div>
@@ -553,7 +539,7 @@
                 </div>
             </div>
             <div class="portfolio-item">
-                <div class="portfolio-inner"><div class="browser-bar"><div class="browser-dot red"></div><div class="browser-dot yellow"></div><div class="browser-dot green"></div><span class="browser-url">ads.meridian.co/dashboard</span></div><div class="browser-content" style="gap:4px"><div style="display:flex;gap:4px;align-items:flex-end;height:40px"><div style="flex:1;background:#4361ee;opacity:0.3;border-radius:2px 2px 0 0;height:20%"></div><div style="flex:1;background:#4361ee;opacity:0.4;border-radius:2px 2px 0 0;height:40%"></div><div style="flex:1;background:#4361ee;opacity:0.5;border-radius:2px 2px 0 0;height:55%"></div><div style="flex:1;background:#4361ee;opacity:0.6;border-radius:2px 2px 0 0;height:45%"></div><div style="flex:1;background:#4361ee;opacity:0.7;border-radius:2px 2px 0 0;height:70%"></div><div style="flex:1;background:#4361ee;opacity:0.8;border-radius:2px 2px 0 0;height:60%"></div><div style="flex:1;background:#06d6a0;opacity:0.9;border-radius:2px 2px 0 0;height:95%"></div></div><div style="display:flex;gap:4px"><div style="flex:1;background:#06d6a0;opacity:0.4;border-radius:3px;padding:3px;text-align:center"><div style="font-size:7px;color:white;font-weight:700">4.2x</div></div><div style="flex:1;background:#4361ee;opacity:0.5;border-radius:3px;padding:3px;text-align:center"><div style="font-size:7px;color:white;font-weight:700">-60%</div></div></div><div class="mock-text w80" style="background:#4361ee"></div></div></div>
+                <div class="portfolio-inner"><div class="browser-bar"><div class="browser-dot red"></div><div class="browser-dot yellow"></div><div class="browser-dot green"></div><span class="browser-url">ads.meridian.co/dashboard</span></div><div class="browser-content" style="gap:4px"><div style="display:flex;gap:4px;align-items:flex-end;height:40px"><div style="flex:1;background:#4361ee;opacity:0.3;border-radius:2px 2px 0 0;height:20%"></div><div style="flex:1;background:#4361ee;opacity:0.4;border-radius:2px 2px 0 0;height:40%"></div><div style="flex:1;background:#4361ee;opacity:0.5;border-radius:2px 2px 0 0;height:55%"></div><div style="flex:1;background:#4361ee;opacity:0.6;border-radius:2px 2px 0 0;height:45%"></div><div style="flex:1;background:#4361ee;opacity:0.7;border-radius:2px 2px 0 0;height:70%"></div><div style="flex:1;background:#4361ee;opacity:0.8;border-radius:2px 2px 0 0;height:60%"></div><div style="flex:1;background:#06d6a0;opacity:0.9;border-radius:2px 2px 0 0;height:95%"></div></div><div style="display:flex;gap:4px"><div style="flex:1;background:#06d6a0;opacity:0.4;border-radius:3px;padding:3px;text-align:center"><div style="font-size:7px;color:white;font-weight:700">4.2x</div></div><div style="flex:1;background:#4361ee;opacity:0.5;border-radius:3px;padding:3px;text-align:center"><div style="font-size:7px;color:white;font-weight:700">-60%</div></div></div><div style="height:5px;width:80%;border-radius:2px;background:#4361ee;opacity:0.6"></div></div></div>
                 <div class="portfolio-overlay">
                     <h3>Meridian Co. Paid Ads</h3>
                     <p>Restructured Meta & Google ad accounts, built new creative testing framework, and optimized audiences. Reduced CPA by 60% while scaling spend 3x.</p>
@@ -681,11 +667,11 @@
                 </div>
             </div>
         </div>
-        <div style="text-align: center; margin-top: 32px;">
-            <p style="color: var(--text-secondary); margin-bottom: 12px;">Get insights like these delivered weekly</p>
-            <div class="blog-cta-inline" style="display: inline-flex; gap: 8px; max-width: 400px;">
-                <input type="email" placeholder="your@email.com" style="flex: 1; padding: 12px 16px; border: 1px solid var(--border); border-radius: 8px; font-size: 16px; background: var(--input-bg); color: var(--text-primary); font-family: inherit; outline: none;">
-                <button class="btn btn-primary" style="padding: 12px 20px; font-size: 14px; white-space: nowrap;">Subscribe</button>
+        <div class="blog-cta-wrap">
+            <p>Get insights like these delivered weekly</p>
+            <div class="blog-cta-inline">
+                <input type="email" placeholder="your@email.com">
+                <button class="btn btn-primary">Subscribe</button>
             </div>
         </div>
     </div>
@@ -807,7 +793,7 @@
     <!-- CTA (after FAQ — objections addressed, now ask for the sale) -->
     <div class="section">
         <div class="cta-section">
-            <p style="font-size: 14px; opacity: 0.8; margin-bottom: 16px;">&#x2B50; Trusted by 50+ brands &nbsp;|&nbsp; 200% avg. ROI increase &nbsp;|&nbsp; 10M+ impressions</p>
+            <p class="cta-social-proof">&#x2B50; Trusted by 50+ brands &nbsp;|&nbsp; 200% avg. ROI increase &nbsp;|&nbsp; 10M+ impressions</p>
             <h2>Ready to Grow Your Brand?</h2>
             <p>Let's build a marketing strategy that actually moves the needle.</p>
             <p class="cta-urgency">&#x1F525; Currently accepting 2 new clients for Q2 2026</p>
@@ -876,7 +862,7 @@
                 <button class="btn btn-primary">Subscribe</button>
             </div>
         </div>
-        <div class="social-links" style="justify-content: center; margin-bottom: 16px;">
+        <div class="social-links footer-social">
             <a href="#" aria-label="Instagram">&#x1F4F7;</a>
             <a href="#" aria-label="LinkedIn">&#x1F4BC;</a>
             <a href="#" aria-label="X / Twitter">&#x1F426;</a>
