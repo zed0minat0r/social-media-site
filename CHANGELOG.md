@@ -2,6 +2,16 @@
 
 ## 2026-03-30
 
+### Builder: Client Industry Tags on Testimonials
+- Added pill-style tags below each testimonial showing the client's industry and services used
+- Two tag styles: gradient industry tags (brand blue-to-purple) and translucent service tags (subtle primary tint)
+- Tags have hover lift effect (translateY -1px + full opacity) for interactivity
+- James Rodriguez: SaaS / Social Media / Content Strategy
+- Aisha Lee: D2C E-Commerce / Brand Strategy / Social Media
+- Daniel Kim: B2B SaaS / Paid Ads / Analytics
+- Sarah Park: Health & Wellness / Video Production / TikTok
+- Visitors can now instantly see which industries and services each testimonial relates to — builds trust for prospects in similar verticals
+
 ### Spark's Innovation: Scroll-Triggered Cascade Animation on Process Steps
 - Process section steps now start hidden and cascade into view with staggered timing (0s, 0.25s, 0.5s delay) as you scroll down — each step slides up and fades in sequentially
 - Step number circles fire a radial pulse ring (gradient glow that expands and fades) when they appear, giving each step a satisfying "activation" moment
