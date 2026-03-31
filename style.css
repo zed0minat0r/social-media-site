@@ -381,5 +381,5 @@ footer a { color: var(--primary); text-decoration: none; }
 .social-toast-text { font-size: 13px; line-height: 1.4; }
 .social-toast-text strong { display: block; font-size: 14px; }
 .social-toast-text span { color: var(--text-secondary); }
-.social-toast-close { background: none; border: none; color: var(--text-secondary); cursor: pointer; font-size: 16px; padding: 4px; position: absolute; top: 8px; right: 8px; }
-@media (max-width: 480px) { .social-toast { left: 12px; right: 12px; max-width: none; bottom: 72px; } }
+.social-toast-close { background: none; border: none; color: var(--text-secondary); cursor: pointer; font-size: 18px; padding: 12px; position: absolute; top: 2px; right: 2px; min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center; }
+@media (max-width: 480px) { .social-toast { left: 12px; right: 60px; max-width: none; bottom: 72px; } }

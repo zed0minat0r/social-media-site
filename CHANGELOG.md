@@ -2,6 +2,11 @@
 
 ## 2026-03-31
 
+### Pixel: Toast Close Button + Toast/Back-to-Top Overlap Fix
+- Social proof toast close button was 24px tap target — bumped to 44px minimum with proper padding and min-width/min-height
+- Toast at 480px was full-width (left: 12px, right: 12px) overlapping the back-to-top button at right: 12px. Changed to right: 60px to leave space for the back-to-top circle.
+- Toast, sticky CTA, and back-to-top now coexist cleanly at all breakpoints
+
 ### Refiner: Inline Form Validation, Social Proof Toast, Conversion Polish
 - Added CSS-only inline form validation: name/email fields show green border when valid, email shows pink when invalid format. No JS needed — uses :valid/:invalid pseudo-classes with :not(:placeholder-shown) to avoid styling empty fields.
 - Added social proof toast notification: "Aisha from NovaBrand started a project 2 days ago" slides in from the left after 8 seconds, auto-dismisses after 6 more. Dismissible with X button. Positioned above sticky CTA. Responsive on mobile.
