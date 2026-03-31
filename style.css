@@ -83,6 +83,8 @@ nav a:hover, nav a.active { background: var(--hover-bg); color: var(--primary); 
 .service-icon { width: 56px; height: 56px; border-radius: 12px; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2)); position: relative; }
 .service-card h3 { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
 .service-card p { color: var(--text-secondary); font-size: 14px; line-height: 1.6; }
+.service-card { perspective: 800px; }
+.service-card:hover { transform: translateY(-4px) rotateX(2deg) rotateY(-2deg); }
 
 /* Portfolio */
 .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -147,7 +149,8 @@ nav a:hover, nav a.active { background: var(--hover-bg); color: var(--primary); 
 .pricing-card { background: var(--card-bg); border-radius: 12px; padding: 32px; box-shadow: var(--shadow); transition: all 0.3s; position: relative; overflow: hidden; }
 .pricing-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
 .pricing-card.featured { border: 2px solid var(--primary); }
-.pricing-card.featured::before { content: 'MOST POPULAR'; position: absolute; top: 16px; right: -28px; background: var(--primary); color: #fff; font-size: 10px; font-weight: 700; padding: 4px 32px; transform: rotate(45deg); letter-spacing: 1px; }
+.pricing-card.featured::before { content: 'MOST POPULAR'; position: absolute; top: 16px; right: -28px; background: var(--primary); color: #fff; font-size: 10px; font-weight: 700; padding: 4px 32px; transform: rotate(45deg); letter-spacing: 1px; animation: badgePulse 3s ease-in-out infinite; }
+@keyframes badgePulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
 .pricing-tier { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--primary); margin-bottom: 8px; }
 .pricing-price { font-size: 42px; font-weight: 800; margin-bottom: 4px; }
 .pricing-price span { font-size: 16px; font-weight: 400; color: var(--text-secondary); }
@@ -365,6 +368,11 @@ footer a { color: var(--primary); text-decoration: none; }
 .section-dot.active { background: var(--primary); transform: scale(1.3); }
 .section-dot:hover { background: var(--primary); opacity: 0.7; }
 @media (max-width: 768px) { .section-dots { display: none; } }
+
+/* Page transition */
+body { animation: pageIn 0.4s ease-out; }
+@keyframes pageIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+body.page-exit { opacity: 0; transform: translateY(-8px); transition: all 0.3s ease-in; }
 
 /* Parallax hero layers */
 .hero-content { position: relative; z-index: 2; will-change: transform, opacity; }

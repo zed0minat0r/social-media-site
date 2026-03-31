@@ -2,6 +2,12 @@
 
 ## 2026-03-31
 
+### Refiner: Micro-Interactions — 3D Service Cards, Badge Pulse, Page Transitions
+- Added 3D tilt on service card hover: perspective(800px) with subtle rotateX(2deg) rotateY(-2deg). The cards feel like physical objects responding to your cursor.
+- Added gentle opacity pulse animation on the "MOST POPULAR" pricing badge (3s cycle). Draws the eye without being aggressive. A whisper of emphasis.
+- Added smooth page transitions: pages fade in on load (0.4s, translateY 8px). When clicking an internal .html link, the page fades out (0.3s) before navigating. The transition between the homepage and the blog article now feels intentional, not abrupt.
+- BONUS: Page transitions work on the blog article page too since it shares the stylesheet.
+
 ### QA: Fixed parallax jank + stats double-animation race condition
 - Fixed: .hero-content had transition: transform 0.1s which fought with the scroll handler setting transforms every 16ms. Replaced with will-change: transform, opacity for GPU optimization without transition lag.
 - Fixed: .stat elements had opacity:0 from scroll animation observer AND the stats-bar had opacity:0 from its own reveal observer. Race condition on reveal. Removed .stat from the generic scroll animation selector — stats bar now has its own dedicated reveal.

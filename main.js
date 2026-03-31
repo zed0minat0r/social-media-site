@@ -190,6 +190,16 @@ function handleSubmit(e) {
     }, 2000);
 }
 
+// Smooth page transitions for internal links
+document.querySelectorAll('a[href$=".html"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+        var href = this.getAttribute('href');
+        e.preventDefault();
+        document.body.classList.add('page-exit');
+        setTimeout(function() { window.location.href = href; }, 300);
+    });
+});
+
 // Hero parallax effect
 var heroContent = document.getElementById('heroContent');
 var heroSection = document.querySelector('.hero');
