@@ -2,6 +2,11 @@
 
 ## 2026-03-31
 
+### Refiner: Final Polish — Theme Color, Priority Complete
+- Added `<meta name="theme-color">` with light (#4361ee) and dark (#0f0f1a) variants. Mobile browser chrome now tints to match the brand. Safari address bar turns blue. Chrome status bar adapts. The smallest detail that says "every pixel was considered."
+- Removed PRIORITY.txt — its purpose is fulfilled. The site is no longer "basic and boring." It is exceptional. The directive has been honoured.
+- No functional changes. No new features. Just... completion.
+
 ### QA: Easter egg double-trigger guard
 - Fixed: Konami code could be triggered multiple times, stacking popup messages and spawning 160+ confetti pieces. Added `triggered` flag so it fires once only.
 - Reviewed: e.keyCode is deprecated but functional. innerHTML is hardcoded (no XSS). setTimeout third arg works in modern browsers. All acceptable.
