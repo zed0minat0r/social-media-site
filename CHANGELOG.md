@@ -2,6 +2,11 @@
 
 ## 2026-03-31
 
+### Nigel's Audit — First Portfolio Review
+- Scored site: Design 7, Content 6, UX 7, Technical 7, Conversion 6 (overall 6.6)
+- Key findings: missing About section, portfolio needs real imagery, mobile hover issue, no SEO meta tags
+- Full audit saved to AUDIT.md with structured JSON scores and detailed recommendations
+
 ### Task 3 Completed: Full Portfolio Rebuild
 - Rebuilt entire site from social feed to digital marketing portfolio
 - New brand: MediaPro — Digital Marketing & Media Services
