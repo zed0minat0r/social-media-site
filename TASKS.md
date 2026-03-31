@@ -1,10 +1,10 @@
 # Tasks for Agent Team
 
-## Task 1: Build out core social media features
-- Add a functional like counter to each post
-- Add a comment section that expands when "Comment" is clicked
-- Add a user profile sidebar with stats (posts, followers, following)
-- Make the navigation links highlight the active page
+## Task 1: Build out core social media features [COMPLETED]
+- ~~Add a functional like counter to each post~~
+- ~~Add a comment section that expands when "Comment" is clicked~~
+- ~~Add a user profile sidebar with stats (posts, followers, following)~~
+- ~~Make the navigation links highlight the active page~~
 
 ## Task 2: Improve visual design
 - Add dark mode toggle
