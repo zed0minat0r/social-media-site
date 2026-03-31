@@ -142,9 +142,11 @@ window.addEventListener('scroll', function() {
 });
 
 // Blog card clicks
-document.querySelectorAll('.blog-card').forEach(function(card) {
-    card.addEventListener('click', function() {
-        document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+document.querySelectorAll('.blog-card').forEach(function(card, index) {
+    card.addEventListener('click', function(e) {
+        if (e.target.closest('a')) return; // let links handle themselves
+        if (index === 0) { window.location.href = 'blog-ad-budget.html'; }
+        else { document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }); }
     });
 });
 

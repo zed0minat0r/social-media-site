@@ -2,6 +2,19 @@
 
 ## 2026-03-31
 
+### Builder: Full Blog Article Page — "Why Brands Waste 60% of Their Ad Budget"
+- Created blog-ad-budget.html — a full-length ~1200 word article
+- Content: The Creative Testing Framework (Matrix → $50 Test → Kill/Scale/Iterate)
+- Real case study reference (Meridian Co. 1.2x → 4.2x ROAS)
+- Specific actionable steps with metrics at each stage
+- CTA at bottom: "Get a Free Ad Audit" linking to contact form
+- Dark mode support via shared style.css
+- Article hero with gradient background matching the blog card
+- Responsive layout with proper reading width (700px max)
+- Updated first blog card link from "#contact" to "blog-ad-budget.html"
+- Blog card click handler updated: first card navigates to article, others scroll to contact
+- This is the first multi-page content — demonstrates real thought leadership depth
+
 ### Pixel: Toast Close Button + Toast/Back-to-Top Overlap Fix
 - Social proof toast close button was 24px tap target — bumped to 44px minimum with proper padding and min-width/min-height
 - Toast at 480px was full-width (left: 12px, right: 12px) overlapping the back-to-top button at right: 12px. Changed to right: 60px to leave space for the back-to-top circle.
