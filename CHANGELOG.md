@@ -2,6 +2,11 @@
 
 ## 2026-03-31
 
+### QA: Fixed cursor dot invisible on light bg + stagger animations broken
+- Fixed: cursor dot used mix-blend-mode: screen which makes it invisible on white/light backgrounds. Replaced with solid primary color + glow box-shadow. Now visible everywhere.
+- Fixed: staggered animation-delay on service cards/portfolio/testimonials was being OVERRIDDEN by the .animate shorthand which includes implicit animation-delay: 0s. Broke apart the shorthand into individual properties (animation-name, animation-duration, etc.) so animation-delay from nth-child rules is preserved. Stagger now actually works.
+- Noted: cursor RAF loop runs even when mouse is stationary. Minor — converges to no-op. Not fixing.
+
 ### Spark's Innovation: Custom Cursor Follower + Staggered Grid Animations
 - Added custom cursor follower: a 12px gradient dot that trails the mouse with smooth easing (0.15 lerp). Uses mix-blend-mode: screen for elegant blending. Hidden on touch devices.
 - Cursor fades in on mouse enter, fades out on mouse leave. Follows with satisfying lag — not laggy, but intentionally smooth. An Awwwards-level detail.
