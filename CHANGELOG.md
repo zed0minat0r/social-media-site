@@ -2,6 +2,14 @@
 
 ## 2026-03-31
 
+### Builder: Mesh Gradient Hero + Blog CSS Illustrations
+- Replaced flat linear-gradient hero with multi-stop mesh gradient (purple, blue, cyan, pink radials) — premium, dynamic feel
+- Replaced emoji blog thumbnails with CSS illustrations:
+  - Strategy article: ascending bar chart in white on purple gradient
+  - Social Media article: video play button with progress dots on pink gradient
+  - Email article: envelope illustration with fold line on green gradient
+- No more emojis anywhere on the site — all illustrations are CSS-generated
+
 ### Pixel: Sticky CTA + Back-to-Top Mobile Adjustments
 - Sticky CTA button was 28px tall at 480px (12px font + 8px padding) — well below 44px minimum. Bumped to min-height: 44px with 12px padding
 - Reduced sticky CTA overall padding on mobile for tighter fit without sacrificing tap targets
