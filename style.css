@@ -371,6 +371,23 @@ footer a { color: var(--primary); text-decoration: none; }
 .section-dot:hover { background: var(--primary); opacity: 0.7; }
 @media (max-width: 768px) { .section-dots { display: none; } }
 
+/* ROI Calculator */
+.calculator { background: var(--card-bg); border-radius: 16px; padding: 40px; max-width: 600px; margin: 0 auto; box-shadow: var(--shadow-hover); }
+.calculator h3 { font-size: 22px; text-align: center; margin-bottom: 8px; }
+.calculator .calc-subtitle { text-align: center; color: var(--text-secondary); font-size: 14px; margin-bottom: 32px; }
+.calc-input-group { margin-bottom: 24px; }
+.calc-input-group label { display: block; font-weight: 600; font-size: 14px; margin-bottom: 8px; }
+.calc-slider { width: 100%; -webkit-appearance: none; appearance: none; height: 6px; border-radius: 3px; background: var(--border); outline: none; }
+.calc-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 24px; height: 24px; border-radius: 50%; background: var(--primary); cursor: pointer; box-shadow: 0 2px 8px rgba(67,97,238,0.4); }
+.calc-value { text-align: right; font-size: 20px; font-weight: 700; color: var(--primary); margin-top: 8px; }
+.calc-results { background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2)); border-radius: 12px; padding: 24px; color: #fff; text-align: center; margin-top: 24px; }
+.calc-results .calc-big-number { font-size: 42px; font-weight: 800; }
+.calc-results p { opacity: 0.85; font-size: 14px; margin-top: 4px; }
+.calc-results .calc-detail { display: flex; justify-content: space-around; margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.2); }
+.calc-results .calc-detail div { text-align: center; }
+.calc-results .calc-detail .calc-detail-num { font-size: 20px; font-weight: 700; }
+.calc-results .calc-detail .calc-detail-label { font-size: 11px; opacity: 0.7; }
+
 /* Custom cursor follower */
 .cursor-dot { position: fixed; width: 12px; height: 12px; border-radius: 50%; background: var(--primary); pointer-events: none; z-index: 9999; opacity: 0; transition: opacity 0.3s; box-shadow: 0 0 8px var(--primary); }
 .cursor-dot.visible { opacity: 0.6; }

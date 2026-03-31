@@ -2,6 +2,18 @@
 
 ## 2026-03-31
 
+### Builder: Interactive Marketing ROI Calculator
+- Built a fully interactive ROI calculator with slider input
+- User drags "Monthly Ad Spend" slider ($1K-$50K) and sees real-time projections:
+  - Estimated monthly revenue (spend × 3.8x ROAS)
+  - Projected ROAS (3.8x, drops to 3.3x at high spend for realism)
+  - Waste eliminated (60% of current spend)
+  - Estimated monthly leads (based on $52 CPL)
+- Gradient results card with animated numbers updating as slider moves
+- CTA: "Get Your Free Custom Audit" linking to contact form
+- Placed between Blog and Process sections on tinted background
+- This is a lead magnet AND a conversion tool — visitors engage before they even realize they're selling themselves on the service
+
 ### Refiner: Blog Card Transition Fix, Portfolio Glow, Code Harmony
 - Fixed blog card click to use smooth page transition (fade-out before navigate) — matching the anchor link behavior. Pixel noted the inconsistency; now both paths feel the same.
 - Added hover glow on portfolio items: box-shadow with brand-color blue at 30% opacity. The cards scale AND glow, creating depth on hover.

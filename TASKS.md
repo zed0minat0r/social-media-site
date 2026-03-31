@@ -60,5 +60,5 @@ Future work should focus on Nigel's audit priorities for pushing scores toward 9
 - Add inline form validation error messages (not just color)
 - Add lazy loading for below-fold sections
 - Consider exit-intent popup with lead magnet
-- Add a "results calculator" interactive tool
+- ~~Add a "results calculator" interactive tool~~
 - Add video testimonials or video hero background

@@ -194,6 +194,25 @@ function handleSubmit(e) {
     }, 2000);
 }
 
+// ROI Calculator — interactive tool
+var calcSpend = document.getElementById('calcSpend');
+if (calcSpend) {
+    calcSpend.addEventListener('input', function() {
+        var spend = parseInt(this.value);
+        var roas = 3.8 - (spend > 20000 ? 0.5 : 0); // slightly lower ROAS at high spend
+        var wastePercent = 0.6; // 60% waste eliminated
+        var cpl = 52; // cost per lead
+        var revenue = Math.round(spend * roas);
+        var saved = Math.round(spend * wastePercent);
+        var leads = Math.round((spend * (1 - wastePercent * 0.5)) / cpl);
+        document.getElementById('calcSpendValue').textContent = '$' + spend.toLocaleString() + '/mo';
+        document.getElementById('calcRevenue').textContent = '$' + revenue.toLocaleString();
+        document.getElementById('calcRoas').textContent = roas.toFixed(1) + 'x';
+        document.getElementById('calcSaved').textContent = '$' + saved.toLocaleString();
+        document.getElementById('calcLeads').textContent = leads.toLocaleString();
+    });
+}
+
 // Custom cursor follower
 (function() {
     var dot = document.getElementById('cursorDot');
