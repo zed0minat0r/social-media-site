@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-03-31
+
+### Task 2 Completed: Visual Design Improvements
+- Added dark mode toggle with sun/moon icon in header (persists via localStorage)
+- Added CSS custom properties (variables) for seamless theme switching
+- Added smooth animations: fadeInUp on posts, popIn on like, shimmer on skeletons
+- Added loading skeleton screen that shows for 800ms on page load
+- Improved mobile responsiveness with breakpoints at 768px and 480px
+- Added micro-interactions: button scale on click, avatar hover scale, theme toggle rotation
+- All transitions are 0.2-0.3s for a polished feel
+- Comments section now animates open/closed with max-height transition
+
 ## 2026-03-30
 
 ### Task 1 Completed: Core Social Media Features

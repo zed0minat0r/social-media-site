@@ -5,75 +5,182 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SocialConnect</title>
     <style>
+        :root {
+            --bg: #f0f2f5;
+            --card-bg: #ffffff;
+            --text-primary: #1c1e21;
+            --text-secondary: #606770;
+            --border: #e4e6eb;
+            --hover-bg: #f0f2f5;
+            --primary: #1877f2;
+            --primary-hover: #166fe5;
+            --green: #42b72a;
+            --shadow: 0 1px 2px rgba(0,0,0,0.1);
+            --shadow-hover: 0 2px 8px rgba(0,0,0,0.15);
+            --comment-bg: #f0f2f5;
+            --input-bg: #ffffff;
+        }
+        [data-theme="dark"] {
+            --bg: #18191a;
+            --card-bg: #242526;
+            --text-primary: #e4e6eb;
+            --text-secondary: #b0b3b8;
+            --border: #3e4042;
+            --hover-bg: #3a3b3c;
+            --shadow: 0 1px 2px rgba(0,0,0,0.3);
+            --shadow-hover: 0 2px 8px rgba(0,0,0,0.4);
+            --comment-bg: #3a3b3c;
+            --input-bg: #3a3b3c;
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f0f2f5; color: #1c1e21; }
-        header { background: #fff; padding: 12px 24px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
-        header h1 { font-size: 24px; color: #1877f2; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text-primary); transition: background 0.3s, color 0.3s; }
+        header { background: var(--card-bg); padding: 12px 24px; box-shadow: var(--shadow); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; transition: background 0.3s; }
+        header h1 { font-size: 24px; color: var(--primary); }
+        .header-right { display: flex; align-items: center; gap: 12px; }
         nav { display: flex; gap: 4px; }
-        nav a { text-decoration: none; color: #606770; font-weight: 500; padding: 8px 16px; border-radius: 6px; transition: background 0.2s, color 0.2s; }
-        nav a:hover { background: #f0f2f5; color: #1877f2; }
-        nav a.active { color: #1877f2; border-bottom: 3px solid #1877f2; }
+        nav a { text-decoration: none; color: var(--text-secondary); font-weight: 500; padding: 8px 16px; border-radius: 6px; transition: background 0.2s, color 0.2s; }
+        nav a:hover { background: var(--hover-bg); color: var(--primary); }
+        nav a.active { color: var(--primary); border-bottom: 3px solid var(--primary); }
+        .theme-toggle { background: var(--hover-bg); border: none; font-size: 20px; cursor: pointer; padding: 8px; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; transition: background 0.2s, transform 0.3s; }
+        .theme-toggle:hover { transform: rotate(30deg); }
         .layout { max-width: 1024px; margin: 24px auto; padding: 0 16px; display: flex; gap: 24px; }
         .feed { flex: 1; max-width: 680px; }
         .sidebar { width: 300px; flex-shrink: 0; }
-        .profile-card { background: #fff; border-radius: 8px; padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.1); margin-bottom: 16px; text-align: center; }
-        .profile-card .avatar-large { width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, #1877f2, #42b72a); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 28px; margin: 0 auto 12px; }
+        .profile-card { background: var(--card-bg); border-radius: 8px; padding: 20px; box-shadow: var(--shadow); margin-bottom: 16px; text-align: center; transition: background 0.3s, box-shadow 0.3s; }
+        .profile-card .avatar-large { width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--green)); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 28px; margin: 0 auto 12px; }
         .profile-card h3 { font-size: 18px; margin-bottom: 4px; }
-        .profile-card .bio { font-size: 13px; color: #606770; margin-bottom: 16px; }
-        .profile-stats { display: flex; justify-content: space-around; border-top: 1px solid #e4e6eb; padding-top: 16px; }
+        .profile-card .bio { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; }
+        .profile-stats { display: flex; justify-content: space-around; border-top: 1px solid var(--border); padding-top: 16px; }
         .profile-stats .stat { text-align: center; }
-        .profile-stats .stat-number { font-size: 18px; font-weight: 700; color: #1c1e21; }
-        .profile-stats .stat-label { font-size: 12px; color: #606770; }
-        .create-post { background: #fff; border-radius: 8px; padding: 16px; margin-bottom: 16px; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
-        .create-post textarea { width: 100%; border: none; resize: none; font-size: 16px; padding: 8px; outline: none; min-height: 60px; font-family: inherit; }
-        .create-post button { background: #1877f2; color: #fff; border: none; padding: 8px 24px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; margin-top: 8px; transition: background 0.2s; }
-        .create-post button:hover { background: #166fe5; }
-        .post { background: #fff; border-radius: 8px; margin-bottom: 16px; box-shadow: 0 1px 2px rgba(0,0,0,0.1); transition: box-shadow 0.2s; }
-        .post:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+        .profile-stats .stat-number { font-size: 18px; font-weight: 700; color: var(--text-primary); }
+        .profile-stats .stat-label { font-size: 12px; color: var(--text-secondary); }
+        .create-post { background: var(--card-bg); border-radius: 8px; padding: 16px; margin-bottom: 16px; box-shadow: var(--shadow); transition: background 0.3s; }
+        .create-post textarea { width: 100%; border: none; resize: none; font-size: 16px; padding: 8px; outline: none; min-height: 60px; font-family: inherit; background: transparent; color: var(--text-primary); }
+        .create-post button { background: var(--primary); color: #fff; border: none; padding: 8px 24px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; margin-top: 8px; transition: background 0.2s, transform 0.1s; }
+        .create-post button:hover { background: var(--primary-hover); }
+        .create-post button:active { transform: scale(0.97); }
+        .post { background: var(--card-bg); border-radius: 8px; margin-bottom: 16px; box-shadow: var(--shadow); transition: box-shadow 0.3s, background 0.3s, transform 0.2s; animation: fadeInUp 0.4s ease-out; }
+        .post:hover { box-shadow: var(--shadow-hover); transform: translateY(-1px); }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes shimmer {
+            0% { background-position: -200px 0; }
+            100% { background-position: 200px 0; }
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); opacity: 1; }
+        }
         .post-header { padding: 16px; display: flex; align-items: center; }
-        .avatar { width: 40px; height: 40px; border-radius: 50%; background: #1877f2; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; margin-right: 12px; flex-shrink: 0; }
+        .avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; margin-right: 12px; flex-shrink: 0; transition: transform 0.2s; }
+        .avatar:hover { transform: scale(1.1); }
         .post-author { font-weight: 600; }
-        .post-time { font-size: 12px; color: #606770; }
+        .post-time { font-size: 12px; color: var(--text-secondary); }
         .post-content { padding: 0 16px 16px; font-size: 15px; line-height: 1.5; }
-        .post-actions { padding: 8px 16px; border-top: 1px solid #e4e6eb; display: flex; justify-content: space-around; }
-        .post-actions button { background: none; border: none; padding: 8px 16px; color: #606770; font-size: 14px; font-weight: 600; cursor: pointer; border-radius: 4px; transition: background 0.2s, color 0.2s; display: flex; align-items: center; gap: 6px; }
-        .post-actions button:hover { background: #f0f2f5; }
-        .post-actions button.liked { color: #1877f2; }
-        .like-count { font-size: 13px; color: #606770; padding: 4px 16px 8px; }
-        .comments-section { padding: 0 16px 16px; display: none; }
-        .comments-section.open { display: block; }
-        .comment { display: flex; gap: 8px; margin-bottom: 12px; }
+        .post-actions { padding: 8px 16px; border-top: 1px solid var(--border); display: flex; justify-content: space-around; }
+        .post-actions button { background: none; border: none; padding: 8px 16px; color: var(--text-secondary); font-size: 14px; font-weight: 600; cursor: pointer; border-radius: 4px; transition: background 0.2s, color 0.2s, transform 0.1s; display: flex; align-items: center; gap: 6px; }
+        .post-actions button:hover { background: var(--hover-bg); }
+        .post-actions button:active { transform: scale(0.95); }
+        .post-actions button.liked { color: var(--primary); animation: popIn 0.3s ease-out; }
+        .like-count { font-size: 13px; color: var(--text-secondary); padding: 4px 16px 8px; }
+        .comments-section { padding: 0 16px 16px; max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out, padding 0.4s ease-out; }
+        .comments-section.open { max-height: 500px; padding: 0 16px 16px; }
+        .comment { display: flex; gap: 8px; margin-bottom: 12px; animation: fadeInUp 0.3s ease-out; }
         .comment .avatar { width: 32px; height: 32px; font-size: 12px; }
-        .comment-body { background: #f0f2f5; border-radius: 12px; padding: 8px 12px; flex: 1; }
+        .comment-body { background: var(--comment-bg); border-radius: 12px; padding: 8px 12px; flex: 1; transition: background 0.3s; }
         .comment-author { font-weight: 600; font-size: 13px; }
         .comment-text { font-size: 14px; line-height: 1.4; }
         .comment-input { display: flex; gap: 8px; margin-top: 8px; }
-        .comment-input input { flex: 1; border: 1px solid #e4e6eb; border-radius: 20px; padding: 8px 16px; font-size: 14px; outline: none; font-family: inherit; }
-        .comment-input input:focus { border-color: #1877f2; }
-        .comment-input button { background: #1877f2; color: #fff; border: none; border-radius: 20px; padding: 8px 16px; font-size: 13px; font-weight: 600; cursor: pointer; }
-        .hero { background: linear-gradient(135deg, #1877f2, #42b72a); color: #fff; text-align: center; padding: 60px 24px; margin-bottom: 24px; border-radius: 8px; }
+        .comment-input input { flex: 1; border: 1px solid var(--border); border-radius: 20px; padding: 8px 16px; font-size: 14px; outline: none; font-family: inherit; background: var(--input-bg); color: var(--text-primary); transition: border-color 0.2s, background 0.3s; }
+        .comment-input input:focus { border-color: var(--primary); }
+        .comment-input button { background: var(--primary); color: #fff; border: none; border-radius: 20px; padding: 8px 16px; font-size: 13px; font-weight: 600; cursor: pointer; transition: background 0.2s, transform 0.1s; }
+        .comment-input button:active { transform: scale(0.95); }
+        .hero { background: linear-gradient(135deg, var(--primary), var(--green)); color: #fff; text-align: center; padding: 60px 24px; margin-bottom: 24px; border-radius: 8px; animation: fadeInUp 0.5s ease-out; }
         .hero h2 { font-size: 32px; margin-bottom: 12px; }
         .hero p { font-size: 18px; opacity: 0.9; }
-        footer { text-align: center; padding: 24px; color: #606770; font-size: 13px; }
+        footer { text-align: center; padding: 24px; color: var(--text-secondary); font-size: 13px; }
+
+        /* Loading skeleton */
+        .skeleton { display: none; }
+        .skeleton.loading { display: block; }
+        .skeleton-post { background: var(--card-bg); border-radius: 8px; margin-bottom: 16px; padding: 16px; box-shadow: var(--shadow); }
+        .skeleton-line { height: 14px; border-radius: 4px; margin-bottom: 10px; background: linear-gradient(90deg, var(--border) 25%, var(--hover-bg) 50%, var(--border) 75%); background-size: 400px 100%; animation: shimmer 1.5s infinite; }
+        .skeleton-line.short { width: 40%; }
+        .skeleton-line.medium { width: 70%; }
+        .skeleton-line.long { width: 100%; }
+        .skeleton-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(90deg, var(--border) 25%, var(--hover-bg) 50%, var(--border) 75%); background-size: 400px 100%; animation: shimmer 1.5s infinite; margin-bottom: 12px; }
+        .skeleton-header { display: flex; gap: 12px; align-items: center; margin-bottom: 16px; }
+        .skeleton-header-lines { flex: 1; }
+
         @media (max-width: 768px) {
             .layout { flex-direction: column; }
             .sidebar { width: 100%; order: -1; }
-            nav a { padding: 8px 10px; font-size: 14px; }
+            nav a { padding: 6px 8px; font-size: 13px; }
+            .hero h2 { font-size: 24px; }
+            .hero p { font-size: 15px; }
+            .hero { padding: 40px 16px; }
+            header { padding: 10px 16px; }
+            header h1 { font-size: 20px; }
+            .post-content { font-size: 14px; }
+            .profile-card .avatar-large { width: 56px; height: 56px; font-size: 22px; }
+            .create-post textarea { font-size: 15px; min-height: 48px; }
+        }
+
+        @media (max-width: 480px) {
+            nav { gap: 0; }
+            nav a { padding: 6px 6px; font-size: 12px; }
+            .layout { padding: 0 8px; margin: 12px auto; }
+            .post-actions button { padding: 8px 8px; font-size: 12px; gap: 4px; }
         }
     </style>
 </head>
 <body>
     <header>
         <h1>SocialConnect</h1>
-        <nav>
-            <a href="#" class="active">Home</a>
-            <a href="#">Explore</a>
-            <a href="#">Messages</a>
-            <a href="#">Profile</a>
-        </nav>
+        <div class="header-right">
+            <nav>
+                <a href="#" class="active">Home</a>
+                <a href="#">Explore</a>
+                <a href="#">Messages</a>
+                <a href="#">Profile</a>
+            </nav>
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">&#x2600;&#xFE0F;</button>
+        </div>
     </header>
 
-    <div class="layout">
+    <!-- Loading skeleton -->
+    <div class="skeleton loading" id="skeleton">
+        <div style="max-width: 1024px; margin: 24px auto; padding: 0 16px;">
+            <div class="skeleton-post">
+                <div class="skeleton-header">
+                    <div class="skeleton-avatar"></div>
+                    <div class="skeleton-header-lines">
+                        <div class="skeleton-line short"></div>
+                        <div class="skeleton-line" style="width: 25%; height: 10px;"></div>
+                    </div>
+                </div>
+                <div class="skeleton-line long"></div>
+                <div class="skeleton-line medium"></div>
+            </div>
+            <div class="skeleton-post">
+                <div class="skeleton-header">
+                    <div class="skeleton-avatar"></div>
+                    <div class="skeleton-header-lines">
+                        <div class="skeleton-line short"></div>
+                        <div class="skeleton-line" style="width: 25%; height: 10px;"></div>
+                    </div>
+                </div>
+                <div class="skeleton-line long"></div>
+                <div class="skeleton-line medium"></div>
+                <div class="skeleton-line short"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="layout" id="content" style="display: none;">
         <div class="feed">
             <div class="hero">
                 <h2>Welcome to SocialConnect</h2>
@@ -185,26 +292,58 @@
     </footer>
 
     <script>
+        // Loading skeleton — show for 800ms then reveal content
+        window.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                document.getElementById('skeleton').classList.remove('loading');
+                document.getElementById('content').style.display = 'flex';
+            }, 800);
+        });
+
+        // Dark mode toggle with persistence
+        function toggleTheme() {
+            const body = document.body;
+            const btn = document.querySelector('.theme-toggle');
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                btn.innerHTML = '&#x2600;&#xFE0F;';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                btn.innerHTML = '&#x1F319;';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Restore saved theme
+        (function() {
+            var saved = localStorage.getItem('theme');
+            if (saved === 'dark') {
+                document.body.setAttribute('data-theme', 'dark');
+                document.querySelector('.theme-toggle').innerHTML = '&#x1F319;';
+            }
+        })();
+
         function toggleLike(btn) {
             btn.classList.toggle('liked');
-            const post = btn.closest('.post');
-            const countEl = post.querySelector('.like-count .count');
-            let count = parseInt(countEl.textContent);
+            var post = btn.closest('.post');
+            var countEl = post.querySelector('.like-count .count');
+            var count = parseInt(countEl.textContent);
             countEl.textContent = btn.classList.contains('liked') ? count + 1 : count - 1;
         }
 
         function toggleComments(btn) {
-            const post = btn.closest('.post');
-            const comments = post.querySelector('.comments-section');
+            var post = btn.closest('.post');
+            var comments = post.querySelector('.comments-section');
             comments.classList.toggle('open');
         }
 
         function addComment(btn) {
-            const input = btn.previousElementSibling;
-            const text = input.value.trim();
+            var input = btn.previousElementSibling;
+            var text = input.value.trim();
             if (!text) return;
-            const section = btn.closest('.comments-section');
-            const commentDiv = document.createElement('div');
+            var section = btn.closest('.comments-section');
+            var commentDiv = document.createElement('div');
             commentDiv.className = 'comment';
             commentDiv.innerHTML = '<div class="avatar" style="background: #1877f2;">Y</div><div class="comment-body"><div class="comment-author">You</div><div class="comment-text">' + text.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</div></div>';
             section.insertBefore(commentDiv, btn.closest('.comment-input'));
