@@ -67,10 +67,14 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
     });
 });
 
-// Typewriter effect
+// Typewriter effect (skips animation for reduced-motion preference)
 (function() {
     var words = ['Drives Results', 'Builds Brands', 'Goes Viral', 'Converts Clicks', 'Tells Stories', 'Breaks Records'];
     var el = document.getElementById('typewriter');
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        el.textContent = words[0];
+        return;
+    }
     var wordIndex = 0;
     var charIndex = 0;
     var deleting = false;
@@ -161,7 +165,7 @@ window.addEventListener('scroll', function() {
     } else {
         stickyCta.classList.remove('visible');
     }
-});
+}, { passive: true });
 
 // Blog card clicks — first card navigates to article with page transition, others scroll to contact
 document.querySelectorAll('.blog-card').forEach(function(card, index) {
@@ -335,20 +339,22 @@ document.querySelectorAll('a[href$=".html"]').forEach(function(link) {
     });
 });
 
-// Hero parallax effect
+// Hero parallax effect (disabled for reduced-motion preference)
 var heroContent = document.getElementById('heroContent');
 var heroSection = document.querySelector('.hero');
 var particles = document.querySelector('.particles');
-window.addEventListener('scroll', function() {
-    var scrollY = window.scrollY;
-    var heroH = heroSection.offsetHeight;
-    if (scrollY < heroH) {
-        var ratio = scrollY / heroH;
-        heroContent.style.transform = 'translateY(' + (scrollY * 0.3) + 'px)';
-        heroContent.style.opacity = 1 - ratio * 0.8;
-        if (particles) particles.style.transform = 'translateY(' + (scrollY * 0.15) + 'px)';
-    }
-}, { passive: true });
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    window.addEventListener('scroll', function() {
+        var scrollY = window.scrollY;
+        var heroH = heroSection.offsetHeight;
+        if (scrollY < heroH) {
+            var ratio = scrollY / heroH;
+            heroContent.style.transform = 'translateY(' + (scrollY * 0.3) + 'px)';
+            heroContent.style.opacity = 1 - ratio * 0.8;
+            if (particles) particles.style.transform = 'translateY(' + (scrollY * 0.15) + 'px)';
+        }
+    }, { passive: true });
+}
 
 // Stats bar reveal animation
 var statsBarEl = document.querySelector('.stats-bar');

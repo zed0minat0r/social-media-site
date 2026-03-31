@@ -2,6 +2,15 @@
 
 ## 2026-03-30
 
+### Refiner: Reduced Motion, Keyboard Parity & Passive Scroll Performance
+- Added comprehensive `prefers-reduced-motion: reduce` media query in CSS — disables all animations, transitions, parallax particles, floating avatar, typewriter cursor blink, and scroll-behavior for users who prefer stillness
+- Added reduced-motion guard in JS: typewriter effect shows static first word instead of animating; hero parallax scroll handler is skipped entirely
+- Added `focus-within` selectors alongside `:hover` on service cards, testimonial cards, and pricing cards — keyboard users now get the same lift/shadow feedback as mouse users
+- Marked unified scroll handler (progress bar, back-to-top, sticky CTA) as `{ passive: true }` to unlock compositor-thread scrolling and eliminate jank
+- Zero new sections, zero new dependencies — all improvements refine existing code paths
+
+## 2026-03-30
+
 ### QA Code Review — Bug Fixes & Accessibility Hardening
 - Added skip-to-content link for keyboard/screen-reader users (was entirely missing)
 - Added `aria-expanded` and `aria-controls` attributes to FAQ accordion buttons so screen readers announce open/close state
