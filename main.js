@@ -285,11 +285,13 @@ setTimeout(function() {
 (function() {
     var code = [38,38,40,40,37,39,37,39,66,65]; // up up down down left right left right B A
     var pos = 0;
+    var triggered = false;
     document.addEventListener('keydown', function(e) {
+        if (triggered) return;
         if (e.keyCode === code[pos]) {
             pos++;
             if (pos === code.length) {
-                pos = 0;
+                triggered = true;
                 // Confetti burst
                 var colors = ['#4361ee','#7209b7','#f72585','#4cc9f0','#06d6a0','#ffd166','#ff6b6b'];
                 for (var i = 0; i < 80; i++) {

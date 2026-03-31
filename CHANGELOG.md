@@ -2,6 +2,10 @@
 
 ## 2026-03-31
 
+### QA: Easter egg double-trigger guard
+- Fixed: Konami code could be triggered multiple times, stacking popup messages and spawning 160+ confetti pieces. Added `triggered` flag so it fires once only.
+- Reviewed: e.keyCode is deprecated but functional. innerHTML is hardcoded (no XSS). setTimeout third arg works in modern browsers. All acceptable.
+
 ### Spark's Innovation: Konami Code Easter Egg with Confetti Explosion
 - Added hidden Konami code easter egg (up up down down left right left right B A)
 - Triggers 80-piece confetti burst in brand colors (blue, purple, pink, cyan, green, gold, red)
