@@ -187,3 +187,29 @@ function handleSubmit(e) {
         e.target.reset();
     }, 2000);
 }
+
+// Section dots navigator
+(function() {
+    var sections = document.querySelectorAll('.section[id]');
+    var dotsNav = document.getElementById('sectionDots');
+    if (!dotsNav || !sections.length) return;
+    sections.forEach(function(sec) {
+        var dot = document.createElement('button');
+        dot.className = 'section-dot';
+        dot.setAttribute('aria-label', sec.id);
+        dot.addEventListener('click', function() {
+            sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        dotsNav.appendChild(dot);
+    });
+    var dots = dotsNav.querySelectorAll('.section-dot');
+    var dotsObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                var idx = Array.from(sections).indexOf(entry.target);
+                dots.forEach(function(d, i) { d.classList.toggle('active', i === idx); });
+            }
+        });
+    }, { threshold: 0.3 });
+    sections.forEach(function(sec) { dotsObserver.observe(sec); });
+})();

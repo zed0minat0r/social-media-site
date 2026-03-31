@@ -2,6 +2,14 @@
 
 ## 2026-03-31
 
+### Spark's Innovation: Section Dots Navigator + Floating Avatar
+- Added floating section dots navigator on right side of page: one dot per section, highlights current section as you scroll, click to jump
+- Dots use IntersectionObserver for accurate tracking — no extra scroll listener
+- Hidden on mobile (under 768px) to avoid clutter — hamburger menu handles navigation there
+- ARIA labels on each dot for accessibility
+- Added gentle floating animation on the About avatar (8px hover, 4s cycle) — the CSS illustration now breathes and feels alive
+- Both features push Design and UX toward Nigel's "signature moment" requirement
+
 ### Nigel's Audit #7 — OVERALL 8.2. Technical breaks through to 8.
 - Scores: Design 8 (stable), Content 8 (stable), UX 8 (stable), Technical 8 (⬆1!), Conversion 9 (stable)
 - Overall: 8.2 (was 8.0)
