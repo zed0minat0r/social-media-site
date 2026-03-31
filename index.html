@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="top">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <div class="scroll-progress" id="scrollProgress"></div>
     <div class="cursor-dot" id="cursorDot"></div>
     <nav class="section-dots" id="sectionDots" aria-label="Section navigation"></nav>
@@ -47,7 +48,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
     <section class="hero">
         <div class="particles">
             <div class="particle" style="left:5%"></div>
@@ -365,7 +366,7 @@
         <div class="blog-cta-wrap">
             <p>Get insights like these delivered weekly</p>
             <div class="blog-cta-inline">
-                <input type="email" placeholder="your@email.com">
+                <input type="email" placeholder="your@email.com" aria-label="Email for newsletter subscription">
                 <button class="btn btn-primary">Subscribe</button>
             </div>
         </div>
@@ -552,7 +553,7 @@
                     <span class="form-error" id="formEmailError"></span>
                 </div>
                 <input type="text" placeholder="Company / Brand">
-                <select>
+                <select aria-label="Service interest">
                     <option value="" disabled selected>What service are you interested in?</option>
                     <option>Social Media Marketing</option>
                     <option>Video & Content Production</option>
@@ -562,7 +563,7 @@
                     <option>SEO & Analytics</option>
                     <option>Full-Service Package</option>
                 </select>
-                <select>
+                <select aria-label="Monthly budget range">
                     <option value="" disabled selected>Monthly budget range</option>
                     <option>Under $2,000</option>
                     <option>$2,000 – $5,000</option>
@@ -570,7 +571,7 @@
                     <option>$10,000 – $25,000</option>
                     <option>$25,000+</option>
                 </select>
-                <select>
+                <select aria-label="Start timeline">
                     <option value="" disabled selected>When do you want to start?</option>
                     <option>ASAP</option>
                     <option>Within 2 weeks</option>
@@ -605,7 +606,7 @@
         <div class="footer-newsletter">
             <p>Get marketing insights in your inbox</p>
             <div class="footer-newsletter-form">
-                <input type="email" placeholder="your@email.com">
+                <input type="email" placeholder="your@email.com" aria-label="Email for marketing insights newsletter">
                 <button class="btn btn-primary">Subscribe</button>
             </div>
         </div>

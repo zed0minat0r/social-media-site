@@ -177,9 +177,17 @@ document.querySelectorAll('.blog-card').forEach(function(card, index) {
 });
 
 // FAQ accordion — keyboard accessible
-document.querySelectorAll('.faq-question').forEach(function(q) {
+document.querySelectorAll('.faq-question').forEach(function(q, idx) {
     q.setAttribute('tabindex', '0');
     q.setAttribute('role', 'button');
+    q.setAttribute('aria-expanded', 'false');
+    var answerId = 'faq-answer-' + idx;
+    var answer = q.parentElement.querySelector('.faq-answer');
+    if (answer) {
+        answer.setAttribute('id', answerId);
+        answer.setAttribute('role', 'region');
+    }
+    q.setAttribute('aria-controls', answerId);
     q.addEventListener('keydown', function(e) {
         if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
@@ -195,11 +203,13 @@ function toggleFaq(el) {
     document.querySelectorAll('.faq-item').forEach(function(i) {
         i.classList.remove('open');
         i.querySelector('.faq-answer').style.maxHeight = null;
+        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
     });
     // Open clicked if it was closed
     if (!isOpen) {
         item.classList.add('open');
         answer.style.maxHeight = answer.scrollHeight + 'px';
+        el.setAttribute('aria-expanded', 'true');
     }
 }
 

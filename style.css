@@ -25,6 +25,8 @@
     --input-bg: #252540;
 }
 html { scroll-behavior: smooth; }
+.skip-link { position: absolute; top: -100px; left: 16px; background: var(--primary); color: #fff; padding: 12px 24px; border-radius: 0 0 8px 8px; z-index: 9999; font-weight: 600; text-decoration: none; transition: top 0.2s; }
+.skip-link:focus { top: 0; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text-primary); transition: background 0.3s, color 0.3s; }
 

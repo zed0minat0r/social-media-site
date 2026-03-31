@@ -2,6 +2,23 @@
 
 ## 2026-03-30
 
+### QA Code Review — Bug Fixes & Accessibility Hardening
+- Added skip-to-content link for keyboard/screen-reader users (was entirely missing)
+- Added `aria-expanded` and `aria-controls` attributes to FAQ accordion buttons so screen readers announce open/close state
+- Added `role="region"` and unique IDs to FAQ answer panels for proper ARIA accordion pattern
+- Added `aria-label` to all three contact form `<select>` elements (service, budget, timeline) — they had no accessible label
+- Added `aria-label` to both newsletter email inputs (blog CTA and footer) — placeholder-only inputs are invisible to screen readers
+- Added skip-link CSS with focus-visible reveal (hidden off-screen until Tab)
+- Added `id="main-content"` to `<main>` element as skip-link target
+- No XSS issues found: all innerHTML usage is hardcoded static content (theme toggle emoji, easter egg), no user input flows into DOM insertion
+- No broken ID references: all `href="#id"` links match existing element IDs
+- No undefined function references: all onclick handlers (toggleTheme, toggleMenu, toggleFaq, handleSubmit, closeMenu) are defined in main.js
+- No JavaScript syntax errors or undefined variable references found
+- CSS dark mode coverage is complete — all custom properties have dark-mode overrides
+- 3D tilt, process cascade animations, smooth scroll, and form validation all reviewed and working correctly
+
+## 2026-03-30
+
 ### Nigel's Audit #11 — Overall 9.2 (was 9.0)
 - Technical Quality UP from 8 to 9 — inline form validation architecture, dedicated IntersectionObservers, CSS-driven cascade animations, clean event delegation
 - Simplicity debuts at 9 — three files, no frameworks, no dependencies, under 470 lines CSS / 450 lines JS
