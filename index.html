@@ -127,7 +127,7 @@
         /* CTA */
         .cta-section { background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2)); color: #fff; text-align: center; padding: 80px 24px; border-radius: 16px; margin: 0 24px; }
         .cta-section h2 { font-size: 36px; font-weight: 700; margin-bottom: 12px; }
-        .cta-section p { font-size: 18px; opacity: 0.9; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; margin-bottom: 32px; }
+        .cta-section p { font-size: 18px; opacity: 0.9; max-width: 500px; margin: 0 auto 16px; }
 
         /* Contact */
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
@@ -136,9 +136,18 @@
         .contact-detail { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; color: var(--text-secondary); font-size: 15px; }
         .contact-detail span:first-child { font-size: 20px; }
         .contact-form { display: flex; flex-direction: column; gap: 16px; }
-        .contact-form input, .contact-form textarea { padding: 14px 16px; border: 1px solid var(--border); border-radius: 8px; font-size: 15px; font-family: inherit; background: var(--input-bg); color: var(--text-primary); transition: border-color 0.2s, background 0.3s; outline: none; }
-        .contact-form input:focus, .contact-form textarea:focus { border-color: var(--primary); }
+        .contact-form input, .contact-form textarea, .contact-form select { padding: 14px 16px; border: 1px solid var(--border); border-radius: 8px; font-size: 15px; font-family: inherit; background: var(--input-bg); color: var(--text-primary); transition: border-color 0.2s, background 0.3s; outline: none; cursor: pointer; }
+        .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus { border-color: var(--primary); }
         .contact-form textarea { min-height: 120px; resize: vertical; }
+        .btn-block { width: 100%; text-align: center; }
+        .btn-outline-primary { color: var(--primary); border-color: var(--primary); }
+        .btn-submit { align-self: flex-start; }
+        .cta-urgency { opacity: 0.85; font-size: 15px; margin-bottom: 24px; font-weight: 600; }
+        .footer-newsletter { max-width: 600px; margin: 0 auto 24px; }
+        .footer-newsletter p { font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; }
+        .footer-newsletter-form { display: flex; gap: 8px; max-width: 400px; margin: 0 auto; }
+        .footer-newsletter-form input { flex: 1; padding: 10px 16px; border: 1px solid var(--border); border-radius: 8px; font-size: 14px; background: var(--input-bg); color: var(--text-primary); font-family: inherit; outline: none; }
+        .footer-newsletter-form .btn { padding: 10px 20px; font-size: 14px; }
 
         /* Pricing */
         .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: start; }
@@ -612,7 +621,7 @@
                     <li>Monthly strategy call</li>
                     <li>Email support</li>
                 </ul>
-                <a href="#contact" class="btn btn-outline" style="width: 100%; text-align: center; color: var(--primary); border-color: var(--primary);">Get Started</a>
+                <a href="#contact" class="btn btn-outline btn-block btn-outline-primary">Get Started</a>
             </div>
             <div class="pricing-card featured">
                 <div class="pricing-tier">Growth</div>
@@ -627,7 +636,7 @@
                     <li>Email marketing setup</li>
                     <li>Priority support</li>
                 </ul>
-                <a href="#contact" class="btn btn-primary" style="width: 100%; text-align: center;">Start Growing</a>
+                <a href="#contact" class="btn btn-primary btn-block">Start Growing</a>
             </div>
             <div class="pricing-card">
                 <div class="pricing-tier">Enterprise</div>
@@ -643,7 +652,7 @@
                     <li>Custom reporting dashboard</li>
                     <li>24/7 priority support</li>
                 </ul>
-                <a href="#contact" class="btn btn-outline" style="width: 100%; text-align: center; color: var(--primary); border-color: var(--primary);">Contact Me</a>
+                <a href="#contact" class="btn btn-outline btn-block btn-outline-primary">Contact Me</a>
             </div>
         </div>
     </div>
@@ -653,7 +662,7 @@
         <div class="cta-section">
             <h2>Ready to Grow Your Brand?</h2>
             <p>Let's build a marketing strategy that actually moves the needle.</p>
-            <p style="opacity: 0.85; font-size: 15px; margin-bottom: 24px; font-weight: 600;">&#x1F525; Currently accepting 2 new clients for Q2 2026</p>
+            <p class="cta-urgency">&#x1F525; Currently accepting 2 new clients for Q2 2026</p>
             <a href="#contact" class="btn btn-white">Claim Your Spot</a>
         </div>
     </div>
@@ -709,7 +718,7 @@
                 <input type="text" placeholder="Your Name" required>
                 <input type="email" placeholder="Your Email" required>
                 <input type="text" placeholder="Company / Brand">
-                <select style="padding: 14px 16px; border: 1px solid var(--border); border-radius: 8px; font-size: 15px; font-family: inherit; background: var(--input-bg); color: var(--text-primary); cursor: pointer;">
+                <select>
                     <option value="" disabled selected>What service are you interested in?</option>
                     <option>Social Media Marketing</option>
                     <option>Video & Content Production</option>
@@ -719,7 +728,7 @@
                     <option>SEO & Analytics</option>
                     <option>Full-Service Package</option>
                 </select>
-                <select style="padding: 14px 16px; border: 1px solid var(--border); border-radius: 8px; font-size: 15px; font-family: inherit; background: var(--input-bg); color: var(--text-primary); cursor: pointer;">
+                <select>
                     <option value="" disabled selected>Monthly budget range</option>
                     <option>Under $2,000</option>
                     <option>$2,000 – $5,000</option>
@@ -727,7 +736,7 @@
                     <option>$10,000 – $25,000</option>
                     <option>$25,000+</option>
                 </select>
-                <select style="padding: 14px 16px; border: 1px solid var(--border); border-radius: 8px; font-size: 15px; font-family: inherit; background: var(--input-bg); color: var(--text-primary); cursor: pointer;">
+                <select>
                     <option value="" disabled selected>When do you want to start?</option>
                     <option>ASAP</option>
                     <option>Within 2 weeks</option>
@@ -735,7 +744,7 @@
                     <option>Just exploring options</option>
                 </select>
                 <textarea placeholder="Tell me about your project and goals..."></textarea>
-                <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Send Message</button>
+                <button type="submit" class="btn btn-primary btn-submit">Send Message</button>
             </form>
         </div>
     </div>
@@ -743,11 +752,11 @@
     </main>
 
     <footer>
-        <div style="max-width: 600px; margin: 0 auto 24px;">
-            <p style="font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 8px;">Get marketing insights in your inbox</p>
-            <div style="display: flex; gap: 8px; max-width: 400px; margin: 0 auto;">
-                <input type="email" placeholder="your@email.com" style="flex: 1; padding: 10px 16px; border: 1px solid var(--border); border-radius: 8px; font-size: 14px; background: var(--input-bg); color: var(--text-primary); font-family: inherit; outline: none;">
-                <button class="btn btn-primary" style="padding: 10px 20px; font-size: 14px;">Subscribe</button>
+        <div class="footer-newsletter">
+            <p>Get marketing insights in your inbox</p>
+            <div class="footer-newsletter-form">
+                <input type="email" placeholder="your@email.com">
+                <button class="btn btn-primary">Subscribe</button>
             </div>
         </div>
         <div class="social-links" style="justify-content: center; margin-bottom: 16px;">

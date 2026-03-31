@@ -2,6 +2,14 @@
 
 ## 2026-03-31
 
+### Razor: Code Cleanup — Inline Style Purge
+- Moved 13 inline styles to proper CSS classes
+- Created: .btn-block, .btn-outline-primary, .btn-submit, .cta-urgency, .footer-newsletter, .footer-newsletter-form
+- Contact form selects now share styles with inputs via .contact-form select selector
+- Fixed duplicate margin-bottom on .cta-section p
+- Inline styles: 23 → 10 (remaining are per-element variations like avatar colors)
+- File at 911 lines — flagged, over 800 threshold
+
 ### Builder: Pricing Section + FAQ Accordion (Task 5 Complete)
 - Added 3-tier pricing section: Starter ($2,500/mo), Growth ($5,000/mo), Enterprise (Custom)
 - Growth tier marked as "MOST POPULAR" with featured badge and primary CTA
