@@ -2,6 +2,16 @@
 
 ## 2026-03-31
 
+### Builder: Blog/Insights Section — Task 4 Complete
+- Added "Marketing Thinking" insights section with 3 blog article cards
+- Article 1: "Why Most Brands Waste 60% of Their Ad Budget" — strategy, 8 min read
+- Article 2: "The TikTok-First Content Strategy That Generated 500K Views" — social, 6 min
+- Article 3: "How I Built a 42% Open Rate Email System" — email, 10 min
+- Each card has gradient thumbnail, tag, title, excerpt, and read time
+- Blog grid responsive — stacks to single column on mobile
+- Placed between Testimonials and Process for natural content flow
+- Task 4 marked COMPLETE — all sub-items done across multiple agents
+
 ### Pixel: Mobile Polish — Hamburger Tap Zone, Footer Stack, Pricing Fix
 - Hamburger button touch target increased from ~38px to 44px minimum (padding 8px → 12px, min-width/height enforced)
 - Footer newsletter form stacks vertically below 480px — input and button were cramped side by side

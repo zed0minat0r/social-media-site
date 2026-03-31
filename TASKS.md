@@ -22,12 +22,12 @@
 - ~~Add contact form and info section~~
 - ~~Add stats bar~~
 
-## Task 4: Polish and enhance portfolio
-- Add individual case study pages or expanded details for each portfolio item
-- Add an "About Me" section with personal bio and photo placeholder
-- Add social media links (Instagram, LinkedIn, X, TikTok)
-- Add a blog/insights section for thought leadership content
-- Improve SEO meta tags (description, og tags, structured data)
+## Task 4: Polish and enhance portfolio [COMPLETED]
+- ~~Add individual case study pages or expanded details for each portfolio item~~ (expanded overlay descriptions)
+- ~~Add an "About Me" section with personal bio and photo placeholder~~ (CSS avatar illustration)
+- ~~Add social media links (Instagram, LinkedIn, X, TikTok)~~
+- ~~Add a blog/insights section for thought leadership content~~
+- ~~Improve SEO meta tags (description, og tags, structured data)~~
 
 ## Task 5: Advanced features [COMPLETED]
 - ~~Add a pricing/packages section~~
