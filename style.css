@@ -106,7 +106,10 @@ nav a:hover, nav a.active { background: var(--hover-bg); color: var(--primary); 
 .testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .testimonial { background: var(--card-bg); border-radius: 12px; padding: 32px; box-shadow: var(--shadow); transition: all 0.3s; position: relative; }
 .testimonial:hover { box-shadow: var(--shadow-hover); }
-.testimonial::before { content: '\201C'; font-size: 60px; color: var(--primary); opacity: 0.2; position: absolute; top: 12px; left: 20px; font-family: Georgia, serif; }
+.testimonial { perspective: 600px; transform-style: preserve-3d; }
+.testimonial::before { content: '\201C'; font-size: 60px; color: var(--primary); opacity: 0.2; position: absolute; top: 12px; left: 20px; font-family: Georgia, serif; transition: opacity 0.4s, background 0.4s; }
+.testimonial:hover::before { opacity: 0.5; background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: quoteShimmer 2s ease-in-out infinite; }
+@keyframes quoteShimmer { 0%, 100% { opacity: 0.5; } 50% { opacity: 0.8; } }
 .testimonial-text { font-size: 15px; line-height: 1.7; margin-bottom: 20px; font-style: italic; color: var(--text-secondary); }
 .testimonial-author { display: flex; align-items: center; gap: 12px; }
 .testimonial-avatar { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 16px; }

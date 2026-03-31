@@ -318,6 +318,26 @@ setTimeout(function() {
     });
 })();
 
+// Magnetic 3D tilt on testimonial cards
+(function() {
+    if (window.matchMedia('(hover: none)').matches) return;
+    document.querySelectorAll('.testimonial').forEach(function(card) {
+        card.addEventListener('mousemove', function(e) {
+            var rect = card.getBoundingClientRect();
+            var x = e.clientX - rect.left;
+            var y = e.clientY - rect.top;
+            var centerX = rect.width / 2;
+            var centerY = rect.height / 2;
+            var rotateY = ((x - centerX) / centerX) * 4; // max 4deg
+            var rotateX = ((centerY - y) / centerY) * 4;
+            card.style.transform = 'rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateZ(8px)';
+        });
+        card.addEventListener('mouseleave', function() {
+            card.style.transform = '';
+        });
+    });
+})();
+
 // Section dots navigator
 (function() {
     var sections = document.querySelectorAll('.section[id]');

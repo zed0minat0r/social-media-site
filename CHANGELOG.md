@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-03-30
+
+### Spark's Innovation: Magnetic 3D Tilt on Testimonial Cards + Quote Shimmer
+- Added mouse-tracking 3D tilt effect on testimonial cards: cards physically respond to cursor position with subtle rotateX/rotateY (max 4deg) plus a translateZ(8px) lift
+- Card tilts toward the cursor like a physical object — perspective(600px) with preserve-3d creates convincing depth
+- On hover, the large quotation mark shifts from flat opacity to a gradient shimmer (brand blue-to-purple) with a breathing pulse animation (2s cycle)
+- Both effects are desktop-only (skipped on touch devices) and reset smoothly on mouse leave
+- The testimonials section now has that Awwwards-level tactile quality — cards feel like they exist in 3D space
+
 ## 2026-03-31
 
 ### Pixel: Final Mobile Pass — Calculator Responsive + Mission Complete
