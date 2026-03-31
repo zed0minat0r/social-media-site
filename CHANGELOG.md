@@ -2,6 +2,12 @@
 
 ## 2026-03-31
 
+### Spark's Innovation: Custom Cursor Follower + Staggered Grid Animations
+- Added custom cursor follower: a 12px gradient dot that trails the mouse with smooth easing (0.15 lerp). Uses mix-blend-mode: screen for elegant blending. Hidden on touch devices.
+- Cursor fades in on mouse enter, fades out on mouse leave. Follows with satisfying lag — not laggy, but intentionally smooth. An Awwwards-level detail.
+- Added staggered animation delays on service cards (0-0.5s), portfolio items (0-0.3s), and testimonials (0-0.2s). Cards cascade in from left to right instead of all appearing at once.
+- Both features are desktop-only enhancements that don't affect mobile.
+
 ### Nigel's Audit #9 — DESIGN 9. UX 9. FOUR 9s. Overall 8.8.
 - Scores: Design 9 (⬆1!), Content 9, UX 9 (⬆1!), Technical 8, Conversion 9
 - Overall: 8.8 (was 8.4) — highest ever

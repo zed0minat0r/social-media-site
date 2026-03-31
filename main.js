@@ -190,6 +190,27 @@ function handleSubmit(e) {
     }, 2000);
 }
 
+// Custom cursor follower
+(function() {
+    var dot = document.getElementById('cursorDot');
+    if (!dot || window.matchMedia('(hover: none)').matches) return;
+    var mouseX = 0, mouseY = 0, dotX = 0, dotY = 0;
+    document.addEventListener('mousemove', function(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        dot.classList.add('visible');
+    });
+    document.addEventListener('mouseleave', function() { dot.classList.remove('visible'); });
+    function animate() {
+        dotX += (mouseX - dotX) * 0.15;
+        dotY += (mouseY - dotY) * 0.15;
+        dot.style.left = dotX - 6 + 'px';
+        dot.style.top = dotY - 6 + 'px';
+        requestAnimationFrame(animate);
+    }
+    animate();
+})();
+
 // Smooth page transitions for internal links
 document.querySelectorAll('a[href$=".html"]').forEach(function(link) {
     link.addEventListener('click', function(e) {
