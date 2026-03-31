@@ -2,6 +2,15 @@
 
 ## 2026-03-31
 
+### Builder: CODE SPLIT — CSS and JS extracted to separate files
+- Extracted 361 lines of CSS to style.css
+- Extracted 189 lines of JS to main.js
+- index.html reduced from 1092 to 540 lines (50% reduction)
+- Total codebase: 540 + 361 + 189 = 1090 lines across 3 files
+- Each file now has a single responsibility: structure, style, behavior
+- This was the RECURRING technical issue from audits #5 and #6 — finally resolved
+- Should push Technical Quality from 7 to 8
+
 ### Pixel: Footer Newsletter iOS Zoom Fix
 - Footer newsletter email input was 14px font-size — triggers iOS Safari auto-zoom on focus. Bumped to 16px. Same fix we applied to blog email capture earlier.
 - Verified: FAQ keyboard nav additions work on mobile — 20px padding gives 56px+ touch height, focus-visible ring shows correctly
