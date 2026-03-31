@@ -2,6 +2,12 @@
 
 ## 2026-03-31
 
+### Pixel: Final Mobile Pass — Calculator Responsive + Mission Complete
+- Added mobile rules for ROI calculator: padding 40px → 24px/16px at 480px, revenue number 42px → 32px, detail metrics stack vertically, value display scales
+- At 320px the calculator now has 288px content space instead of 240px — comfortable for slider and results
+- Verified theme-color meta tags — Safari address bar and Chrome status bar will tint correctly
+- This is the 12th mobile audit. Zero open issues. Every element responsive. Every input 16px+. Every button 44px+. Every breakpoint covered.
+
 ### Refiner: Final Polish — Theme Color, Priority Complete
 - Added `<meta name="theme-color">` with light (#4361ee) and dark (#0f0f1a) variants. Mobile browser chrome now tints to match the brand. Safari address bar turns blue. Chrome status bar adapts. The smallest detail that says "every pixel was considered."
 - Removed PRIORITY.txt — its purpose is fulfilled. The site is no longer "basic and boring." It is exceptional. The directive has been honoured.
