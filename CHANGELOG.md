@@ -2,6 +2,13 @@
 
 ## 2026-03-31
 
+### QA: Fixed querySelector crash on placeholder links
+- Fixed: clicking any href="#" link (social icons, footer Privacy/Terms) threw a JS SyntaxError because querySelector("#") is invalid. Smooth scroll handler now skips bare "#" links. The error was silent but broke click behavior.
+- Reviewed CSS avatar illustration — hardcoded colors are acceptable for illustration elements
+- Reviewed scroll progress bar — z-index stacking correct, no conflicts with sticky header
+- Reviewed all nav anchors — all match existing IDs
+- Note: .process-step:last-child .step-connector targets nothing (step 3 has no connector div) — dead CSS but harmless
+
 ### Spark's Innovation: CSS Avatar Illustration + Scroll Progress Bar
 - Replaced the emoji About photo with a full CSS-illustrated character: person with hair, eyes, smile, torso in brand color, holding a laptop with a glowing screen showing the brand gradient
 - Character is built entirely from CSS shapes — no images, no emoji, fully themed

@@ -837,8 +837,10 @@
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(function(a) {
             a.addEventListener('click', function(e) {
+                var href = this.getAttribute('href');
+                if (href.length <= 1) return; // skip bare "#" links
                 e.preventDefault();
-                var target = document.querySelector(this.getAttribute('href'));
+                var target = document.querySelector(href);
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
