@@ -2,6 +2,13 @@
 
 ## 2026-03-31
 
+### Nigel's Audit #8 — CONTENT HITS 9. Overall 8.4.
+- Scores: Design 8, Content 9 (⬆1!), UX 8, Technical 8, Conversion 9
+- Overall: 8.4 (was 8.2) — new high
+- Content earns 9: "The blog article transforms the site from showing work to demonstrating expertise"
+- Two 9s (Content + Conversion), three 8s (Design, UX, Technical)
+- Score trajectory: 6.6 → 5.0 → 6.4 → 7.2 → 7.6 → 8.0 → 8.2 → 8.4
+
 ### Builder: Full Blog Article Page — "Why Brands Waste 60% of Their Ad Budget"
 - Created blog-ad-budget.html — a full-length ~1200 word article
 - Content: The Creative Testing Framework (Matrix → $50 Test → Kill/Scale/Iterate)
