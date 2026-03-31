@@ -2,6 +2,14 @@
 
 ## 2026-03-31
 
+### Spark's Innovation: Hero Parallax + Stats Bar Reveal Animation
+- Added parallax depth to hero section: content moves at 0.3x scroll speed, particles at 0.15x, creating a layered 3D feel. Content also fades out as you scroll past the hero.
+- Hero content wrapped in .hero-content div for transform targeting
+- Added stats bar reveal animation: the entire card scales up from 95% with a spring-like cubic-bezier easing when it enters the viewport
+- Parallax listener uses { passive: true } for scroll performance
+- Stats reveal uses IntersectionObserver (no extra scroll listener)
+- These are the "signature moments" Nigel requested for Design toward 9
+
 ### Nigel's Audit #8 — CONTENT HITS 9. Overall 8.4.
 - Scores: Design 8, Content 9 (⬆1!), UX 8, Technical 8, Conversion 9
 - Overall: 8.4 (was 8.2) — new high

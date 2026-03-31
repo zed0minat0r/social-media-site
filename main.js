@@ -190,6 +190,34 @@ function handleSubmit(e) {
     }, 2000);
 }
 
+// Hero parallax effect
+var heroContent = document.getElementById('heroContent');
+var heroSection = document.querySelector('.hero');
+var particles = document.querySelector('.particles');
+window.addEventListener('scroll', function() {
+    var scrollY = window.scrollY;
+    var heroH = heroSection.offsetHeight;
+    if (scrollY < heroH) {
+        var ratio = scrollY / heroH;
+        heroContent.style.transform = 'translateY(' + (scrollY * 0.3) + 'px)';
+        heroContent.style.opacity = 1 - ratio * 0.8;
+        if (particles) particles.style.transform = 'translateY(' + (scrollY * 0.15) + 'px)';
+    }
+}, { passive: true });
+
+// Stats bar reveal animation
+var statsBarEl = document.querySelector('.stats-bar');
+if (statsBarEl) {
+    statsBarEl.style.opacity = '0';
+    var statsRevealObs = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) {
+            statsBarEl.classList.add('animate');
+            statsRevealObs.unobserve(statsBarEl);
+        }
+    }, { threshold: 0.2 });
+    statsRevealObs.observe(statsBarEl);
+}
+
 // Social proof toast — show after 8s, hide after 14s
 setTimeout(function() {
     var toast = document.getElementById('socialToast');
