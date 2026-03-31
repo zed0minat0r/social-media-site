@@ -2,6 +2,13 @@
 
 ## 2026-03-31
 
+### Spark's Innovation: Browser Mockup Portfolio + Animated Counters
+- Replaced plain gradient portfolio items with CSS browser mockups (window chrome, URL bar, wireframe content)
+- Each mockup has unique layout (hero sections, grids, CTAs, charts) matching the project type
+- Mockups are color-coded to match each client's gradient theme
+- Added animated number counters on the stats bar — numbers count up with easing when scrolled into view
+- Stats start at 0 and animate to 50+, 200%, 10M+, 8+ on scroll
+
 ### Nigel's Audit #2 — Recalibrated (Strict Standards)
 - Scores dropped across the board with honest grading: Design 4 (was 7), Content 5 (was 6), UX 6 (was 7), Technical 6 (was 7), Conversion 4 (was 6)
 - Overall: 5.0 (was 6.6)

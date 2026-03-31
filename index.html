@@ -186,10 +186,39 @@
         .process-step h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
         .process-step p { color: var(--text-secondary); font-size: 14px; line-height: 1.6; }
 
-        /* Portfolio inner content */
-        .portfolio-inner { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; text-align: center; color: rgba(255,255,255,0.9); }
-        .portfolio-inner .portfolio-brand { font-size: 28px; font-weight: 800; letter-spacing: -1px; margin-bottom: 4px; }
-        .portfolio-inner .portfolio-type { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; opacity: 0.7; }
+        /* Portfolio browser mockup */
+        .portfolio-inner { position: absolute; inset: 12px; display: flex; flex-direction: column; border-radius: 8px; overflow: hidden; background: #fff; box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
+        .browser-bar { background: #e8e8e8; padding: 6px 12px; display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+        .browser-dot { width: 8px; height: 8px; border-radius: 50%; }
+        .browser-dot.red { background: #ff5f57; }
+        .browser-dot.yellow { background: #ffbd2e; }
+        .browser-dot.green { background: #28c840; }
+        .browser-url { margin-left: 8px; background: #fff; border-radius: 4px; padding: 2px 8px; font-size: 9px; color: #999; flex: 1; }
+        .browser-content { flex: 1; padding: 12px; display: flex; flex-direction: column; gap: 6px; overflow: hidden; }
+        .mock-header { height: 8px; width: 60%; border-radius: 4px; }
+        .mock-text { height: 5px; border-radius: 2px; opacity: 0.6; }
+        .mock-text.w100 { width: 100%; }
+        .mock-text.w80 { width: 80%; }
+        .mock-text.w60 { width: 60%; }
+        .mock-text.w40 { width: 40%; }
+        .mock-bar { height: 24px; border-radius: 4px; opacity: 0.4; margin-top: 4px; }
+        .mock-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; margin-top: 4px; }
+        .mock-box { height: 20px; border-radius: 3px; opacity: 0.3; }
+        .mock-hero { height: 32px; border-radius: 4px; opacity: 0.5; margin-bottom: 4px; }
+        .mock-cta { height: 12px; width: 40%; border-radius: 3px; opacity: 0.7; }
+        /* Color themes per portfolio item */
+        .portfolio-item:nth-child(1) .mock-header, .portfolio-item:nth-child(1) .mock-hero, .portfolio-item:nth-child(1) .mock-cta { background: #667eea; }
+        .portfolio-item:nth-child(1) .mock-text, .portfolio-item:nth-child(1) .mock-bar, .portfolio-item:nth-child(1) .mock-box { background: #667eea; }
+        .portfolio-item:nth-child(2) .mock-header, .portfolio-item:nth-child(2) .mock-hero, .portfolio-item:nth-child(2) .mock-cta { background: #f72585; }
+        .portfolio-item:nth-child(2) .mock-text, .portfolio-item:nth-child(2) .mock-bar, .portfolio-item:nth-child(2) .mock-box { background: #f72585; }
+        .portfolio-item:nth-child(3) .mock-header, .portfolio-item:nth-child(3) .mock-hero, .portfolio-item:nth-child(3) .mock-cta { background: #4361ee; }
+        .portfolio-item:nth-child(3) .mock-text, .portfolio-item:nth-child(3) .mock-bar, .portfolio-item:nth-child(3) .mock-box { background: #4361ee; }
+        .portfolio-item:nth-child(4) .mock-header, .portfolio-item:nth-child(4) .mock-hero, .portfolio-item:nth-child(4) .mock-cta { background: #06d6a0; }
+        .portfolio-item:nth-child(4) .mock-text, .portfolio-item:nth-child(4) .mock-bar, .portfolio-item:nth-child(4) .mock-box { background: #06d6a0; }
+        .portfolio-item:nth-child(5) .mock-header, .portfolio-item:nth-child(5) .mock-hero, .portfolio-item:nth-child(5) .mock-cta { background: #ff6b6b; }
+        .portfolio-item:nth-child(5) .mock-text, .portfolio-item:nth-child(5) .mock-bar, .portfolio-item:nth-child(5) .mock-box { background: #ff6b6b; }
+        .portfolio-item:nth-child(6) .mock-header, .portfolio-item:nth-child(6) .mock-hero, .portfolio-item:nth-child(6) .mock-cta { background: #a29bfe; }
+        .portfolio-item:nth-child(6) .mock-text, .portfolio-item:nth-child(6) .mock-bar, .portfolio-item:nth-child(6) .mock-box { background: #a29bfe; }
 
         /* Focus states */
         *:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
@@ -373,7 +402,7 @@
         </div>
         <div class="portfolio-grid">
             <div class="portfolio-item">
-                <div class="portfolio-inner"><div class="portfolio-brand">TechFlow</div><div class="portfolio-type">Launch Campaign</div></div>
+                <div class="portfolio-inner"><div class="browser-bar"><div class="browser-dot red"></div><div class="browser-dot yellow"></div><div class="browser-dot green"></div><span class="browser-url">techflow.io</span></div><div class="browser-content"><div class="mock-hero"></div><div class="mock-text w80"></div><div class="mock-text w60"></div><div class="mock-cta"></div><div class="mock-grid"><div class="mock-box"></div><div class="mock-box"></div><div class="mock-box"></div></div></div></div>
                 <div class="portfolio-overlay">
                     <h3>TechFlow Launch Campaign</h3>
                     <p>Full digital launch across 5 platforms — paid, organic, influencer, email, and PR. Built a 90-day content calendar and executed across Instagram, TikTok, LinkedIn, X, and YouTube.</p>
@@ -381,7 +410,7 @@
                 </div>
             </div>
             <div class="portfolio-item">
-                <div class="portfolio-inner"><div class="portfolio-brand">NovaBrand</div><div class="portfolio-type">Brand Overhaul</div></div>
+                <div class="portfolio-inner"><div class="browser-bar"><div class="browser-dot red"></div><div class="browser-dot yellow"></div><div class="browser-dot green"></div><span class="browser-url">novabrand.com</span></div><div class="browser-content"><div class="mock-header"></div><div class="mock-text w100"></div><div class="mock-text w80"></div><div class="mock-bar"></div><div class="mock-text w60"></div><div class="mock-cta"></div></div></div>
                 <div class="portfolio-overlay">
                     <h3>NovaBrand Rebrand</h3>
                     <p>Complete visual identity redesign, new messaging framework, and coordinated social rollout across all platforms. Repositioned from budget to premium.</p>
@@ -389,7 +418,7 @@
                 </div>
             </div>
             <div class="portfolio-item">
-                <div class="portfolio-inner"><div class="portfolio-brand">Meridian</div><div class="portfolio-type">Paid Advertising</div></div>
+                <div class="portfolio-inner"><div class="browser-bar"><div class="browser-dot red"></div><div class="browser-dot yellow"></div><div class="browser-dot green"></div><span class="browser-url">meridian.co/ads</span></div><div class="browser-content"><div class="mock-header"></div><div class="mock-grid"><div class="mock-box" style="height:32px"></div><div class="mock-box" style="height:32px"></div><div class="mock-box" style="height:32px"></div></div><div class="mock-text w80"></div><div class="mock-bar"></div></div></div>
                 <div class="portfolio-overlay">
                     <h3>Meridian Co. Paid Ads</h3>
                     <p>Restructured Meta & Google ad accounts, built new creative testing framework, and optimized audiences. Reduced CPA by 60% while scaling spend 3x.</p>
@@ -397,7 +426,7 @@
                 </div>
             </div>
             <div class="portfolio-item">
-                <div class="portfolio-inner"><div class="portfolio-brand">Bloom</div><div class="portfolio-type">Video Strategy</div></div>
+                <div class="portfolio-inner"><div class="browser-bar"><div class="browser-dot red"></div><div class="browser-dot yellow"></div><div class="browser-dot green"></div><span class="browser-url">bloomhealth.co</span></div><div class="browser-content"><div class="mock-hero" style="height:40px"></div><div class="mock-text w100"></div><div class="mock-text w80"></div><div class="mock-grid"><div class="mock-box"></div><div class="mock-box"></div><div class="mock-box"></div></div></div></div>
                 <div class="portfolio-overlay">
                     <h3>Bloom Health Content</h3>
                     <p>Developed a 12-part video series with micro-influencer partnerships. Created a TikTok-first strategy that drove massive organic reach in the wellness space.</p>
@@ -405,7 +434,7 @@
                 </div>
             </div>
             <div class="portfolio-item">
-                <div class="portfolio-inner"><div class="portfolio-brand">Pulse</div><div class="portfolio-type">SEO & Content</div></div>
+                <div class="portfolio-inner"><div class="browser-bar"><div class="browser-dot red"></div><div class="browser-dot yellow"></div><div class="browser-dot green"></div><span class="browser-url">pulsedigital.io</span></div><div class="browser-content"><div class="mock-header"></div><div class="mock-bar" style="height:40px"></div><div class="mock-text w100"></div><div class="mock-text w60"></div><div class="mock-cta"></div></div></div>
                 <div class="portfolio-overlay">
                     <h3>Pulse Digital SEO</h3>
                     <p>Technical SEO overhaul, 50-page content strategy, and link building campaign. Took primary keyword from page 4 to position 1 in 90 days.</p>
@@ -413,7 +442,7 @@
                 </div>
             </div>
             <div class="portfolio-item">
-                <div class="portfolio-inner"><div class="portfolio-brand">Vertex</div><div class="portfolio-type">Email Automation</div></div>
+                <div class="portfolio-inner"><div class="browser-bar"><div class="browser-dot red"></div><div class="browser-dot yellow"></div><div class="browser-dot green"></div><span class="browser-url">vertexlabs.com/email</span></div><div class="browser-content"><div class="mock-header"></div><div class="mock-text w100"></div><div class="mock-bar"></div><div class="mock-text w80"></div><div class="mock-text w40"></div><div class="mock-cta"></div></div></div>
                 <div class="portfolio-overlay">
                     <h3>Vertex Labs Email</h3>
                     <p>Built a 7-sequence automated nurture system from scratch — onboarding, re-engagement, upsell, and win-back. Industry avg open rate is 21%. We hit 42%.</p>
@@ -623,6 +652,36 @@
             }
             type();
         })();
+
+        // Animated counters
+        var counterObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    var nums = entry.target.querySelectorAll('.stat-number');
+                    nums.forEach(function(num) {
+                        var text = num.textContent;
+                        var match = text.match(/(\d+)/);
+                        if (!match) return;
+                        var target = parseInt(match[1]);
+                        var suffix = text.replace(match[1], '');
+                        var duration = 1500;
+                        var start = performance.now();
+                        num.textContent = '0' + suffix;
+                        function tick(now) {
+                            var elapsed = now - start;
+                            var progress = Math.min(elapsed / duration, 1);
+                            var eased = 1 - Math.pow(1 - progress, 3);
+                            num.textContent = Math.floor(target * eased) + suffix;
+                            if (progress < 1) requestAnimationFrame(tick);
+                        }
+                        requestAnimationFrame(tick);
+                    });
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        var statsBar = document.querySelector('.stats-bar');
+        if (statsBar) counterObserver.observe(statsBar);
 
         // Contact form
         function handleSubmit(e) {
