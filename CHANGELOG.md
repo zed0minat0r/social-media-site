@@ -2,6 +2,12 @@
 
 ## 2026-03-31
 
+### Refiner: Inline Form Validation, Social Proof Toast, Conversion Polish
+- Added CSS-only inline form validation: name/email fields show green border when valid, email shows pink when invalid format. No JS needed — uses :valid/:invalid pseudo-classes with :not(:placeholder-shown) to avoid styling empty fields.
+- Added social proof toast notification: "Aisha from NovaBrand started a project 2 days ago" slides in from the left after 8 seconds, auto-dismisses after 6 more. Dismissible with X button. Positioned above sticky CTA. Responsive on mobile.
+- Toast uses dark mode variables, avatar with brand gradient, smooth slide animation.
+- BONUS: Form validation is a pure CSS solution — zero JavaScript, zero performance impact.
+
 ### Spark's Innovation: Section Dots Navigator + Floating Avatar
 - Added floating section dots navigator on right side of page: one dot per section, highlights current section as you scroll, click to jump
 - Dots use IntersectionObserver for accurate tracking — no extra scroll listener

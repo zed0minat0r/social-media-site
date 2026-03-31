@@ -188,6 +188,15 @@ function handleSubmit(e) {
     }, 2000);
 }
 
+// Social proof toast — show after 8s, hide after 14s
+setTimeout(function() {
+    var toast = document.getElementById('socialToast');
+    if (toast) {
+        toast.classList.add('visible');
+        setTimeout(function() { toast.classList.remove('visible'); }, 6000);
+    }
+}, 8000);
+
 // Section dots navigator
 (function() {
     var sections = document.querySelectorAll('.section[id]');
