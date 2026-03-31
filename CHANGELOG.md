@@ -2,6 +2,13 @@
 
 ## 2026-03-31
 
+### Pixel: Mobile Polish — Hamburger Tap Zone, Footer Stack, Pricing Fix
+- Hamburger button touch target increased from ~38px to 44px minimum (padding 8px → 12px, min-width/height enforced)
+- Footer newsletter form stacks vertically below 480px — input and button were cramped side by side
+- Pricing grid max-width removed at 480px — was overflowing on 320px screens
+- Reviewed new mobile nav: link padding at 12px is good, 44px+ touch targets confirmed
+- Browser mockup dots are decorative, 8px is acceptable
+
 ### Refiner: Hamburger Menu, FAQ Reorder, Social Proof, Style Guide Fix
 - Added hamburger menu for mobile (below 480px): 3-line icon, animated open/close, full-width dropdown nav
 - Mobile nav includes all sections: Home, About, Services, Work, Pricing, Contact

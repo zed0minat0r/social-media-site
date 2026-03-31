@@ -270,7 +270,7 @@
         .portfolio-item:nth-child(6) .mock-text, .portfolio-item:nth-child(6) .mock-bar, .portfolio-item:nth-child(6) .mock-box { background: #a29bfe; }
 
         /* Hamburger menu */
-        .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
+        .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 12px; flex-direction: column; gap: 5px; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
         .hamburger span { display: block; width: 22px; height: 2px; background: var(--text-primary); border-radius: 2px; transition: all 0.3s; }
         .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
         .hamburger.open span:nth-child(2) { opacity: 0; }
@@ -343,6 +343,10 @@
             .step-number { width: 52px; height: 52px; font-size: 20px; }
             .contact-form input, .contact-form textarea { font-size: 16px; }
             footer .social-links a { width: 44px; height: 44px; }
+            .footer-newsletter-form { flex-direction: column; }
+            .footer-newsletter-form input { width: 100%; }
+            .footer-newsletter-form .btn { width: 100%; text-align: center; }
+            .pricing-grid { max-width: 100%; }
         }
         @media (max-width: 360px) {
             .hero h1 { font-size: 24px; }
