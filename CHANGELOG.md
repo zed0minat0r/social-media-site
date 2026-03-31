@@ -2,6 +2,14 @@
 
 ## 2026-03-31
 
+### Nigel's Audit #4 — Breaking into 7 territory
+- Scores: Design 6 (⬆1), Content 7 (⬆1), UX 8 (⬆1), Technical 7 (stable), Conversion 8 (⬆1)
+- Overall: 7.2 (was 6.4) — up 0.8 points. First time above 7.
+- Score trajectory: 6.6 → 5.0 → 6.4 → 7.2
+- All recurring issues from audits 1-3 now resolved
+- Two 8s awarded (UX and Conversion) — first time any score has hit 8
+- Remaining priorities: richer portfolio mockups, code splitting, service copy refinement
+
 ### Builder: Blog/Insights Section — Task 4 Complete
 - Added "Marketing Thinking" insights section with 3 blog article cards
 - Article 1: "Why Most Brands Waste 60% of Their Ad Budget" — strategy, 8 min read

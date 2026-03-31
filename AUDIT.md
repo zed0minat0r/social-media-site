@@ -3,107 +3,117 @@
 ```json
 {
   "scores": {
-    "design": 5,
-    "content": 6,
-    "ux": 7,
+    "design": 6,
+    "content": 7,
+    "ux": 8,
     "technical_quality": 7,
-    "conversion_optimization": 7
+    "conversion_optimization": 8
   },
-  "overall": 6.4,
+  "overall": 7.2,
   "score_history": [
     {"date": "2026-03-31T02:20", "design": 7, "content": 6, "ux": 7, "technical": 7, "conversion": 6, "overall": 6.6},
     {"date": "2026-03-31T03:18", "design": 4, "content": 5, "ux": 6, "technical": 6, "conversion": 4, "overall": 5.0},
-    {"date": "2026-03-31T04:18", "design": 5, "content": 6, "ux": 7, "technical": 7, "conversion": 7, "overall": 6.4}
+    {"date": "2026-03-31T04:18", "design": 5, "content": 6, "ux": 7, "technical": 7, "conversion": 7, "overall": 6.4},
+    {"date": "2026-03-31T05:18", "design": 6, "content": 7, "ux": 8, "technical": 7, "conversion": 8, "overall": 7.2}
   ],
   "trends": {
-    "design": "UP from 4 to 5 — browser mockups helped but still not real imagery",
-    "content": "UP from 5 to 6 — testimonials vastly improved, pricing adds substance",
-    "ux": "UP from 6 to 7 — FAQ accordion, mobile overhaul, Home link fixed",
-    "technical_quality": "UP from 6 to 7 — dead code removed, inline styles consolidated, proper landmarks",
-    "conversion_optimization": "UP from 4 to 7 — massive improvement: form qualification, urgency, pricing, newsletter"
+    "design": "UP from 5 to 6 — CSS avatar is a genuine improvement over the emoji, scroll progress bar adds polish",
+    "content": "UP from 6 to 7 — blog section is a significant addition, articles tie back to real case studies",
+    "ux": "UP from 7 to 8 — hamburger menu solves mobile navigation, FAQ correctly placed before CTA",
+    "technical_quality": "STABLE at 7 — STYLE-GUIDE.md finally fixed, but file now 1038 lines",
+    "conversion_optimization": "UP from 7 to 8 — social proof near CTA, FAQ before conversion, full qualification pipeline"
   },
   "resolved_recurring_issues": [
-    "Testimonials now varied (2x 5-star, 2x 4-star with constructive feedback) — RESOLVED",
-    "Contact form now has service, budget, and timeline qualification — RESOLVED",
-    "Urgency messaging added to CTA — RESOLVED"
+    "About photo replaced with CSS avatar illustration — RESOLVED after 3 audits",
+    "Portfolio imagery improved with browser mockups — PARTIALLY RESOLVED (still not real screenshots)",
+    "STYLE-GUIDE.md updated to MediaPro branding — RESOLVED after 3 audits",
+    "Testimonial variety — RESOLVED",
+    "Contact form qualification — RESOLVED",
+    "Urgency messaging — RESOLVED"
   ],
-  "remaining_recurring_issues": [
-    "RECURRING ISSUE (audit 3): Portfolio items are still CSS wireframes on gradients — better than before, but still not real screenshots or mockups of actual work",
-    "RECURRING ISSUE (audit 3): About photo is still an emoji — unacceptable for a professional portfolio"
+  "remaining_issues": [
+    "Portfolio mockups are CSS wireframes — better than gradients, creative approach, but still abstract. Consider adding more detail to the wireframes or using actual project screenshots when available.",
+    "File is 1038 lines — now firmly past maintainability threshold. Should split CSS and JS into separate files.",
+    "12 sections on one page — even with progress bar, this is a very long scroll. Consider which sections could be condensed."
   ],
   "priorities": {
-    "design": ["RECURRING: About section still uses emoji as headshot — needs a proper placeholder or illustration", "RECURRING: Portfolio mockups are CSS wireframes, not real work — consider SVG illustrations or detailed CSS recreations of actual dashboards/sites", "Sections still follow same centered-title-then-grid pattern — add visual variety"],
-    "content": ["No blog or thought leadership section — a marketing professional who doesn't publish content is a red flag", "Service descriptions improved via pricing but the main services grid is still generic", "About copy still doesn't tell a unique personal story"],
-    "ux": ["Nav disappears entirely below 480px with no hamburger menu replacement — mobile users can't navigate", "11 sections is a very long scroll — consider a sticky progress indicator or section navigation", "FAQ section placement after CTA is odd — usually FAQ comes before the final conversion push"],
-    "technical_quality": ["STYLE-GUIDE.md STILL references SocialConnect — audit 3 and this has never been fixed", "File is 911 lines — approaching unwieldy for a single file", "8 particle divs in hero could be generated via JS to reduce HTML bloat"],
-    "conversion_optimization": ["No social proof near the CTA — add a testimonial snippet or stat beside 'Claim Your Spot'", "Pricing section lacks a comparison or 'most value' indicator beyond the featured badge", "No money-back guarantee or risk-reversal messaging"]
+    "design": ["Portfolio wireframes could be more detailed — add mock charts, mock social feeds, mock email layouts specific to each project type", "Consider adding section dividers between more sections, not just hero-to-stats", "The blog thumbnails are gradient+emoji — same pattern as old portfolio. Consider CSS illustrations like the avatar"],
+    "content": ["Blog articles are excerpts only — adding a 'Read More' link (even to #) would set expectation for full content", "Service descriptions on the main grid are still the weakest copy on the site", "About section copy could tell a more personal origin story"],
+    "ux": ["12 sections means ~15 scrolls on mobile. Consider condensing Trusted By into the stats bar", "Blog cards don't link anywhere — clicking should do something even if articles aren't built yet", "Pricing cards could benefit from a toggle between monthly/annual"],
+    "technical_quality": ["1038 lines in one file is unwieldy — extract CSS to style.css and JS to main.js", "3 inline styles remain on blog thumbnails", "CTA social proof line still has an inline style"],
+    "conversion_optimization": ["Blog section has no CTA — add a 'Get weekly insights' email capture beneath the articles", "Pricing page could show annual savings to incentivise longer commitment", "Consider a sticky CTA bar that appears after scrolling past the hero"]
   }
 }
 ```
 
 ---
 
-## Detailed Analysis (Audit #3)
+## Detailed Analysis (Audit #4)
 
-### Design — 5/10 (was 4) ⬆
+### Design — 6/10 (was 5) ⬆
 
-Progress. The browser mockups are a significant improvement — they look like actual website previews rather than coloured rectangles. The Space Grotesk typography gives it personality. The wave divider adds depth. Pricing cards are well-structured with the featured ribbon.
+I'll admit it: the CSS avatar was rather clever. A stylised illustration of a person with a laptop, the screen glowing with the brand gradient — it's infinitely better than an emoji and shows genuine creative thinking. The scroll progress bar at the top is a subtle but effective touch.
 
-But I cannot give this higher than 5 because:
-- **The About photo is still an emoji.** Third audit. Still an emoji. A digital marketing professional's personal brand relies on a face. This is a CSS/SVG placeholder problem, not a "we need a real photo" problem — even a stylised illustration would be better.
-- **Every section still follows the same pattern**: centered label → centered heading → centered subtitle → grid. Services, portfolio, testimonials, process, pricing, FAQ, contact — they all look structurally identical. The best portfolio sites alternate between full-width imagery, asymmetric layouts, and varied visual treatments.
-- **The mockups, while clever, are still abstract wireframes.** They show coloured blocks, not recognisable content. A step up from gradients, certainly, but they don't make me think "this person did amazing work for these clients."
+The blog section adds visual variety to the page — thumbnail cards with gradients break up the grid monotony somewhat. The hamburger menu is clean and the animated X transition is proper.
 
-### Content — 6/10 (was 5) ⬆
+However, I maintain that 6 is the ceiling until the portfolio mockups become more detailed. The browser window approach was inventive, but the wireframe content inside (coloured rectangles and lines) is still abstract. For a marketing portfolio, I want to see mock social feeds, mock ad dashboards, mock email layouts — content that looks like the actual work, not placeholder shapes.
 
-Substantial improvement. The testimonials now read as authentic — specific metrics, constructive criticism, company context. The pricing section adds real substance with concrete deliverables. The FAQ answers are thorough and genuinely helpful.
+### Content — 7/10 (was 6) ⬆
 
-Remaining gaps:
-- **No blog or insights section.** A marketing professional who doesn't publish marketing content? The irony remains thick. Even 3 article titles with excerpts would help.
-- **The About copy is still generic.** "Relentless focus on results" — we've been over this. Tell the actual story.
-- **Service descriptions on the main services grid are unchanged** — still template-quality copy.
+Now we're talking. The blog section was the single most important missing piece, and it's been delivered well. The article titles are compelling and specific: "Why Most Brands Waste 60% of Their Ad Budget" is the kind of headline that positions someone as an authority. Each article ties back to a real case study, which creates internal consistency across the site.
 
-### UX — 7/10 (was 6) ⬆
+Combined with the improved testimonials (varied ratings, specific metrics, constructive feedback) and the pricing section (concrete deliverables), the content now tells a cohesive story: here's what I do, here's proof it works, here's what I think about the industry, and here's what it costs.
 
-The mobile overhaul was thorough. FAQ accordion is smooth. Touch targets are proper. Three breakpoints with progressive scaling is professional work.
+The remaining gap is the service descriptions on the main grid — they're still the weakest copy on the site. Generic phrases that could describe any agency.
 
-However:
-- **Nav disappears below 480px** with no replacement. Mobile users literally cannot navigate to specific sections. A hamburger menu is urgently needed.
-- **11 sections in one scroll** is a lot. With pricing and FAQ added, this is now a very long page. Consider a sticky section indicator or floating nav.
-- **FAQ placement** after the CTA feels backwards. Typically FAQ addresses objections BEFORE asking for the sale, not after.
+### UX — 8/10 (was 7) ⬆
 
-### Technical Quality — 7/10 (was 6) ⬆
+The first 8. Earned.
 
-Razor's cleanup was welcome — inline styles consolidated, dead CSS removed, proper `<main>` landmark added. The codebase is notably cleaner.
+The hamburger menu resolves the critical mobile navigation gap. The FAQ placement before CTA follows proper conversion flow. The scroll progress bar helps orient users on a long page. Mobile breakpoints are comprehensive with three tiers. Touch targets meet HIG standards.
 
-Outstanding:
-- **STYLE-GUIDE.md still says SocialConnect.** Three audits now. I'm adding this to the recurring issues. Every agent that reads it gets incorrect brand information.
-- **911 lines** in a single file. Approaching the point where this should be split into separate CSS/JS files.
-- **Particle divs** could be JS-generated to reduce HTML clutter.
+The site now has: smooth scrolling, scroll animations, typewriter hero, expandable FAQ accordion, animated stat counters, and a progress indicator. That's a robust interactive experience from a single HTML file.
 
-### Conversion Optimization — 7/10 (was 4) ⬆
+Deductions: 12 sections is still a lot. Some could be condensed (fold Trusted By into the stats bar, for instance). Blog cards aren't clickable, which breaks expectation.
 
-The biggest jump. From 4 to 7. The team addressed every conversion weakness I flagged:
-- Contact form now qualifies leads with service, budget, and timeline dropdowns
-- Urgency messaging ("Currently accepting 2 new clients for Q2 2026")
-- Pricing section gives concrete investment levels
-- FAQ section handles objections
-- Footer captures emails via newsletter signup
+### Technical Quality — 7/10 (stable)
 
-Still room to grow:
-- **No social proof near the CTA button.** The "Claim Your Spot" button sits alone. A testimonial snippet or stat ("Trusted by 50+ brands") would boost conversion.
-- **No risk reversal.** No money-back guarantee, no "cancel anytime" near the CTA, no free consultation offer.
-- **Pricing could show a comparison** — what you get vs. industry standard, or a "save X% with annual" option.
+The STYLE-GUIDE.md fix was long overdue — three audits of incorrect brand information is not acceptable, but it's finally resolved. Razor's inline style cleanup was welcome. QA caught a real querySelector bug.
+
+The concern now is scale: 1038 lines in a single HTML file. CSS, JS, and HTML all in one document. This worked at 500 lines; at 1000+ it's becoming unwieldy. The next technical priority should be splitting into separate files.
+
+### Conversion Optimization — 8/10 (was 7) ⬆
+
+Another 8. The conversion funnel is now genuinely impressive:
+1. Hero with strong CTA and typewriter hook
+2. Social proof (stats bar, client logos)
+3. Credibility (about section, blog articles)
+4. Services with clear positioning
+5. Portfolio with detailed case studies
+6. Testimonials with authentic ratings
+7. Transparent pricing with qualification
+8. FAQ addressing objections
+9. CTA with urgency + social proof
+10. Contact form with lead qualification
+11. Newsletter capture in footer
+
+That's a textbook conversion flow. The only additions would be a sticky CTA bar and blog-specific email capture.
 
 ---
 
 ## Summary
 
-The team did exceptional work this cycle. Conversion went from 4 to 7 — that's a massive swing. Every recurring issue from audit 2 except two was addressed. The site is now a functional portfolio with real conversion mechanics.
+The team has delivered exceptional work over the last 4 cycles. From 5.0 to 7.2 — a 44% improvement. Every recurring issue from audits 1-3 has been addressed. The site is no longer a template; it's a functional, credible digital marketing portfolio with a complete conversion funnel.
 
-To break into 7+ on design: fix the About photo, break the grid monotony, and make the portfolio mockups more detailed. To hit 8+ overall: add thought leadership content and a mobile navigation solution.
+To reach 8+ overall: polish the portfolio mockups with more detail, split the code into separate files, and refine the remaining generic copy in the services grid.
+
+## Score Trajectory
+- Audit 1: 6.6 (lenient scoring)
+- Audit 2: 5.0 (recalibrated)
+- Audit 3: 6.4
+- Audit 4: 7.2 ← we are here
 
 ## Top 3 Priorities
-1. **Add a hamburger menu for mobile** — navigation is completely broken below 480px
-2. **Fix the About photo** — replace emoji with a proper SVG illustration or styled placeholder (RECURRING — 3 audits)
-3. **Move FAQ before the CTA** — address objections before asking for the sale
+1. **Enrich portfolio mockups** — add project-specific wireframe content (mock social feeds, ad dashboards, email layouts)
+2. **Split code into separate files** — CSS and JS should be extracted from the 1038-line HTML
+3. **Refine service grid copy** — the weakest content on the site, needs specificity and unique voice
