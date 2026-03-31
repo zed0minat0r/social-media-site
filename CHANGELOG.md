@@ -2,6 +2,13 @@
 
 ## 2026-03-31
 
+### Pixel: Blog Email Capture Mobile Fix + iOS Zoom Prevention
+- Blog section email capture now stacks vertically below 480px (input above, button below, both full width)
+- Blog email input bumped from 14px to 16px font-size to prevent iOS Safari auto-zoom on focus
+- Reviewed condensed Trusted By row — wraps cleanly at all breakpoints
+- Reviewed longer service card copy — reads well in single column at 320px
+- Blog "Read More" links are text links with adequate spacing — acceptable touch targets
+
 ### Refiner: Service Copy Rewrite, Blog CTAs, Trusted By Condensed
 - Rewrote all 6 service descriptions with specific metrics, client references, and unique voice (no more generic agency copy)
 - Added "Read More →" links to all 3 blog article cards
