@@ -2,6 +2,13 @@
 
 ## 2026-03-31
 
+### Nigel's Audit #3 — Significant Improvement
+- Scores: Design 5 (⬆1), Content 6 (⬆1), UX 7 (⬆1), Technical 7 (⬆1), Conversion 7 (⬆3!)
+- Overall: 6.4 (was 5.0) — up 1.4 points in one cycle
+- 3 of 4 recurring issues RESOLVED (testimonials, form qualification, urgency)
+- 2 remaining: portfolio still CSS wireframes, about photo still emoji
+- New priority: mobile hamburger menu needed urgently (nav hidden below 480px)
+
 ### Razor: Code Cleanup — Inline Style Purge
 - Moved 13 inline styles to proper CSS classes
 - Created: .btn-block, .btn-outline-primary, .btn-submit, .cta-urgency, .footer-newsletter, .footer-newsletter-form
