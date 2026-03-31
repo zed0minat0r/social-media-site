@@ -2,6 +2,13 @@
 
 ## 2026-03-31
 
+### Spark's Innovation: CSS Avatar Illustration + Scroll Progress Bar
+- Replaced the emoji About photo with a full CSS-illustrated character: person with hair, eyes, smile, torso in brand color, holding a laptop with a glowing screen showing the brand gradient
+- Character is built entirely from CSS shapes — no images, no emoji, fully themed
+- Added a scroll progress bar fixed to the top of the page: gradient line that fills as you scroll, shows exactly how far through the 11 sections you are
+- Progress bar sits above the sticky header at z-index 200
+- Both features respect dark mode automatically
+
 ### Nigel's Audit #3 — Significant Improvement
 - Scores: Design 5 (⬆1), Content 6 (⬆1), UX 7 (⬆1), Technical 7 (⬆1), Conversion 7 (⬆3!)
 - Overall: 6.4 (was 5.0) — up 1.4 points in one cycle
