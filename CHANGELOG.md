@@ -2,6 +2,12 @@
 
 ## 2026-03-31
 
+### Pixel: Sticky CTA + Back-to-Top Mobile Adjustments
+- Sticky CTA button was 28px tall at 480px (12px font + 8px padding) — well below 44px minimum. Bumped to min-height: 44px with 12px padding
+- Reduced sticky CTA overall padding on mobile for tighter fit without sacrificing tap targets
+- Back-to-top button repositioned on mobile: right 16px at 768px, right 12px at 480px, bottom adjusted to sit above sticky CTA without overlap
+- Back-to-top maintains 44px size at all breakpoints — no shrinking below touch minimum
+
 ### Refiner: Personal Origin Story, Clickable Blog Cards, Back-to-Top
 - Rewrote About section with personal origin story: started at 19, running Instagram for a coffee shop, grew it from 200 to 12K followers. Real, specific, human.
 - Made blog cards fully clickable (entire card, not just Read More link) — scrolls to contact section
