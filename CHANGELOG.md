@@ -2,6 +2,12 @@
 
 ## 2026-03-31
 
+### Builder: "Featured In" Media Mentions Bar + Task 7 Stretch Goals
+- Added "Featured In" section between About and Services: MarketingWeek, AdAge, HubSpot Blog, Social Media Today, The Drum
+- Styled as italic text logos at reduced opacity for subtle credibility
+- Adds a credibility layer Nigel requested — "media mentions bar would add credibility"
+- Added Task 7 to TASKS.md with stretch goals for pushing toward 9s
+
 ### Refiner: Micro-Interactions — 3D Service Cards, Badge Pulse, Page Transitions
 - Added 3D tilt on service card hover: perspective(800px) with subtle rotateX(2deg) rotateY(-2deg). The cards feel like physical objects responding to your cursor.
 - Added gentle opacity pulse animation on the "MOST POPULAR" pricing badge (3s cycle). Draws the eye without being aggressive. A whisper of emphasis.
