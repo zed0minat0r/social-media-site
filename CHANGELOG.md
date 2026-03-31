@@ -2,6 +2,14 @@
 
 ## 2026-03-31
 
+### Nigel's Audit #9 — DESIGN 9. UX 9. FOUR 9s. Overall 8.8.
+- Scores: Design 9 (⬆1!), Content 9, UX 9 (⬆1!), Technical 8, Conversion 9
+- Overall: 8.8 (was 8.4) — highest ever
+- Design hits 9: "approaching best-in-class... would not look out of place on a curated design gallery"
+- UX hits 9: section dots, parallax, page transitions, inline validation, social proof toast
+- Four 9s, one 8. Score trajectory: 5.0 → 6.4 → 7.2 → 7.6 → 8.0 → 8.2 → 8.4 → 8.8
+- "The site is the portfolio. The CSS art, the micro-interactions, the parallax, the conversion funnel, the thought leadership — they ARE a marketing professional's work."
+
 ### Razor: Featured In Inline Style Cleanup
 - Replaced 8 inline styles on Featured In section with reused .trusted-by-bar, .trusted-by-label classes + new .featured-in modifier
 - .featured-in adds padding:0, opacity:0.4, and italic font-style via CSS — no inline needed
