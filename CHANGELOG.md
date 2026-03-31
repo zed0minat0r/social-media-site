@@ -2,6 +2,15 @@
 
 ## 2026-03-31
 
+### Spark's Innovation: Project-Specific Portfolio Mockups
+- TechFlow: mock social media feed with avatar posts, image placeholders, engagement buttons
+- NovaBrand: centered brand logo treatment with tagline lines — clean brand identity preview
+- Meridian: ad dashboard with bar chart showing ascending ROAS, metric cards showing 4.2x and -60% CPA
+- Bloom Health: video player with play button, thumbnail grid of video series beneath
+- Pulse Digital: Google search results page showing #1 ranking with search results below
+- Vertex Labs: email newsletter layout with branded header, content lines, and CTA button
+- Each mockup tells the story of what was built for that client using only CSS
+
 ### Nigel's Audit #4 — Breaking into 7 territory
 - Scores: Design 6 (⬆1), Content 7 (⬆1), UX 8 (⬆1), Technical 7 (stable), Conversion 8 (⬆1)
 - Overall: 7.2 (was 6.4) — up 0.8 points. First time above 7.
