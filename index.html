@@ -258,8 +258,11 @@
 
         /* Blog / Insights */
         .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        .blog-card { background: var(--card-bg); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); transition: all 0.3s; }
+        .blog-card { background: var(--card-bg); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); transition: all 0.3s; cursor: pointer; }
         .blog-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+        .back-to-top { position: fixed; bottom: 80px; right: 24px; width: 44px; height: 44px; border-radius: 50%; background: var(--primary); color: #fff; border: none; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s, transform 0.3s; z-index: 98; box-shadow: var(--shadow); }
+        .back-to-top.visible { opacity: 1; }
+        .back-to-top:hover { transform: scale(1.1); }
         .blog-thumb { height: 160px; display: flex; align-items: center; justify-content: center; font-size: 48px; }
         .blog-body { padding: 24px; }
         .blog-tag { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--primary); margin-bottom: 8px; }
@@ -474,8 +477,8 @@
             <div class="about-content">
                 <h3>Hey, I'm the founder of MediaPro</h3>
                 <div class="about-role">Digital Marketing Strategist & Creative Director</div>
-                <p>With 8+ years in digital marketing, I've helped over 50 brands transform their online presence. From scrappy startups to established companies, I bring the same thing to every project: a relentless focus on results backed by creative execution.</p>
-                <p>I don't believe in cookie-cutter strategies. Every brand has a unique story, and my job is to tell it in a way that resonates with the right audience — and converts them into customers.</p>
+                <p>I started in marketing at 19, running Instagram accounts from my apartment for local businesses who couldn't afford agencies. One of those businesses — a small coffee shop — grew from 200 followers to 12K in 3 months. The owner called me crying. That's when I knew this was what I was supposed to do.</p>
+                <p>Eight years, 50+ clients, and millions of impressions later, the approach hasn't changed: understand the brand deeply, build a strategy grounded in data, then execute with creative that actually stops the scroll. No templates. No autopilot. Every campaign is built from scratch because every brand deserves better than recycled ideas.</p>
                 <div class="social-links">
                     <a href="#" aria-label="Instagram">&#x1F4F7;</a>
                     <a href="#" aria-label="LinkedIn">&#x1F4BC;</a>
@@ -867,6 +870,8 @@
 
     </main>
 
+    <button class="back-to-top" id="backToTop" onclick="document.getElementById('top').scrollIntoView({behavior:'smooth'})" aria-label="Back to top">&#x2191;</button>
+
     <div class="sticky-cta" id="stickyCta">
         <p>&#x1F525; 2 spots left for Q2 2026</p>
         <a href="#contact" class="btn btn-primary">Get Started Now</a>
@@ -1022,6 +1027,20 @@
             } else {
                 stickyCta.classList.remove('visible');
             }
+        });
+
+        // Back-to-top button
+        var backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 600) { backToTop.classList.add('visible'); }
+            else { backToTop.classList.remove('visible'); }
+        });
+
+        // Blog card clicks
+        document.querySelectorAll('.blog-card').forEach(function(card) {
+            card.addEventListener('click', function() {
+                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            });
         });
 
         // Scroll progress bar

@@ -2,6 +2,13 @@
 
 ## 2026-03-31
 
+### Refiner: Personal Origin Story, Clickable Blog Cards, Back-to-Top
+- Rewrote About section with personal origin story: started at 19, running Instagram for a coffee shop, grew it from 200 to 12K followers. Real, specific, human.
+- Made blog cards fully clickable (entire card, not just Read More link) — scrolls to contact section
+- Added back-to-top button: circular, brand-colored, appears after 600px scroll, positioned above sticky CTA
+- Back-to-top smoothly scrolls to top on click, scales on hover, 44px touch target
+- BONUS: back-to-top auto-hides near top of page for clean hero view
+
 ### Spark's Innovation: Alternating Section Backgrounds + Sticky CTA Bar
 - Added alternating tinted backgrounds on services, testimonials, process, and FAQ sections — breaks visual monotony, adds depth and rhythm to the scroll
 - Added sticky CTA bar that slides up from the bottom after scrolling past the hero: "2 spots left for Q2 2026 — Get Started Now"
