@@ -2,6 +2,16 @@
 
 ## 2026-03-31
 
+### Refiner: Audit Fixes — About Section, Mobile Portfolio, SEO, Focus States
+- Added About section with photo placeholder, bio, role title, and social links (Instagram, LinkedIn, X, TikTok)
+- Fixed mobile portfolio: overlays now always visible on touch devices (no hover needed)
+- Improved portfolio overlay gradient for better text readability
+- Added full SEO meta tags: description, Open Graph, Twitter card
+- Added emoji favicon (rocket)
+- Added focus-visible states on all interactive elements for keyboard accessibility
+- Added About link to navigation
+- Responsive about section stacks on mobile
+
 ### Spark's Innovation: Typewriter Hero + Floating Particles
 - Added animated typewriter effect in hero that cycles through: "Drives Results", "Builds Brands", "Goes Viral", "Converts Clicks", "Tells Stories", "Breaks Records"
 - Golden yellow highlight color (#ffd166) for the rotating text with blinking cursor
