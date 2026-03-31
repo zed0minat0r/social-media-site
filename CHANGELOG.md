@@ -2,6 +2,12 @@
 
 ## 2026-03-31
 
+### Refiner: 4 Recurring Issues Addressed
+- RECURRING FIX: Testimonials now varied — 2 are 5-star, 2 are 4-star with constructive feedback and specific details (timelines, metrics, company sizes, industries)
+- RECURRING FIX: Contact form now has 3 qualification dropdowns — service type, budget range ($2K-$25K+), and timeline
+- RECURRING FIX: Added urgency to CTA — "Currently accepting 2 new clients for Q2 2026" with fire emoji
+- BONUS: Rebuilt footer with newsletter signup form, social media links, and email input. No longer wasted space.
+
 ### QA: 6 bugs found and fixed
 - Fixed Home nav link: was href="#" (invalid selector), now href="#top" with id="top" on body
 - Removed unused --accent CSS variable (dead code since day 1)
