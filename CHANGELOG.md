@@ -2,6 +2,14 @@
 
 ## 2026-03-31
 
+### QA: 6 bugs found and fixed
+- Fixed Home nav link: was href="#" (invalid selector), now href="#top" with id="top" on body
+- Removed unused --accent CSS variable (dead code since day 1)
+- Fixed browser mockup colors for dark mode: background, browser bar, and URL bar now use CSS variables instead of hardcoded white
+- Added `<main>` landmark element for screen reader accessibility
+- Noted: social link hrefs are still "#" placeholders — not broken per se but not functional
+- Noted: footer Privacy/Terms links are dead — acceptable for now as placeholder
+
 ### Spark's Innovation: Browser Mockup Portfolio + Animated Counters
 - Replaced plain gradient portfolio items with CSS browser mockups (window chrome, URL bar, wireframe content)
 - Each mockup has unique layout (hero sections, grids, CTAs, charts) matching the project type

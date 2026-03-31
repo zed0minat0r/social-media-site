@@ -25,7 +25,6 @@
             --hover-bg: #f1f3f5;
             --primary: #4361ee;
             --primary-hover: #3a56d4;
-            --accent: #f72585;
             --gradient-1: #4361ee;
             --gradient-2: #7209b7;
             --shadow: 0 2px 8px rgba(0,0,0,0.08);
@@ -187,13 +186,13 @@
         .process-step p { color: var(--text-secondary); font-size: 14px; line-height: 1.6; }
 
         /* Portfolio browser mockup */
-        .portfolio-inner { position: absolute; inset: 12px; display: flex; flex-direction: column; border-radius: 8px; overflow: hidden; background: #fff; box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
-        .browser-bar { background: #e8e8e8; padding: 6px 12px; display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+        .portfolio-inner { position: absolute; inset: 12px; display: flex; flex-direction: column; border-radius: 8px; overflow: hidden; background: var(--card-bg); box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
+        .browser-bar { background: var(--border); padding: 6px 12px; display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
         .browser-dot { width: 8px; height: 8px; border-radius: 50%; }
         .browser-dot.red { background: #ff5f57; }
         .browser-dot.yellow { background: #ffbd2e; }
         .browser-dot.green { background: #28c840; }
-        .browser-url { margin-left: 8px; background: #fff; border-radius: 4px; padding: 2px 8px; font-size: 9px; color: #999; flex: 1; }
+        .browser-url { margin-left: 8px; background: var(--card-bg); border-radius: 4px; padding: 2px 8px; font-size: 9px; color: var(--text-secondary); flex: 1; }
         .browser-content { flex: 1; padding: 12px; display: flex; flex-direction: column; gap: 6px; overflow: hidden; }
         .mock-header { height: 8px; width: 60%; border-radius: 4px; }
         .mock-text { height: 5px; border-radius: 2px; opacity: 0.6; }
@@ -258,12 +257,12 @@
         }
     </style>
 </head>
-<body>
+<body id="top">
     <header>
         <div class="logo">MediaPro</div>
         <div class="header-right">
             <nav>
-                <a href="#" class="active">Home</a>
+                <a href="#top" class="active">Home</a>
                 <a href="#about">About</a>
                 <a href="#services">Services</a>
                 <a href="#portfolio">Work</a>
@@ -273,6 +272,7 @@
         </div>
     </header>
 
+    <main>
     <section class="hero">
         <div class="particles">
             <div class="particle" style="left:5%"></div>
@@ -569,6 +569,8 @@
             </form>
         </div>
     </div>
+
+    </main>
 
     <footer>
         <p>&copy; 2026 MediaPro. All rights reserved. | <a href="#">Privacy</a> | <a href="#">Terms</a></p>
