@@ -2,6 +2,13 @@
 
 ## 2026-03-31
 
+### Refiner: Hamburger Menu, FAQ Reorder, Social Proof, Style Guide Fix
+- Added hamburger menu for mobile (below 480px): 3-line icon, animated open/close, full-width dropdown nav
+- Mobile nav includes all sections: Home, About, Services, Work, Pricing, Contact
+- Moved FAQ section BEFORE CTA — address objections before asking for the sale (Nigel's recommendation)
+- Added social proof line to CTA: "Trusted by 50+ brands | 200% avg. ROI increase | 10M+ impressions"
+- BONUS: Finally fixed STYLE-GUIDE.md — updated from SocialConnect to MediaPro with correct brand colors (#4361ee, #7209b7). This was a recurring technical issue across 3 audits.
+
 ### QA: Fixed querySelector crash on placeholder links
 - Fixed: clicking any href="#" link (social icons, footer Privacy/Terms) threw a JS SyntaxError because querySelector("#") is invalid. Smooth scroll handler now skips bare "#" links. The error was silent but broke click behavior.
 - Reviewed CSS avatar illustration — hardcoded colors are acceptable for illustration elements

@@ -1,13 +1,13 @@
-# SocialConnect Style Guide
+# MediaPro Style Guide
 
 ## Brand Identity
-- **Name**: SocialConnect
-- **Tagline**: Share your thoughts, connect with friends, and discover what's happening.
-- **Tone**: Friendly, modern, approachable. Never corporate or stiff.
+- **Name**: MediaPro
+- **Tagline**: Digital Marketing That Drives Results
+- **Tone**: Professional, confident, results-driven. Approachable but authoritative.
 
 ## Colors
-- **Primary Blue**: #1877f2
-- **Primary Green**: #42b72a
+- **Primary**: #4361ee
+- **Gradient End / Secondary**: #7209b7
 - **Background**: #f0f2f5
 - **Card Background**: #ffffff
 - **Text Primary**: #1c1e21

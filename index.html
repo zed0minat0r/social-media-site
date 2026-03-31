@@ -269,6 +269,17 @@
         .portfolio-item:nth-child(6) .mock-header, .portfolio-item:nth-child(6) .mock-hero, .portfolio-item:nth-child(6) .mock-cta { background: #a29bfe; }
         .portfolio-item:nth-child(6) .mock-text, .portfolio-item:nth-child(6) .mock-bar, .portfolio-item:nth-child(6) .mock-box { background: #a29bfe; }
 
+        /* Hamburger menu */
+        .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
+        .hamburger span { display: block; width: 22px; height: 2px; background: var(--text-primary); border-radius: 2px; transition: all 0.3s; }
+        .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        .mobile-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--card-bg); box-shadow: var(--shadow-hover); padding: 16px; z-index: 99; }
+        .mobile-nav.open { display: flex; flex-direction: column; gap: 4px; }
+        .mobile-nav a { text-decoration: none; color: var(--text-secondary); font-weight: 500; padding: 12px 16px; border-radius: 6px; transition: all 0.2s; font-size: 15px; }
+        .mobile-nav a:hover { background: var(--hover-bg); color: var(--primary); }
+
         /* Focus states */
         *:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
         .btn:focus-visible { outline-offset: 3px; }
@@ -321,6 +332,7 @@
             .hero h1 { font-size: 26px; }
             .hero p { font-size: 15px; }
             nav { display: none; }
+            .hamburger { display: flex; }
             .header-right { gap: 4px; }
             .section { padding: 36px 12px; }
             .section-title { margin-bottom: 32px; }
@@ -354,6 +366,15 @@
                 <a href="#contact">Contact</a>
             </nav>
             <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">&#x2600;&#xFE0F;</button>
+            <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+        <div class="mobile-nav" id="mobileNav">
+            <a href="#top" onclick="closeMenu()">Home</a>
+            <a href="#about" onclick="closeMenu()">About</a>
+            <a href="#services" onclick="closeMenu()">Services</a>
+            <a href="#portfolio" onclick="closeMenu()">Work</a>
+            <a href="#pricing" onclick="closeMenu()">Pricing</a>
+            <a href="#contact" onclick="closeMenu()">Contact</a>
         </div>
     </header>
 
@@ -686,17 +707,7 @@
         </div>
     </div>
 
-    <!-- CTA -->
-    <div class="section">
-        <div class="cta-section">
-            <h2>Ready to Grow Your Brand?</h2>
-            <p>Let's build a marketing strategy that actually moves the needle.</p>
-            <p class="cta-urgency">&#x1F525; Currently accepting 2 new clients for Q2 2026</p>
-            <a href="#contact" class="btn btn-white">Claim Your Spot</a>
-        </div>
-    </div>
-
-    <!-- FAQ -->
+    <!-- FAQ (before CTA — address objections before the ask) -->
     <div class="section" id="faq">
         <div class="section-title">
             <div class="section-label">FAQ</div>
@@ -724,6 +735,17 @@
                 <div class="faq-question" onclick="toggleFaq(this)">How do you measure and report results? <span class="faq-arrow">&#x25BC;</span></div>
                 <div class="faq-answer"><p>Weekly performance snapshots and monthly deep-dive reports covering all KPIs we agreed on: engagement, reach, leads, conversions, ROAS, and more. Every metric tied back to business impact, not vanity numbers. Plus a monthly strategy call to review and adjust.</p></div>
             </div>
+        </div>
+    </div>
+
+    <!-- CTA (after FAQ — objections addressed, now ask for the sale) -->
+    <div class="section">
+        <div class="cta-section">
+            <p style="font-size: 14px; opacity: 0.8; margin-bottom: 16px;">&#x2B50; Trusted by 50+ brands &nbsp;|&nbsp; 200% avg. ROI increase &nbsp;|&nbsp; 10M+ impressions</p>
+            <h2>Ready to Grow Your Brand?</h2>
+            <p>Let's build a marketing strategy that actually moves the needle.</p>
+            <p class="cta-urgency">&#x1F525; Currently accepting 2 new clients for Q2 2026</p>
+            <a href="#contact" class="btn btn-white">Claim Your Spot</a>
         </div>
     </div>
 
@@ -907,6 +929,16 @@
         }, { threshold: 0.3 });
         var statsBar = document.querySelector('.stats-bar');
         if (statsBar) counterObserver.observe(statsBar);
+
+        // Hamburger menu
+        function toggleMenu() {
+            document.querySelector('.hamburger').classList.toggle('open');
+            document.getElementById('mobileNav').classList.toggle('open');
+        }
+        function closeMenu() {
+            document.querySelector('.hamburger').classList.remove('open');
+            document.getElementById('mobileNav').classList.remove('open');
+        }
 
         // Scroll progress bar
         window.addEventListener('scroll', function() {
