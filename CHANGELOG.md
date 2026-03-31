@@ -2,6 +2,11 @@
 
 ## 2026-03-31
 
+### QA: Fixed parallax jank + stats double-animation race condition
+- Fixed: .hero-content had transition: transform 0.1s which fought with the scroll handler setting transforms every 16ms. Replaced with will-change: transform, opacity for GPU optimization without transition lag.
+- Fixed: .stat elements had opacity:0 from scroll animation observer AND the stats-bar had opacity:0 from its own reveal observer. Race condition on reveal. Removed .stat from the generic scroll animation selector — stats bar now has its own dedicated reveal.
+- Noted: parallax adds a second scroll listener (separate from unified handler). Acceptable since it uses { passive: true }.
+
 ### Spark's Innovation: Hero Parallax + Stats Bar Reveal Animation
 - Added parallax depth to hero section: content moves at 0.3x scroll speed, particles at 0.15x, creating a layered 3D feel. Content also fades out as you scroll past the hero.
 - Hero content wrapped in .hero-content div for transform targeting

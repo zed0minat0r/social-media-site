@@ -29,7 +29,7 @@ var observer = new IntersectionObserver(function(entries) {
     });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.service-card, .portfolio-item, .testimonial, .stat').forEach(function(el) {
+document.querySelectorAll('.service-card, .portfolio-item, .testimonial').forEach(function(el) {
     el.style.opacity = '0';
     observer.observe(el);
 });
