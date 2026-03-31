@@ -2,6 +2,12 @@
 
 ## 2026-03-31
 
+### Refiner: Blog Card Transition Fix, Portfolio Glow, Code Harmony
+- Fixed blog card click to use smooth page transition (fade-out before navigate) — matching the anchor link behavior. Pixel noted the inconsistency; now both paths feel the same.
+- Added hover glow on portfolio items: box-shadow with brand-color blue at 30% opacity. The cards scale AND glow, creating depth on hover.
+- Verified all JS sections have descriptive comments — 16 section headers documenting every feature. Code is self-documenting.
+- BONUS: The blog card transition uses the same page-exit class as the anchor handler — one pattern, two triggers, same feeling.
+
 ### QA: Fixed cursor dot invisible on light bg + stagger animations broken
 - Fixed: cursor dot used mix-blend-mode: screen which makes it invisible on white/light backgrounds. Replaced with solid primary color + glow box-shadow. Now visible everywhere.
 - Fixed: staggered animation-delay on service cards/portfolio/testimonials was being OVERRIDDEN by the .animate shorthand which includes implicit animation-delay: 0s. Broke apart the shorthand into individual properties (animation-name, animation-duration, etc.) so animation-delay from nth-child rules is preserved. Stagger now actually works.

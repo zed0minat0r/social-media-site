@@ -141,12 +141,16 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Blog card clicks
+// Blog card clicks — first card navigates to article with page transition, others scroll to contact
 document.querySelectorAll('.blog-card').forEach(function(card, index) {
     card.addEventListener('click', function(e) {
-        if (e.target.closest('a')) return; // let links handle themselves
-        if (index === 0) { window.location.href = 'blog-ad-budget.html'; }
-        else { document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }); }
+        if (e.target.closest('a')) return;
+        if (index === 0) {
+            document.body.classList.add('page-exit');
+            setTimeout(function() { window.location.href = 'blog-ad-budget.html'; }, 300);
+        } else {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
     });
 });
 
