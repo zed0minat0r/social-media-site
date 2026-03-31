@@ -2,6 +2,13 @@
 
 ## 2026-03-31
 
+### Spark's Innovation: Alternating Section Backgrounds + Sticky CTA Bar
+- Added alternating tinted backgrounds on services, testimonials, process, and FAQ sections — breaks visual monotony, adds depth and rhythm to the scroll
+- Added sticky CTA bar that slides up from the bottom after scrolling past the hero: "2 spots left for Q2 2026 — Get Started Now"
+- Sticky CTA auto-hides when user reaches the contact section (no redundancy)
+- Responsive: CTA bar scales down on mobile with smaller text and padding
+- Both features respect dark mode via CSS variables
+
 ### Nigel's Audit #5 — 7.6 Overall, Design Hits 7
 - Scores: Design 7 (⬆1), Content 8 (⬆1), UX 8 (stable), Technical 7 (stable), Conversion 8 (stable)
 - Overall: 7.6 (was 7.2) — third consecutive improvement
