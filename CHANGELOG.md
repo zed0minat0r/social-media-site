@@ -2,6 +2,13 @@
 
 ## 2026-03-31
 
+### Refiner: Service Copy Rewrite, Blog CTAs, Trusted By Condensed
+- Rewrote all 6 service descriptions with specific metrics, client references, and unique voice (no more generic agency copy)
+- Added "Read More →" links to all 3 blog article cards
+- Added inline email capture CTA beneath blog section ("Get insights like these delivered weekly")
+- Condensed Trusted By from a full section into a compact logo row beneath the stats bar — one fewer section to scroll past
+- Service copy now references actual results: 340% engagement, 500K views, 3.8x ROAS, 2M impressions, 42% open rates, page 1 ranking
+
 ### QA: 3 bugs fixed — nav mismatch, dark mode regression, invisible text
 - Fixed: Desktop nav was missing Pricing link that mobile nav had. Now both match (Home, About, Services, Work, Pricing, Contact)
 - Fixed: Vertex Labs email mockup had hardcoded #f8f9fa background — same dark mode bug Spark reintroduced. Removed.
