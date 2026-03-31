@@ -2,6 +2,12 @@
 
 ## 2026-03-31
 
+### Razor: Featured In Inline Style Cleanup
+- Replaced 8 inline styles on Featured In section with reused .trusted-by-bar, .trusted-by-label classes + new .featured-in modifier
+- .featured-in adds padding:0, opacity:0.4, and italic font-style via CSS — no inline needed
+- Inline styles: 29 → 21 (8 removed)
+- Remaining inlines: 1 padding override on Trusted By row, plus portfolio/service/blog illustrations (per-element art — acceptable)
+
 ### Builder: "Featured In" Media Mentions Bar + Task 7 Stretch Goals
 - Added "Featured In" section between About and Services: MarketingWeek, AdAge, HubSpot Blog, Social Media Today, The Drum
 - Styled as italic text logos at reduced opacity for subtle credibility

@@ -263,6 +263,8 @@ footer a { color: var(--primary); text-decoration: none; }
 .blog-cta-inline .btn { padding: 12px 20px; font-size: 14px; white-space: nowrap; }
 .trusted-by-bar { text-align: center; padding: 24px 16px 0; }
 .trusted-by-label { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--text-secondary); margin-bottom: 12px; }
+.featured-in { padding: 0; opacity: 0.4; }
+.featured-in .client-logo { font-style: italic; }
 .cta-social-proof { font-size: 14px; opacity: 0.8; margin-bottom: 16px; }
 .footer-social { justify-content: center; margin-bottom: 16px; }
 
