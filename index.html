@@ -133,6 +133,23 @@
         footer { text-align: center; padding: 40px 24px; color: var(--text-secondary); font-size: 13px; border-top: 1px solid var(--border); margin-top: 80px; }
         footer a { color: var(--primary); text-decoration: none; }
 
+        /* Typewriter */
+        .typewriter-wrapper { display: inline-block; position: relative; }
+        .typewriter-text { color: #ffd166; font-style: normal; border-right: 3px solid rgba(255,255,255,0.8); padding-right: 4px; animation: blink 0.8s step-end infinite; }
+        @keyframes blink { 0%, 100% { border-color: rgba(255,255,255,0.8); } 50% { border-color: transparent; } }
+
+        /* Floating particles */
+        .particles { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+        .particle { position: absolute; width: 6px; height: 6px; background: rgba(255,255,255,0.15); border-radius: 50%; animation: rise linear infinite; }
+        .particle:nth-child(2) { width: 4px; height: 4px; left: 20%; animation-duration: 12s; animation-delay: 2s; }
+        .particle:nth-child(3) { width: 8px; height: 8px; left: 40%; animation-duration: 18s; animation-delay: 4s; }
+        .particle:nth-child(4) { width: 5px; height: 5px; left: 60%; animation-duration: 14s; animation-delay: 1s; }
+        .particle:nth-child(5) { width: 7px; height: 7px; left: 75%; animation-duration: 16s; animation-delay: 3s; }
+        .particle:nth-child(6) { width: 4px; height: 4px; left: 90%; animation-duration: 11s; animation-delay: 5s; }
+        .particle:nth-child(7) { width: 6px; height: 6px; left: 10%; animation-duration: 20s; animation-delay: 0s; }
+        .particle:nth-child(8) { width: 3px; height: 3px; left: 50%; animation-duration: 13s; animation-delay: 6s; }
+        @keyframes rise { 0% { bottom: -10px; opacity: 0; transform: translateX(0); } 10% { opacity: 1; } 90% { opacity: 1; } 100% { bottom: 110%; opacity: 0; transform: translateX(40px); } }
+
         /* Animations */
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .animate { animation: fadeInUp 0.6s ease-out forwards; }
@@ -177,7 +194,17 @@
     </header>
 
     <section class="hero">
-        <h1>Digital Marketing<br>That Drives Results</h1>
+        <div class="particles">
+            <div class="particle" style="left:5%"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        <h1>Digital Marketing<br>That <span class="typewriter-wrapper"><span class="typewriter-text" id="typewriter"></span></span></h1>
         <p>I help brands grow through strategic content, creative campaigns, and data-driven marketing across every platform.</p>
         <div class="hero-cta">
             <a href="#contact" class="btn btn-white">Let's Work Together</a>
@@ -452,6 +479,39 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
+
+        // Typewriter effect
+        (function() {
+            var words = ['Drives Results', 'Builds Brands', 'Goes Viral', 'Converts Clicks', 'Tells Stories', 'Breaks Records'];
+            var el = document.getElementById('typewriter');
+            var wordIndex = 0;
+            var charIndex = 0;
+            var deleting = false;
+            var speed = 100;
+
+            function type() {
+                var current = words[wordIndex];
+                if (deleting) {
+                    el.textContent = current.substring(0, charIndex - 1);
+                    charIndex--;
+                    speed = 50;
+                } else {
+                    el.textContent = current.substring(0, charIndex + 1);
+                    charIndex++;
+                    speed = 100;
+                }
+                if (!deleting && charIndex === current.length) {
+                    speed = 2000;
+                    deleting = true;
+                } else if (deleting && charIndex === 0) {
+                    deleting = false;
+                    wordIndex = (wordIndex + 1) % words.length;
+                    speed = 400;
+                }
+                setTimeout(type, speed);
+            }
+            type();
+        })();
 
         // Contact form
         function handleSubmit(e) {

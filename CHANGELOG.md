@@ -2,6 +2,12 @@
 
 ## 2026-03-31
 
+### Spark's Innovation: Typewriter Hero + Floating Particles
+- Added animated typewriter effect in hero that cycles through: "Drives Results", "Builds Brands", "Goes Viral", "Converts Clicks", "Tells Stories", "Breaks Records"
+- Golden yellow highlight color (#ffd166) for the rotating text with blinking cursor
+- Added 8 floating particle dots that rise through the hero background
+- Particles vary in size, speed, and timing for organic feel
+
 ### Nigel's Audit — First Portfolio Review
 - Scored site: Design 7, Content 6, UX 7, Technical 7, Conversion 6 (overall 6.6)
 - Key findings: missing About section, portfolio needs real imagery, mobile hover issue, no SEO meta tags
