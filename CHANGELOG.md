@@ -2,6 +2,16 @@
 
 ## 2026-03-30
 
+### Pixel's Mobile Audit — Alignment, Padding, Typography & Touch Target Fixes (320px / 375px / 428px)
+- **Padding consistency**: Unified horizontal padding to 20px across ALL sections on mobile (was a mix of 8px, 12px, 16px across hero, sections, header, stats bar, CTA, calculator, footer, trusted-by bar, and sticky CTA)
+- **Font size floor raised to 14px**: Bumped every sub-14px font to 14px minimum — portfolio overlay text (was 11-13px), testimonial tags (11px), blog tags (11px), blog meta (12px), testimonial roles (12px), section labels (13px), pricing tier labels (13px), pricing badge (10px), footer (13px), social toast text (13px), form errors (13px), sticky CTA text (11-13px), trusted-by label (12px), calculator detail labels (11px)
+- **iOS zoom prevention**: All input, textarea, and select elements now 16px at every breakpoint (contact form base was 15px, selects had no mobile override)
+- **Touch targets to 44px+**: Theme toggle enlarged from 32x32 to 44x44 on mobile; social link icons set to 44x44; hero CTA buttons set to min-height 48px; FAQ questions get min-height 48px; footer newsletter and blog CTA buttons get min-height 44px
+- **Visual rhythm**: CTA section margin matched to 20px (was 8px, creating jarring inset); stats bar side margin matched to 20px (was 8px); back-to-top and social toast repositioned to 20px edge alignment; consistent spacing creates smooth vertical scroll at all three widths
+- **Alignment consistency**: All section headings, cards, text blocks, and edge elements now follow the same 20px inset pattern on mobile — no more jarring shifts between 8/12/16/20px side margins when scrolling
+
+## 2026-03-30
+
 ### Mobile Spacing Fix — Breathing Room Between Sections
 - Increased `.trusted-by-bar` base bottom padding from 0 to 16px so the Trusted By logos don't sit flush against the next element
 - Added `.trusted-by-bar + .trusted-by-bar` rule giving the Featured In row 40-48px bottom padding, creating clear separation before the Services section
