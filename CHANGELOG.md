@@ -2,6 +2,13 @@
 
 ## 2026-03-31
 
+### Pixel: Footer Newsletter iOS Zoom Fix
+- Footer newsletter email input was 14px font-size — triggers iOS Safari auto-zoom on focus. Bumped to 16px. Same fix we applied to blog email capture earlier.
+- Verified: FAQ keyboard nav additions work on mobile — 20px padding gives 56px+ touch height, focus-visible ring shows correctly
+- Verified: service icon containers (56x56) render cleanly in single-column mobile layout
+- Verified: unified scroll handler works — sticky CTA, back-to-top, and progress bar all function correctly with one listener
+- Site is mobile-solid. Getting harder to find issues with each pass.
+
 ### Refiner: Consolidated Scroll Listeners, FAQ Keyboard Nav, Process Copy
 - Consolidated 3 separate scroll event listeners into 1 unified handler (progress bar + sticky CTA + back-to-top). One listener, three functions. Performance improvement.
 - Added keyboard navigation to FAQ accordion: questions now have tabindex="0" and role="button", respond to Enter and Space keys. Accessibility improvement for screen readers and keyboard users.
