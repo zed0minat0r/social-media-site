@@ -2,6 +2,11 @@
 
 ## 2026-03-31
 
+### QA: 3 bugs fixed — nav mismatch, dark mode regression, invisible text
+- Fixed: Desktop nav was missing Pricing link that mobile nav had. Now both match (Home, About, Services, Work, Pricing, Contact)
+- Fixed: Vertex Labs email mockup had hardcoded #f8f9fa background — same dark mode bug Spark reintroduced. Removed.
+- Fixed: Meridian dashboard metric cards had same-color text on same-color background (green text on green bg, blue on blue). Changed to white text. Now readable.
+
 ### Spark's Innovation: Project-Specific Portfolio Mockups
 - TechFlow: mock social media feed with avatar posts, image placeholders, engagement buttons
 - NovaBrand: centered brand logo treatment with tagline lines — clean brand identity preview
