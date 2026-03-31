@@ -2,6 +2,22 @@
 
 ## 2026-03-31
 
+### Pixel: Comprehensive Mobile Overhaul
+- Added 360px breakpoint for ultra-small screens (iPhone SE, older devices)
+- Nav links hidden at 480px and below (prevents overflow — hamburger menu needed later)
+- Logo, theme toggle, and header padding all scale down progressively
+- Hero CTA buttons now full-width on mobile with max-width cap for thumb-friendly tapping
+- Stats bar numbers scale from 36px to 28px to 24px across breakpoints
+- Client logos shrink to 18px on tablets
+- Portfolio overlay text and headings reduced for readability in small cards
+- Contact form selects forced to width: 100% on mobile (prevents overflow)
+- CTA section padding and margins reduced on small screens
+- Testimonial cards get tighter padding, smaller text on mobile
+- Form inputs set to 16px on mobile (prevents iOS auto-zoom)
+- Footer social links bumped to 44px touch targets
+- About photo emoji scales down on mobile
+- Section padding reduces at each breakpoint for better content density
+
 ### Refiner: 4 Recurring Issues Addressed
 - RECURRING FIX: Testimonials now varied — 2 are 5-star, 2 are 4-star with constructive feedback and specific details (timelines, metrics, company sizes, industries)
 - RECURRING FIX: Contact form now has 3 qualification dropdowns — service type, budget range ($2K-$25K+), and timeline
