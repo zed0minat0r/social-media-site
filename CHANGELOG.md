@@ -2,6 +2,14 @@
 
 ## 2026-03-31
 
+### Nigel's Audit #7 — OVERALL 8.2. Technical breaks through to 8.
+- Scores: Design 8 (stable), Content 8 (stable), UX 8 (stable), Technical 8 (⬆1!), Conversion 9 (stable)
+- Overall: 8.2 (was 8.0)
+- Technical Quality FINALLY hits 8: "Professional-grade organisation. The 8 is earned."
+- Five scores at 8 or above. All recurring issues resolved across 7 audits.
+- Score trajectory: 6.6 → 5.0 → 6.4 → 7.2 → 7.6 → 8.0 → 8.2
+- Remaining: polish items for pushing toward 9 (parallax, full blog articles, section dots nav)
+
 ### Razor: Post-Split Cleanup — Indent Purge + Dead Rule
 - Removed 8-space base indentation from style.css and main.js (leftover from inline <style>/<script> blocks)
 - style.css: 31.3KB → 28.5KB (8.7% smaller)
