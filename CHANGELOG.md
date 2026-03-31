@@ -2,6 +2,14 @@
 
 ## 2026-03-31
 
+### Builder: Major Visual Upgrade — Font, Dividers, Process Section, Portfolio Content
+- Added Space Grotesk display font from Google Fonts for distinctive typography
+- Added wave SVG divider between hero and stats bar for visual depth
+- Added "How I Work" 3-step process section with numbered circles and connector lines
+- Enriched all 6 portfolio items with brand names and project types visible on the cards
+- Expanded portfolio overlay descriptions with real strategy details (not one-liners)
+- Portfolio items now show brand name + type even before hover
+
 ### Refiner: Audit Fixes — About Section, Mobile Portfolio, SEO, Focus States
 - Added About section with photo placeholder, bio, role title, and social links (Instagram, LinkedIn, X, TikTok)
 - Fixed mobile portfolio: overlays now always visible on touch devices (no hover needed)

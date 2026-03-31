@@ -12,6 +12,8 @@
     <meta name="twitter:title" content="MediaPro — Digital Marketing That Drives Results">
     <meta name="twitter:description" content="50+ clients served. 200% avg ROI increase. 10M+ impressions generated.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
     <title>MediaPro — Digital Marketing & Media Services</title>
     <style>
         :root {
@@ -42,7 +44,7 @@
             --input-bg: #252540;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text-primary); transition: background 0.3s, color 0.3s; }
+        body { font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text-primary); transition: background 0.3s, color 0.3s; }
 
         /* Header */
         header { background: var(--card-bg); padding: 16px 32px; box-shadow: var(--shadow); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; transition: background 0.3s; }
@@ -170,6 +172,25 @@
         .social-links a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 8px; background: var(--hover-bg); text-decoration: none; font-size: 18px; transition: all 0.2s; }
         .social-links a:hover { background: var(--primary); transform: translateY(-2px); }
 
+        /* Wave divider */
+        .wave-divider { position: relative; margin-top: -1px; }
+        .wave-divider svg { display: block; width: 100%; height: 60px; }
+        .wave-divider svg path { fill: var(--bg); }
+
+        /* Process / How I Work */
+        .process-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; position: relative; }
+        .process-step { text-align: center; position: relative; }
+        .step-number { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2)); color: #fff; font-size: 24px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; position: relative; z-index: 2; }
+        .step-connector { position: absolute; top: 32px; left: calc(50% + 40px); right: calc(-50% + 40px); height: 3px; background: linear-gradient(90deg, var(--gradient-1), var(--gradient-2)); opacity: 0.3; z-index: 1; }
+        .process-step:last-child .step-connector { display: none; }
+        .process-step h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+        .process-step p { color: var(--text-secondary); font-size: 14px; line-height: 1.6; }
+
+        /* Portfolio inner content */
+        .portfolio-inner { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; text-align: center; color: rgba(255,255,255,0.9); }
+        .portfolio-inner .portfolio-brand { font-size: 28px; font-weight: 800; letter-spacing: -1px; margin-bottom: 4px; }
+        .portfolio-inner .portfolio-type { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; opacity: 0.7; }
+
         /* Focus states */
         *:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
         .btn:focus-visible { outline-offset: 3px; }
@@ -189,6 +210,8 @@
             .about-grid { grid-template-columns: 1fr; text-align: center; }
             .about-photo { margin: 0 auto; width: 200px; height: 200px; }
             .social-links { justify-content: center; }
+            .process-steps { grid-template-columns: 1fr; }
+            .step-connector { display: none; }
             .services-grid { grid-template-columns: 1fr; }
             .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
             .testimonials-grid { grid-template-columns: 1fr; }
@@ -239,6 +262,9 @@
             <a href="#portfolio" class="btn btn-outline">View My Work</a>
         </div>
     </section>
+    <div class="wave-divider">
+        <svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,0 C300,60 900,60 1200,0 L1200,60 L0,60 Z"></path></svg>
+    </div>
 
     <div class="stats-bar">
         <div class="stat">
@@ -347,44 +373,50 @@
         </div>
         <div class="portfolio-grid">
             <div class="portfolio-item">
+                <div class="portfolio-inner"><div class="portfolio-brand">TechFlow</div><div class="portfolio-type">Launch Campaign</div></div>
                 <div class="portfolio-overlay">
                     <h3>TechFlow Launch Campaign</h3>
-                    <p>Full digital launch across 5 platforms</p>
+                    <p>Full digital launch across 5 platforms — paid, organic, influencer, email, and PR. Built a 90-day content calendar and executed across Instagram, TikTok, LinkedIn, X, and YouTube.</p>
                     <span class="tag">+340% engagement</span>
                 </div>
             </div>
             <div class="portfolio-item">
+                <div class="portfolio-inner"><div class="portfolio-brand">NovaBrand</div><div class="portfolio-type">Brand Overhaul</div></div>
                 <div class="portfolio-overlay">
                     <h3>NovaBrand Rebrand</h3>
-                    <p>Complete brand overhaul & social rollout</p>
+                    <p>Complete visual identity redesign, new messaging framework, and coordinated social rollout across all platforms. Repositioned from budget to premium.</p>
                     <span class="tag">2M impressions in 30 days</span>
                 </div>
             </div>
             <div class="portfolio-item">
+                <div class="portfolio-inner"><div class="portfolio-brand">Meridian</div><div class="portfolio-type">Paid Advertising</div></div>
                 <div class="portfolio-overlay">
                     <h3>Meridian Co. Paid Ads</h3>
-                    <p>Meta & Google Ads optimization</p>
+                    <p>Restructured Meta & Google ad accounts, built new creative testing framework, and optimized audiences. Reduced CPA by 60% while scaling spend 3x.</p>
                     <span class="tag">4.2x ROAS</span>
                 </div>
             </div>
             <div class="portfolio-item">
+                <div class="portfolio-inner"><div class="portfolio-brand">Bloom</div><div class="portfolio-type">Video Strategy</div></div>
                 <div class="portfolio-overlay">
                     <h3>Bloom Health Content</h3>
-                    <p>Video series & influencer partnerships</p>
+                    <p>Developed a 12-part video series with micro-influencer partnerships. Created a TikTok-first strategy that drove massive organic reach in the wellness space.</p>
                     <span class="tag">500K organic views</span>
                 </div>
             </div>
             <div class="portfolio-item">
+                <div class="portfolio-inner"><div class="portfolio-brand">Pulse</div><div class="portfolio-type">SEO & Content</div></div>
                 <div class="portfolio-overlay">
                     <h3>Pulse Digital SEO</h3>
-                    <p>SEO overhaul & content strategy</p>
+                    <p>Technical SEO overhaul, 50-page content strategy, and link building campaign. Took primary keyword from page 4 to position 1 in 90 days.</p>
                     <span class="tag">#1 ranking in 90 days</span>
                 </div>
             </div>
             <div class="portfolio-item">
+                <div class="portfolio-inner"><div class="portfolio-brand">Vertex</div><div class="portfolio-type">Email Automation</div></div>
                 <div class="portfolio-overlay">
                     <h3>Vertex Labs Email</h3>
-                    <p>Automated nurture sequence</p>
+                    <p>Built a 7-sequence automated nurture system from scratch — onboarding, re-engagement, upsell, and win-back. Industry avg open rate is 21%. We hit 42%.</p>
                     <span class="tag">42% open rate</span>
                 </div>
             </div>
@@ -442,6 +474,34 @@
                         <div class="testimonial-role">Head of Growth, Bloom Health</div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Process -->
+    <div class="section" id="process">
+        <div class="section-title">
+            <div class="section-label">Process</div>
+            <h2>How I Work</h2>
+            <p>Simple, transparent, and built around results.</p>
+        </div>
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <div class="step-connector"></div>
+                <h3>Discovery & Strategy</h3>
+                <p>We start with a deep dive into your brand, audience, competitors, and goals. I build a custom strategy — no templates, no guesswork.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <div class="step-connector"></div>
+                <h3>Execute & Create</h3>
+                <p>I bring the strategy to life — content, campaigns, ads, whatever the plan calls for. You see everything before it goes live.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h3>Measure & Optimize</h3>
+                <p>Data drives every decision. Weekly reports, A/B testing, and continuous optimization to keep improving results month over month.</p>
             </div>
         </div>
     </div>
