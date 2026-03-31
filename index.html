@@ -707,18 +707,18 @@
                 <div class="step-number">1</div>
                 <div class="step-connector"></div>
                 <h3>Discovery & Strategy</h3>
-                <p>We start with a deep dive into your brand, audience, competitors, and goals. I build a custom strategy — no templates, no guesswork.</p>
+                <p>60-minute kickoff call. Competitor audit. Audience research. You get a detailed strategy document with channels, content themes, posting schedule, and KPIs — delivered within 2 weeks.</p>
             </div>
             <div class="process-step">
                 <div class="step-number">2</div>
                 <div class="step-connector"></div>
                 <h3>Execute & Create</h3>
-                <p>I bring the strategy to life — content, campaigns, ads, whatever the plan calls for. You see everything before it goes live.</p>
+                <p>Content calendar built. Campaigns launched. Ad creatives tested. You approve everything before it goes live. Weekly check-ins so you're never in the dark.</p>
             </div>
             <div class="process-step">
                 <div class="step-number">3</div>
                 <h3>Measure & Optimize</h3>
-                <p>Data drives every decision. Weekly reports, A/B testing, and continuous optimization to keep improving results month over month.</p>
+                <p>Weekly performance snapshots. Monthly deep-dive reports. A/B tests on creatives and copy. We double down on what works and cut what doesn't. Month-over-month growth, documented.</p>
             </div>
         </div>
     </div>
@@ -1018,25 +1018,27 @@
             document.getElementById('mobileNav').classList.remove('open');
         }
 
-        // Sticky CTA bar — appears after scrolling past hero
+        // Unified scroll handler (sticky CTA + back-to-top + progress bar)
         var stickyCta = document.getElementById('stickyCta');
+        var backToTop = document.getElementById('backToTop');
+        var scrollProgress = document.getElementById('scrollProgress');
         var heroHeight = document.querySelector('.hero').offsetHeight;
         var contactSection = document.getElementById('contact');
         window.addEventListener('scroll', function() {
             var scrollY = window.scrollY;
+            var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            // Progress bar
+            scrollProgress.style.width = (scrollY / docHeight) * 100 + '%';
+            // Back-to-top
+            if (scrollY > 600) { backToTop.classList.add('visible'); }
+            else { backToTop.classList.remove('visible'); }
+            // Sticky CTA
             var contactTop = contactSection.getBoundingClientRect().top + scrollY;
             if (scrollY > heroHeight && scrollY < contactTop - window.innerHeight) {
                 stickyCta.classList.add('visible');
             } else {
                 stickyCta.classList.remove('visible');
             }
-        });
-
-        // Back-to-top button
-        var backToTop = document.getElementById('backToTop');
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 600) { backToTop.classList.add('visible'); }
-            else { backToTop.classList.remove('visible'); }
         });
 
         // Blog card clicks
@@ -1046,15 +1048,17 @@
             });
         });
 
-        // Scroll progress bar
-        window.addEventListener('scroll', function() {
-            var scrollTop = window.scrollY;
-            var docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            var progress = (scrollTop / docHeight) * 100;
-            document.getElementById('scrollProgress').style.width = progress + '%';
+        // FAQ accordion — keyboard accessible
+        document.querySelectorAll('.faq-question').forEach(function(q) {
+            q.setAttribute('tabindex', '0');
+            q.setAttribute('role', 'button');
+            q.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleFaq(this);
+                }
+            });
         });
-
-        // FAQ accordion
         function toggleFaq(el) {
             var item = el.parentElement;
             var answer = item.querySelector('.faq-answer');

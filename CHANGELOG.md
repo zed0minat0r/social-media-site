@@ -2,6 +2,12 @@
 
 ## 2026-03-31
 
+### Refiner: Consolidated Scroll Listeners, FAQ Keyboard Nav, Process Copy
+- Consolidated 3 separate scroll event listeners into 1 unified handler (progress bar + sticky CTA + back-to-top). One listener, three functions. Performance improvement.
+- Added keyboard navigation to FAQ accordion: questions now have tabindex="0" and role="button", respond to Enter and Space keys. Accessibility improvement for screen readers and keyboard users.
+- Rewrote process step descriptions with specific deliverables: "60-minute kickoff call", "strategy document within 2 weeks", "weekly check-ins", "monthly deep-dive reports"
+- Reduced total event listeners on the page
+
 ### Spark's Innovation: Grain Texture Hero + CSS Service Icons
 - Added SVG noise/grain texture overlay on hero — subtle film-grain effect for premium depth, 0.4 opacity, pointer-events none
 - Replaced all 6 service emoji icons with CSS illustrations on gradient squares:
