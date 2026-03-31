@@ -34,12 +34,17 @@ document.querySelectorAll('.service-card, .portfolio-item, .testimonial').forEac
     observer.observe(el);
 });
 
-// Smooth scroll
+// Smooth scroll — works for both desktop and mobile nav links
 document.querySelectorAll('a[href^="#"]').forEach(function(a) {
     a.addEventListener('click', function(e) {
         var href = this.getAttribute('href');
         if (href.length <= 1) return; // skip bare "#" links
         e.preventDefault();
+        // Close mobile menu if open
+        var mobileNav = document.getElementById('mobileNav');
+        if (mobileNav && mobileNav.classList.contains('open')) {
+            closeMenu();
+        }
         var target = document.querySelector(href);
         if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });

@@ -2,6 +2,13 @@
 
 ## 2026-03-30
 
+### Refiner: Smooth Scroll Fix — Nav Links No Longer Snap
+- Added `html { scroll-behavior: smooth; }` to style.css as the CSS baseline for smooth scrolling — this was entirely missing, causing the browser to fall back to instant jumps
+- Updated the JS smooth scroll handler to also close the mobile hamburger menu when a nav link is clicked, so mobile users get both menu close AND smooth scroll in one action
+- Removed inline `onclick="closeMenu()"` from mobile nav links — the JS event listener now handles menu closing alongside smooth scrolling, preventing layout-shift conflicts that could interrupt the scroll animation
+- All nav links (desktop, mobile, section dots, hero CTAs, blog read-more links) now smoothly animate to their target section
+- Both `scrollIntoView({ behavior: 'smooth', block: 'start' })` in JS and `scroll-behavior: smooth` in CSS work together as belt-and-suspenders
+
 ### Builder: Inline Form Validation Error Messages
 - Added real-time inline validation on the contact form's Name and Email fields with descriptive error text
 - Errors appear on blur (when the user leaves the field) and clear in real-time as they type corrections
