@@ -2,6 +2,16 @@
 
 ## 2026-03-30
 
+### Spark's Innovation: Scroll-Triggered Cascade Animation on Process Steps
+- Process section steps now start hidden and cascade into view with staggered timing (0s, 0.25s, 0.5s delay) as you scroll down — each step slides up and fades in sequentially
+- Step number circles fire a radial pulse ring (gradient glow that expands and fades) when they appear, giving each step a satisfying "activation" moment
+- Connector lines between steps animate from scaleX(0) to scaleX(1) with a springy cubic-bezier easing, drawing themselves left-to-right as each step lands
+- Uses a dedicated IntersectionObserver (threshold 0.2) so the animation triggers when 20% of the process grid is visible — feels natural, not premature
+- All animations are CSS-driven (transitions + keyframes) for buttery 60fps performance — JS only toggles the `.step-visible` class
+- Mobile: steps already stack vertically and connectors are hidden, so the cascade works perfectly as a simple fade-up sequence
+
+## 2026-03-30
+
 ### Refiner: Smooth Scroll Fix — Nav Links No Longer Snap
 - Added `html { scroll-behavior: smooth; }` to style.css as the CSS baseline for smooth scrolling — this was entirely missing, causing the browser to fall back to instant jumps
 - Updated the JS smooth scroll handler to also close the mobile hamburger menu when a nav link is clicked, so mobile users get both menu close AND smooth scroll in one action

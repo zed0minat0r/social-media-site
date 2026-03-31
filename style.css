@@ -116,6 +116,11 @@ nav a:hover, nav a.active { background: var(--hover-bg); color: var(--primary); 
 .testimonial-avatar { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 16px; }
 .testimonial-name { font-weight: 600; font-size: 14px; }
 .testimonial-role { font-size: 12px; color: var(--text-secondary); }
+.testimonial-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.testimonial-tag { display: inline-block; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; color: #fff; opacity: 0.85; letter-spacing: 0.3px; transition: opacity 0.3s, transform 0.3s; }
+.testimonial-tag:hover { opacity: 1; transform: translateY(-1px); }
+.testimonial-tag.tag-industry { background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2)); }
+.testimonial-tag.tag-service { background: rgba(67, 97, 238, 0.15); color: var(--primary); }
 .stars { color: #ffc107; font-size: 14px; margin-bottom: 12px; }
 
 /* Clients */
@@ -228,9 +233,17 @@ footer a { color: var(--primary); text-decoration: none; }
 
 /* Process / How I Work */
 .process-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; position: relative; }
-.process-step { text-align: center; position: relative; }
+.process-step { text-align: center; position: relative; opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.process-step.step-visible { opacity: 1; transform: translateY(0); }
+.process-step:nth-child(2) { transition-delay: 0.25s; }
+.process-step:nth-child(3) { transition-delay: 0.5s; }
 .step-number { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2)); color: #fff; font-size: 24px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; position: relative; z-index: 2; }
-.step-connector { position: absolute; top: 32px; left: calc(50% + 40px); right: calc(-50% + 40px); height: 3px; background: linear-gradient(90deg, var(--gradient-1), var(--gradient-2)); opacity: 0.3; z-index: 1; }
+.step-number::after { content: ''; position: absolute; inset: -6px; border-radius: 50%; background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2)); opacity: 0; z-index: -1; animation: none; }
+.step-visible .step-number::after { animation: stepPulse 1.8s ease-out 0.3s; }
+@keyframes stepPulse { 0% { opacity: 0.5; transform: scale(1); } 100% { opacity: 0; transform: scale(1.6); } }
+.step-connector { position: absolute; top: 32px; left: calc(50% + 40px); right: calc(-50% + 40px); height: 3px; background: linear-gradient(90deg, var(--gradient-1), var(--gradient-2)); opacity: 0; z-index: 1; transform: scaleX(0); transform-origin: left center; transition: opacity 0.5s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
+.step-visible .step-connector { opacity: 0.4; transform: scaleX(1); }
+.process-step:nth-child(2) .step-connector { transition-delay: 0.25s; }
 .process-step h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
 .process-step p { color: var(--text-secondary); font-size: 14px; line-height: 1.6; }
 

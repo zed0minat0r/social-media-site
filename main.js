@@ -34,6 +34,23 @@ document.querySelectorAll('.service-card, .portfolio-item, .testimonial').forEac
     observer.observe(el);
 });
 
+// Process steps scroll-triggered cascade animation
+var processObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.process-step').forEach(function(step) {
+                step.classList.add('step-visible');
+            });
+            processObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.2 });
+
+var processSteps = document.querySelector('.process-steps');
+if (processSteps) {
+    processObserver.observe(processSteps);
+}
+
 // Smooth scroll — works for both desktop and mobile nav links
 document.querySelectorAll('a[href^="#"]').forEach(function(a) {
     a.addEventListener('click', function(e) {
