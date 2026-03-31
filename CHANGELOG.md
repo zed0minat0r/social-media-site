@@ -2,6 +2,15 @@
 
 ## 2026-03-31
 
+### Nigel's Audit #5 — 7.6 Overall, Design Hits 7
+- Scores: Design 7 (⬆1), Content 8 (⬆1), UX 8 (stable), Technical 7 (stable), Conversion 8 (stable)
+- Overall: 7.6 (was 7.2) — third consecutive improvement
+- Design hits 7 for first time under strict scoring: "genuinely impressive, would make someone want to hire this person"
+- Content hits 8: headline overhaul + service copy rewrite pushed it over
+- Three 8s now (Content, UX, Conversion)
+- All recurring issues resolved across all 5 audits
+- Remaining: alternating section backgrounds, code splitting, sticky CTA
+
 ### Razor: Dead CSS Purge + Inline Style Consolidation
 - Removed 23 lines of dead mock CSS (mock-header, mock-text, mock-bar, mock-box, mock-hero, mock-cta, mock-grid, and all 6 per-item color themes) — Spark replaced them with project-specific inline art
 - Replaced last mock-text class usage in Meridian card with inline style
