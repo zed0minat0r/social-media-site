@@ -2,6 +2,20 @@
 
 ## 2026-03-31
 
+### Builder: Headline Copy Overhaul — ALL TASKS COMPLETE
+- Rewrote 9 section headings from descriptive to benefit-driven:
+  "What I Do" → "How I'll Grow Your Brand"
+  "Recent Work" → "Results, Not Just Pretty Campaigns"
+  "What Clients Say" → "Don't Take My Word For It"
+  "Marketing Thinking" → "Steal My Playbook"
+  "How I Work" → "From Strategy to Results in 3 Steps"
+  "Investment Levels" → "What It Costs (No Surprises)"
+  "Common Questions" → "Before You Decide"
+  "Let's Talk" → "Start Your Growth Story"
+  "The Person Behind the Work" → "Who You'll Be Working With"
+- Updated subtitles to match the new tone
+- Task 6 marked COMPLETE — ALL 6 ORIGINAL TASKS NOW DONE
+
 ### Pixel: Blog Email Capture Mobile Fix + iOS Zoom Prevention
 - Blog section email capture now stacks vertically below 480px (input above, button below, both full width)
 - Blog email input bumped from 14px to 16px font-size to prevent iOS Safari auto-zoom on focus
