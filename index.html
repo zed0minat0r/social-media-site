@@ -522,9 +522,15 @@
                 <div class="contact-detail"><span>&#x1F4CD;</span> Available worldwide — remote first</div>
                 <div class="contact-detail"><span>&#x1F554;</span> Response within 24 hours</div>
             </div>
-            <form class="contact-form" onsubmit="handleSubmit(event)">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
+            <form class="contact-form" onsubmit="handleSubmit(event)" novalidate>
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required id="formName">
+                    <span class="form-error" id="formNameError"></span>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required id="formEmail">
+                    <span class="form-error" id="formEmailError"></span>
+                </div>
                 <input type="text" placeholder="Company / Brand">
                 <select>
                     <option value="" disabled selected>What service are you interested in?</option>

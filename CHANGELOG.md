@@ -2,6 +2,17 @@
 
 ## 2026-03-30
 
+### Builder: Inline Form Validation Error Messages
+- Added real-time inline validation on the contact form's Name and Email fields with descriptive error text
+- Errors appear on blur (when the user leaves the field) and clear in real-time as they type corrections
+- Error messages are human and on-brand: "Please enter your name so I know who I'm talking to", "That doesn't look like a valid email. Double-check?"
+- Form submit now validates before sending — blocks submission if required fields are empty or invalid
+- Added `novalidate` to form to use custom validation instead of browser defaults
+- Error text animates in with max-height + opacity transition (0.25s) — no layout jump
+- Invalid fields get pink border + pink focus ring for clear visual feedback alongside the text
+- Wrapped Name and Email inputs in `.form-group` divs with `.form-error` spans
+- This was the #1 Task 7 stretch goal for pushing Technical Quality above 8
+
 ### Spark's Innovation: Magnetic 3D Tilt on Testimonial Cards + Quote Shimmer
 - Added mouse-tracking 3D tilt effect on testimonial cards: cards physically respond to cursor position with subtle rotateX/rotateY (max 4deg) plus a translateZ(8px) lift
 - Card tilts toward the cursor like a physical object — perspective(600px) with preserve-3d creates convincing depth

@@ -57,7 +57,7 @@ Future work should focus on Nigel's audit priorities for pushing scores toward 9
 ## Task 7: Push toward 9s (stretch goals)
 - Build remaining 2 blog articles as full pages
 - Add client industry tags to testimonials
-- Add inline form validation error messages (not just color)
+- ~~Add inline form validation error messages (not just color)~~ (done by Builder — real-time blur/input validation with descriptive error text)
 - Add lazy loading for below-fold sections
 - Consider exit-intent popup with lead magnet
 - ~~Add a "results calculator" interactive tool~~

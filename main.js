@@ -181,12 +181,71 @@ function toggleFaq(el) {
     }
 }
 
-// Contact form
+// Contact form — inline validation with error messages
+function showError(input, errorEl, message) {
+    input.classList.add('input-error');
+    errorEl.textContent = message;
+    errorEl.classList.add('visible');
+}
+function clearError(input, errorEl) {
+    input.classList.remove('input-error');
+    errorEl.textContent = '';
+    errorEl.classList.remove('visible');
+}
+function validateName(silent) {
+    var input = document.getElementById('formName');
+    var error = document.getElementById('formNameError');
+    if (!input || !error) return true;
+    if (input.value.trim() === '') {
+        if (!silent) showError(input, error, 'Please enter your name so I know who I\'m talking to.');
+        return false;
+    }
+    if (input.value.trim().length < 2) {
+        if (!silent) showError(input, error, 'Name should be at least 2 characters.');
+        return false;
+    }
+    clearError(input, error);
+    return true;
+}
+function validateEmail(silent) {
+    var input = document.getElementById('formEmail');
+    var error = document.getElementById('formEmailError');
+    if (!input || !error) return true;
+    if (input.value.trim() === '') {
+        if (!silent) showError(input, error, 'I\'ll need your email to get back to you.');
+        return false;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim())) {
+        if (!silent) showError(input, error, 'That doesn\'t look like a valid email. Double-check?');
+        return false;
+    }
+    clearError(input, error);
+    return true;
+}
+// Real-time validation on blur
+(function() {
+    var nameInput = document.getElementById('formName');
+    var emailInput = document.getElementById('formEmail');
+    if (nameInput) {
+        nameInput.addEventListener('blur', function() { if (this.value.trim() !== '') validateName(); });
+        nameInput.addEventListener('input', function() { if (this.classList.contains('input-error')) validateName(); });
+    }
+    if (emailInput) {
+        emailInput.addEventListener('blur', function() { if (this.value.trim() !== '') validateEmail(); });
+        emailInput.addEventListener('input', function() { if (this.classList.contains('input-error')) validateEmail(); });
+    }
+})();
 function handleSubmit(e) {
     e.preventDefault();
+    var nameOk = validateName();
+    var emailOk = validateEmail();
+    if (!nameOk || !emailOk) return;
     var btn = e.target.querySelector('button[type="submit"]');
     btn.textContent = 'Sent!';
     btn.style.background = '#06d6a0';
+    // Clear error states on successful submit
+    document.querySelectorAll('.form-error').forEach(function(el) { el.classList.remove('visible'); el.textContent = ''; });
+    document.querySelectorAll('.input-error').forEach(function(el) { el.classList.remove('input-error'); });
     setTimeout(function() {
         btn.textContent = 'Send Message';
         btn.style.background = '';
