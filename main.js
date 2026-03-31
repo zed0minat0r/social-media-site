@@ -281,6 +281,41 @@ setTimeout(function() {
     }
 }, 8000);
 
+// Konami code easter egg
+(function() {
+    var code = [38,38,40,40,37,39,37,39,66,65]; // up up down down left right left right B A
+    var pos = 0;
+    document.addEventListener('keydown', function(e) {
+        if (e.keyCode === code[pos]) {
+            pos++;
+            if (pos === code.length) {
+                pos = 0;
+                // Confetti burst
+                var colors = ['#4361ee','#7209b7','#f72585','#4cc9f0','#06d6a0','#ffd166','#ff6b6b'];
+                for (var i = 0; i < 80; i++) {
+                    var piece = document.createElement('div');
+                    piece.className = 'confetti-piece';
+                    piece.style.left = Math.random() * 100 + 'vw';
+                    piece.style.top = -10 + 'px';
+                    piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+                    piece.style.width = (Math.random() * 8 + 6) + 'px';
+                    piece.style.height = (Math.random() * 8 + 6) + 'px';
+                    piece.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                    piece.style.animationDelay = (Math.random() * 0.5) + 's';
+                    document.body.appendChild(piece);
+                    setTimeout(function(p) { p.remove(); }, 4000, piece);
+                }
+                // Message
+                var msg = document.createElement('div');
+                msg.className = 'easter-egg-msg';
+                msg.innerHTML = '<h3>You found the secret!</h3><p>You clearly pay attention to details.<br>That\'s exactly the kind of client I love working with.</p><button class="btn btn-primary close-egg" onclick="this.parentElement.remove()">Nice.</button>';
+                document.body.appendChild(msg);
+            }
+        } else { pos = 0; }
+    });
+})();
+
 // Section dots navigator
 (function() {
     var sections = document.querySelectorAll('.section[id]');

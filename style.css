@@ -411,6 +411,15 @@ footer a { color: var(--primary); text-decoration: none; }
 .testimonial:nth-child(3) { animation-delay: 0.15s; }
 .testimonial:nth-child(4) { animation-delay: 0.2s; }
 
+/* Confetti easter egg */
+.confetti-piece { position: fixed; width: 10px; height: 10px; z-index: 10000; pointer-events: none; animation: confettiFall 3s ease-out forwards; }
+@keyframes confettiFall { 0% { opacity: 1; transform: translateY(0) rotate(0deg); } 100% { opacity: 0; transform: translateY(100vh) rotate(720deg); } }
+.easter-egg-msg { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--card-bg); padding: 32px 48px; border-radius: 16px; box-shadow: 0 16px 64px rgba(0,0,0,0.3); z-index: 10001; text-align: center; animation: popIn 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+@keyframes popIn { from { opacity: 0; transform: translate(-50%, -50%) scale(0.5); } to { opacity: 1; transform: translate(-50%, -50%) scale(1); } }
+.easter-egg-msg h3 { font-size: 24px; margin-bottom: 8px; }
+.easter-egg-msg p { color: var(--text-secondary); font-size: 15px; }
+.easter-egg-msg .close-egg { margin-top: 16px; }
+
 /* Page transition */
 body { animation: pageIn 0.4s ease-out; }
 @keyframes pageIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
