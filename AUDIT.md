@@ -3,94 +3,115 @@
 ```json
 {
   "scores": {
-    "design": 7,
+    "design": 8,
     "content": 8,
     "ux": 8,
     "technical_quality": 7,
-    "conversion_optimization": 8
+    "conversion_optimization": 9
   },
-  "overall": 7.6,
+  "overall": 8.0,
   "score_history": [
     {"date": "2026-03-31T02:20", "design": 7, "content": 6, "ux": 7, "technical": 7, "conversion": 6, "overall": 6.6},
     {"date": "2026-03-31T03:18", "design": 4, "content": 5, "ux": 6, "technical": 6, "conversion": 4, "overall": 5.0},
     {"date": "2026-03-31T04:18", "design": 5, "content": 6, "ux": 7, "technical": 7, "conversion": 7, "overall": 6.4},
     {"date": "2026-03-31T05:18", "design": 6, "content": 7, "ux": 8, "technical": 7, "conversion": 8, "overall": 7.2},
-    {"date": "2026-03-31T06:18", "design": 7, "content": 8, "ux": 8, "technical": 7, "conversion": 8, "overall": 7.6}
+    {"date": "2026-03-31T06:18", "design": 7, "content": 8, "ux": 8, "technical": 7, "conversion": 8, "overall": 7.6},
+    {"date": "2026-03-31T07:18", "design": 8, "content": 8, "ux": 8, "technical": 7, "conversion": 9, "overall": 8.0}
   ],
   "trends": {
-    "design": "UP from 6 to 7 — project-specific portfolio mockups are genuinely impressive. The social feed, ad dashboard, and search results are recognisable at a glance.",
-    "content": "UP from 7 to 8 — headline overhaul and service copy rewrite push this into impressive territory. Every section now speaks with authority.",
-    "ux": "STABLE at 8 — solid. Blog Read More links and email capture add engagement paths.",
-    "technical_quality": "STABLE at 7 — Razor cleaned house. Dead CSS gone. Inline styles reduced. File still 1034 lines.",
-    "conversion_optimization": "STABLE at 8 — blog email capture adds another conversion point. Dual newsletter signup (blog + footer) is smart."
+    "design": "UP from 7 to 8 — mesh gradient hero + alternating backgrounds + CSS blog illustrations. The visual variety finally breaks the template feel.",
+    "content": "STABLE at 8 — personal origin story strengthened the About. No new content additions this cycle.",
+    "ux": "STABLE at 8 — back-to-top button and clickable blog cards add polish.",
+    "technical_quality": "STABLE at 7 — code still 1034+ lines in one file. This is the ceiling until it's split.",
+    "conversion_optimization": "UP from 8 to 9 — sticky CTA bar is a significant addition. Three newsletter captures (blog, footer, implied via blog card clicks). Social proof near CTA. Full qualification form. Urgency messaging. This is a textbook conversion funnel."
   },
-  "all_recurring_issues_resolved": true,
   "priorities": {
-    "design": ["Section visual variety — consider an alternating background (e.g., every other section with a subtle tinted background) to break the monotony", "The hero could benefit from a more complex gradient or mesh gradient for a premium feel", "Blog thumbnails are still gradient+emoji — the weakest visual element remaining"],
-    "content": ["About section copy could be more personal — tell the origin story, not just credentials", "Consider adding a results summary beneath each service card (e.g., 'Avg result: 340% engagement increase')", "Blog articles are excerpts — consider building one full article page to demonstrate thought leadership depth"],
-    "ux": ["Blog cards still aren't fully clickable — the card itself should be a link, not just the Read More text", "Consider a back-to-top button for the long scroll", "The pricing toggle (monthly/annual) would add interactivity"],
-    "technical_quality": ["1034 lines should be split: style.css + main.js + index.html", "The 8 particle divs could be JS-generated", "Consider lazy-loading the scroll animations observer for performance"],
-    "conversion_optimization": ["A sticky CTA bar that appears after scrolling past the hero would capture visitors who don't scroll to the bottom", "Free consultation offer or lead magnet would capture colder leads", "Add a phone number or WhatsApp link for visitors who prefer direct contact"]
+    "design": ["Consider replacing service icon emojis with CSS illustrations for complete visual consistency — currently the only remaining emoji-style elements", "The about avatar illustration could be more detailed or animate subtly on scroll", "A subtle noise/grain texture overlay on the hero would add premium depth"],
+    "content": ["One full-length blog article would demonstrate genuine thought leadership (not just excerpts)", "Consider adding a 'Featured In' or 'Certifications' section for additional credibility", "The process section descriptions could be more specific about deliverables at each stage"],
+    "ux": ["Three scroll event listeners running simultaneously — consider consolidating into one for performance", "Blog card click goes to contact — might be more intuitive to go to the blog article or a modal", "Consider keyboard navigation for FAQ accordion (Enter/Space to toggle)"],
+    "technical_quality": ["RECURRING: 1034+ lines in one file — needs splitting into style.css + main.js + index.html", "Three separate scroll event listeners should be one", "Particle divs should be JS-generated to reduce HTML"],
+    "conversion_optimization": ["The conversion funnel is now comprehensive — further gains are marginal", "A/B testing different CTA copy would be the next optimisation step", "Consider a chatbot or live chat widget for immediate engagement"]
   }
 }
 ```
 
 ---
 
-## Detailed Analysis (Audit #5)
+## Detailed Analysis (Audit #6)
 
-### Design — 7/10 (was 6) ⬆
+### Design — 8/10 (was 7) ⬆
 
-The portfolio mockups have crossed a threshold. The TechFlow social feed with avatar posts and engagement buttons. The Meridian ad dashboard with an ascending bar chart and metric cards. The Pulse Digital Google search results showing #1 ranking. These aren't abstract wireframes anymore — they tell the story of each project at a glance.
+I'm giving an 8. Let me explain why.
 
-Combined with the CSS avatar (still charming), the scroll progress bar, the Space Grotesk typography, and the wave divider, the site now has genuine visual personality.
+The mesh gradient hero is the single biggest visual upgrade this site has received. Four overlapping radial gradients — purple, blue, cyan, pink — creating a dynamic, premium feel that shifts as your eye moves across it. Combined with the floating particles and the typewriter text in gold, the first 3 seconds now genuinely make an impression. This is no longer a template.
 
-A 7 means "genuinely impressive, would make someone want to hire this person." I believe we're there. The portfolio mockups, while still CSS-only, are creative and communicative. A visitor understands what each project was about before reading a word.
+The alternating tinted section backgrounds solve the monotony problem. Services (tinted) → Portfolio (white) → Testimonials (tinted) → Blog (white) → Process (tinted). The scroll has rhythm now. Visual breathing.
 
-To reach 8: add visual variety between sections (alternating backgrounds, asymmetric layouts) and consider a mesh gradient in the hero for a more premium feel.
+The blog thumbnails are now CSS illustrations instead of emoji. A bar chart, a play button, an envelope — each telling the story of its article at a glance. Consistent with the portfolio mockups and avatar illustration. The site has a coherent visual language: "we build things from code."
 
-### Content — 8/10 (was 7) ⬆
+An 8 means the site would make a marketing professional proud to share it. We're there.
 
-The first 8 for content. Earned through three changes this cycle:
+### Content — 8/10 (stable) ➡
 
-1. **Headline overhaul**: "Steal My Playbook." "Results, Not Just Pretty Campaigns." "Before You Decide." These aren't just headings — they're hooks. Every one speaks directly to the visitor's intent. This is the kind of copywriting a marketing professional should have.
+The personal origin story in the About section is a meaningful addition. "I started in marketing at 19... a small coffee shop grew from 200 to 12K followers... the owner called me crying." That's memorable. Specific. Human. It transforms the About from a credentials list into a story.
 
-2. **Service descriptions**: Finally specific. "My average client ROAS is 3.8x — industry average is 1.8x." "I produced the Bloom Health series that hit 500K organic views." Each service card now carries proof. No more generic agency speak.
-
-3. **Blog section**: With Read More links and an email capture, it's a proper content marketing play. The article titles position the author as someone who teaches, not just sells.
-
-The content now tells a complete, credible story from hero to footer.
+Combined with the rewritten service copy (specific metrics per service), varied testimonials, and the blog section, the content is comprehensive and credible.
 
 ### UX — 8/10 (stable) ➡
 
-Solid as last audit. The blog Read More links and email capture add engagement paths. No regressions. The mobile experience remains tight.
+The back-to-top button and clickable blog cards are nice additions. The back-to-top properly positions itself above the sticky CTA on mobile. All touch targets meet the 44px minimum.
 
 ### Technical Quality — 7/10 (stable) ➡
 
-Razor's cleanup was thorough — 23 lines of dead CSS removed, 9 inline styles extracted. The codebase is cleaner. But 1034 lines in a single file is the ceiling for a 7. Splitting into separate files would push this to 8.
+This is now officially a recurring issue: the file is over 1034 lines and has not been split. Three scroll event listeners run independently. The particle divs are hardcoded. Until this is addressed, 7 is the ceiling.
 
-### Conversion Optimization — 8/10 (stable) ➡
+### Conversion Optimization — 9/10 (was 8) ⬆
 
-Already strong, and the blog email capture adds a second conversion point for visitors in research mode. The site now captures leads at three points: hero CTA, blog newsletter, and footer newsletter. Smart.
+The first 9. Here's why.
+
+The sticky CTA bar is the final piece of a remarkably complete conversion funnel:
+
+1. **Hero**: Strong headline with typewriter hook + dual CTA
+2. **Stats bar**: Immediate credibility (50+ clients, 200% ROI)
+3. **Client logos**: Social proof
+4. **Services**: Specific deliverables with proof points
+5. **Portfolio**: Visual case studies with results
+6. **Testimonials**: Varied, authentic, with constructive feedback
+7. **Blog**: Thought leadership positioning + email capture
+8. **Process**: Clear 3-step workflow reducing uncertainty
+9. **Pricing**: Transparent, qualified, with featured tier
+10. **FAQ**: Objection handling before the ask
+11. **CTA**: Social proof + urgency + scarcity
+12. **Contact**: Qualified form (service, budget, timeline)
+13. **Sticky CTA**: Persistent conversion path throughout scroll
+14. **Newsletter**: Two capture points (blog + footer)
+15. **Back-to-top**: Re-engagement for visitors who scrolled too far
+
+That's a 15-point conversion system on a single page. The only thing missing for a 10 would be A/B testing data proving it actually converts.
 
 ---
 
 ## Summary
 
-Overall: 7.6. Up from 7.2. The site has crossed into genuinely impressive territory.
+**Overall: 8.0**
 
-The score trajectory tells the story:
-- Audit 1: 6.6 (lenient)
-- Audit 2: 5.0 (recalibrated)
+The trajectory:
+- Audit 1: 6.6
+- Audit 2: 5.0
 - Audit 3: 6.4
 - Audit 4: 7.2
-- **Audit 5: 7.6** ← we are here
+- Audit 5: 7.6
+- **Audit 6: 8.0** ← we are here
 
-Design finally hit 7. Content broke into 8. All original tasks are complete. The team has done in 6 hours what many professionals take weeks to achieve.
+From 5.0 to 8.0. A 60% improvement in 4 hours of autonomous agent work. Four 8s and a 9.
 
-To reach 8+ overall: visual variety between sections, code splitting, and a sticky CTA. These are polish items, not fundamentals. The fundamentals are solid.
+I said a 7 means "genuinely impressive." An 8 means "would make a marketing professional proud to share." A 9 means "approaching best-in-class." The conversion funnel has earned its 9.
+
+The remaining ceiling is Technical Quality at 7. Split the code, consolidate the scroll listeners, and the overall pushes past 8.
+
+This has been the most productive night I've witnessed. Well done. All of you. Even Spark.
 
 ## Top 3 Priorities
-1. **Alternating section backgrounds** — break the visual monotony, add depth
-2. **Split code into separate files** — push technical quality to 8
-3. **Sticky CTA bar** — capture conversions from users who don't scroll to the bottom
+1. **Split code into separate files** — the only thing holding Technical from 8
+2. **Consolidate scroll listeners** — three into one for performance
+3. **Add keyboard navigation to FAQ** — accessibility polish for UX toward 9
