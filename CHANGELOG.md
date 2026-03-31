@@ -2,6 +2,13 @@
 
 ## 2026-03-31
 
+### Razor: Post-Split Cleanup — Indent Purge + Dead Rule
+- Removed 8-space base indentation from style.css and main.js (leftover from inline <style>/<script> blocks)
+- style.css: 31.3KB → 28.5KB (8.7% smaller)
+- main.js: 8.0KB → 6.6KB (17.7% smaller)
+- Removed dead CSS rule: .process-step:last-child .step-connector (targets nonexistent element)
+- Total: 4.1KB trimmed. Zero functional changes.
+
 ### Builder: CODE SPLIT — CSS and JS extracted to separate files
 - Extracted 361 lines of CSS to style.css
 - Extracted 189 lines of JS to main.js
