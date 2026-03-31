@@ -2,6 +2,13 @@
 
 ## 2026-03-30
 
+### Mobile Spacing Fix — Breathing Room Between Sections
+- Increased `.trusted-by-bar` base bottom padding from 0 to 16px so the Trusted By logos don't sit flush against the next element
+- Added `.trusted-by-bar + .trusted-by-bar` rule giving the Featured In row 40-48px bottom padding, creating clear separation before the Services section
+- Updated 768px breakpoint: `.trusted-by-bar` now has 16px bottom padding (was 0) and Featured In gets 48px bottom padding
+- Bumped 480px breakpoint section padding from 36px to 52px top/bottom for generous vertical rhythm on small phones
+- Net effect: all sections on mobile scroll with consistent, open spacing instead of feeling cramped
+
 ### Razor: CSS & JS Cleanup — Deduplicate, Consolidate, Guard
 - Merged duplicate `.service-card` selectors (base + 3D tilt) into one rule; merged duplicate hover rules
 - Merged duplicate `.testimonial` selectors (base + perspective/preserve-3d) into one rule

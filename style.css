@@ -157,9 +157,9 @@ nav a:hover, nav a.active { background: var(--hover-bg); color: var(--primary); 
 .pricing-card { background: var(--card-bg); border-radius: 12px; padding: 32px; box-shadow: var(--shadow); transition: all 0.3s; position: relative; overflow: hidden; }
 .pricing-card:hover, .pricing-card:focus-within { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
 .pricing-card.featured { border: 2px solid var(--primary); }
-.pricing-card.featured::before { content: 'MOST POPULAR'; position: absolute; top: 16px; right: -28px; background: var(--primary); color: #fff; font-size: 10px; font-weight: 700; padding: 4px 32px; transform: rotate(45deg); letter-spacing: 1px; animation: badgePulse 3s ease-in-out infinite; }
+.pricing-card.featured::before { content: 'MOST POPULAR'; position: absolute; top: 16px; right: -28px; background: var(--primary); color: #fff; font-size: 14px; font-weight: 700; padding: 4px 36px; transform: rotate(45deg); letter-spacing: 1px; animation: badgePulse 3s ease-in-out infinite; }
 @keyframes badgePulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
-.pricing-tier { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--primary); margin-bottom: 8px; }
+.pricing-tier { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--primary); margin-bottom: 8px; }
 .pricing-price { font-size: 42px; font-weight: 800; margin-bottom: 4px; }
 .pricing-price span { font-size: 16px; font-weight: 400; color: var(--text-secondary); }
 .pricing-desc { color: var(--text-secondary); font-size: 14px; margin-bottom: 24px; line-height: 1.5; }
@@ -266,7 +266,7 @@ footer a { color: var(--primary); text-decoration: none; }
 .back-to-top:hover { transform: scale(1.1); }
 .blog-thumb { height: 160px; display: flex; align-items: center; justify-content: center; font-size: 48px; }
 .blog-body { padding: 24px; }
-.blog-tag { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--primary); margin-bottom: 8px; }
+.blog-tag { display: inline-block; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--primary); margin-bottom: 8px; }
 .blog-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
 .blog-card p { color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin-bottom: 16px; }
 .blog-meta { font-size: 14px; color: var(--text-secondary); }
@@ -277,9 +277,10 @@ footer a { color: var(--primary); text-decoration: none; }
 .blog-cta-inline { display: inline-flex; gap: 8px; max-width: 400px; }
 .blog-cta-inline input { flex: 1; padding: 12px 16px; border: 1px solid var(--border); border-radius: 8px; font-size: 16px; background: var(--input-bg); color: var(--text-primary); font-family: inherit; outline: none; }
 .blog-cta-inline .btn { padding: 12px 20px; font-size: 14px; white-space: nowrap; }
-.trusted-by-bar { text-align: center; padding: 24px 16px 0; }
-.trusted-by-label { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--text-secondary); margin-bottom: 12px; }
+.trusted-by-bar { text-align: center; padding: 32px 16px 16px; }
+.trusted-by-label { font-size: 14px; text-transform: uppercase; letter-spacing: 2px; color: var(--text-secondary); margin-bottom: 12px; }
 .featured-in { padding: 0; opacity: 0.4; }
+.trusted-by-bar + .trusted-by-bar { padding-top: 8px; padding-bottom: 40px; }
 .featured-in .client-logo { font-style: italic; }
 .cta-social-proof { font-size: 14px; opacity: 0.8; margin-bottom: 16px; }
 .footer-social { justify-content: center; margin-bottom: 16px; }
@@ -335,7 +336,8 @@ footer a { color: var(--primary); text-decoration: none; }
     .theme-toggle { width: 44px; height: 44px; font-size: 18px; }
     .clients-row { gap: 16px; padding: 20px 0; }
     .client-logo { font-size: 18px; }
-    .trusted-by-bar { padding: 24px 20px 0; }
+    .trusted-by-bar { padding: 32px 20px 16px; }
+    .trusted-by-bar + .trusted-by-bar { padding-top: 8px; padding-bottom: 48px; }
     .testimonial { padding: 24px; }
     .testimonial-text { font-size: 14px; }
     .testimonial-role { font-size: 14px; }
@@ -366,7 +368,7 @@ footer a { color: var(--primary); text-decoration: none; }
     nav { display: none; }
     .hamburger { display: flex; }
     .header-right { gap: 4px; }
-    .section { padding: 36px 20px; }
+    .section { padding: 52px 20px; }
     .section-title { margin-bottom: 32px; }
     .section-title h2 { font-size: 24px; }
     .service-card { padding: 24px; }
@@ -432,7 +434,7 @@ footer a { color: var(--primary); text-decoration: none; }
 .calc-results .calc-detail { display: flex; justify-content: space-around; margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.2); }
 .calc-results .calc-detail div { text-align: center; }
 .calc-results .calc-detail .calc-detail-num { font-size: 20px; font-weight: 700; }
-.calc-results .calc-detail .calc-detail-label { font-size: 11px; opacity: 0.7; }
+.calc-results .calc-detail .calc-detail-label { font-size: 14px; opacity: 0.7; }
 
 /* Custom cursor follower */
 .cursor-dot { position: fixed; width: 12px; height: 12px; border-radius: 50%; background: var(--primary); pointer-events: none; z-index: 9999; opacity: 0; transition: opacity 0.3s; box-shadow: 0 0 8px var(--primary); }
@@ -499,7 +501,7 @@ body.page-exit { opacity: 0; transform: translateY(-8px); transition: all 0.3s e
 .social-toast-text strong { display: block; font-size: 14px; }
 .social-toast-text span { color: var(--text-secondary); }
 .social-toast-close { background: none; border: none; color: var(--text-secondary); cursor: pointer; font-size: 18px; padding: 12px; position: absolute; top: 2px; right: 2px; min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center; }
-@media (max-width: 480px) { .social-toast { left: 12px; right: 60px; max-width: none; bottom: 72px; } }
+@media (max-width: 480px) { .social-toast { left: 20px; right: 60px; max-width: none; bottom: 72px; } }
 
 /* Calculator CTA wrapper */
 .calc-cta { text-align: center; margin-top: 20px; }
@@ -522,4 +524,4 @@ body.page-exit { opacity: 0; transform: translateY(-8px); transition: all 0.3s e
 .article-cta p { margin-bottom: 16px; }
 .back-link { display: inline-block; margin: 24px; color: var(--primary); text-decoration: none; font-weight: 600; }
 .back-link:hover { text-decoration: underline; }
-@media (max-width: 768px) { .article-hero h1 { font-size: 28px; } .article-hero { padding: 60px 16px 40px; } }
+@media (max-width: 768px) { .article-hero h1 { font-size: 28px; } .article-hero { padding: 60px 20px 40px; } }
