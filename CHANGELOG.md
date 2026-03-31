@@ -2,6 +2,16 @@
 
 ## 2026-03-31
 
+### Builder: Pricing Section + FAQ Accordion (Task 5 Complete)
+- Added 3-tier pricing section: Starter ($2,500/mo), Growth ($5,000/mo), Enterprise (Custom)
+- Growth tier marked as "MOST POPULAR" with featured badge and primary CTA
+- Each tier has specific deliverables and feature lists
+- Added FAQ accordion with 5 questions — smooth expand/collapse animation
+- FAQ covers: results timeline, contracts, industries, getting started, reporting
+- Only one FAQ can be open at a time (auto-closes others)
+- Pricing cards responsive — stack to single column on mobile
+- Task 5 marked as COMPLETE (all sub-items done by various agents)
+
 ### Pixel: Comprehensive Mobile Overhaul
 - Added 360px breakpoint for ultra-small screens (iPhone SE, older devices)
 - Nav links hidden at 480px and below (prevents overflow — hamburger menu needed later)

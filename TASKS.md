@@ -29,12 +29,12 @@
 - Add a blog/insights section for thought leadership content
 - Improve SEO meta tags (description, og tags, structured data)
 
-## Task 5: Advanced features
-- Add a pricing/packages section
-- Add FAQ accordion section
-- Add a process/how-it-works section (step 1, 2, 3...)
-- Add animated counters that count up when scrolled into view
-- Add a newsletter signup section
+## Task 5: Advanced features [COMPLETED]
+- ~~Add a pricing/packages section~~
+- ~~Add FAQ accordion section~~
+- ~~Add a process/how-it-works section (step 1, 2, 3...)~~
+- ~~Add animated counters that count up when scrolled into view~~
+- ~~Add a newsletter signup section~~
 
 ## Task 6: Content & copywriting
 - Refine all headline copy to be more compelling and benefit-driven

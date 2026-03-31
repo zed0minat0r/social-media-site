@@ -140,6 +140,30 @@
         .contact-form input:focus, .contact-form textarea:focus { border-color: var(--primary); }
         .contact-form textarea { min-height: 120px; resize: vertical; }
 
+        /* Pricing */
+        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: start; }
+        .pricing-card { background: var(--card-bg); border-radius: 12px; padding: 32px; box-shadow: var(--shadow); transition: all 0.3s; position: relative; overflow: hidden; }
+        .pricing-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+        .pricing-card.featured { border: 2px solid var(--primary); }
+        .pricing-card.featured::before { content: 'MOST POPULAR'; position: absolute; top: 16px; right: -28px; background: var(--primary); color: #fff; font-size: 10px; font-weight: 700; padding: 4px 32px; transform: rotate(45deg); letter-spacing: 1px; }
+        .pricing-tier { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--primary); margin-bottom: 8px; }
+        .pricing-price { font-size: 42px; font-weight: 800; margin-bottom: 4px; }
+        .pricing-price span { font-size: 16px; font-weight: 400; color: var(--text-secondary); }
+        .pricing-desc { color: var(--text-secondary); font-size: 14px; margin-bottom: 24px; line-height: 1.5; }
+        .pricing-features { list-style: none; margin-bottom: 24px; }
+        .pricing-features li { padding: 8px 0; font-size: 14px; color: var(--text-secondary); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px; }
+        .pricing-features li::before { content: '✓'; color: var(--primary); font-weight: 700; }
+
+        /* FAQ */
+        .faq-list { max-width: 700px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid var(--border); }
+        .faq-question { padding: 20px 0; font-size: 16px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: color 0.2s; }
+        .faq-question:hover { color: var(--primary); }
+        .faq-arrow { font-size: 18px; transition: transform 0.3s; }
+        .faq-item.open .faq-arrow { transform: rotate(180deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
+        .faq-answer p { padding: 0 0 20px; color: var(--text-secondary); font-size: 15px; line-height: 1.7; }
+
         /* Footer */
         footer { text-align: center; padding: 40px 24px; color: var(--text-secondary); font-size: 13px; border-top: 1px solid var(--border); margin-top: 80px; }
         footer a { color: var(--primary); text-decoration: none; }
@@ -241,6 +265,7 @@
             .social-links { justify-content: center; }
             .process-steps { grid-template-columns: 1fr; }
             .step-connector { display: none; }
+            .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
             .services-grid { grid-template-columns: 1fr; }
             .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
             .testimonials-grid { grid-template-columns: 1fr; }
@@ -568,6 +593,61 @@
         </div>
     </div>
 
+    <!-- Pricing -->
+    <div class="section" id="pricing">
+        <div class="section-title">
+            <div class="section-label">Pricing</div>
+            <h2>Investment Levels</h2>
+            <p>Transparent pricing. No hidden fees. Cancel anytime.</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="pricing-tier">Starter</div>
+                <div class="pricing-price">$2,500<span>/mo</span></div>
+                <div class="pricing-desc">Perfect for small brands just getting started with digital marketing.</div>
+                <ul class="pricing-features">
+                    <li>2 social platforms managed</li>
+                    <li>8 posts per month</li>
+                    <li>Basic analytics report</li>
+                    <li>Monthly strategy call</li>
+                    <li>Email support</li>
+                </ul>
+                <a href="#contact" class="btn btn-outline" style="width: 100%; text-align: center; color: var(--primary); border-color: var(--primary);">Get Started</a>
+            </div>
+            <div class="pricing-card featured">
+                <div class="pricing-tier">Growth</div>
+                <div class="pricing-price">$5,000<span>/mo</span></div>
+                <div class="pricing-desc">For brands ready to scale. Full-service marketing with measurable ROI.</div>
+                <ul class="pricing-features">
+                    <li>4 social platforms managed</li>
+                    <li>20 posts per month</li>
+                    <li>Paid ad management (up to $5K spend)</li>
+                    <li>Video content (2 per month)</li>
+                    <li>Weekly analytics + strategy calls</li>
+                    <li>Email marketing setup</li>
+                    <li>Priority support</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary" style="width: 100%; text-align: center;">Start Growing</a>
+            </div>
+            <div class="pricing-card">
+                <div class="pricing-tier">Enterprise</div>
+                <div class="pricing-price">Custom</div>
+                <div class="pricing-desc">Full-stack marketing for established brands with ambitious growth targets.</div>
+                <ul class="pricing-features">
+                    <li>All platforms managed</li>
+                    <li>Unlimited content creation</li>
+                    <li>Paid ad management (unlimited)</li>
+                    <li>Dedicated account manager</li>
+                    <li>Brand strategy & positioning</li>
+                    <li>Influencer partnerships</li>
+                    <li>Custom reporting dashboard</li>
+                    <li>24/7 priority support</li>
+                </ul>
+                <a href="#contact" class="btn btn-outline" style="width: 100%; text-align: center; color: var(--primary); border-color: var(--primary);">Contact Me</a>
+            </div>
+        </div>
+    </div>
+
     <!-- CTA -->
     <div class="section">
         <div class="cta-section">
@@ -575,6 +655,37 @@
             <p>Let's build a marketing strategy that actually moves the needle.</p>
             <p style="opacity: 0.85; font-size: 15px; margin-bottom: 24px; font-weight: 600;">&#x1F525; Currently accepting 2 new clients for Q2 2026</p>
             <a href="#contact" class="btn btn-white">Claim Your Spot</a>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="section" id="faq">
+        <div class="section-title">
+            <div class="section-label">FAQ</div>
+            <h2>Common Questions</h2>
+            <p>Everything you need to know before we work together.</p>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">How quickly will I see results? <span class="faq-arrow">&#x25BC;</span></div>
+                <div class="faq-answer"><p>It depends on the service. Paid ads can generate leads within days. SEO and organic social typically show meaningful results in 60-90 days. I'll set realistic expectations during our initial strategy call and provide weekly progress updates so you always know where things stand.</p></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">What's the minimum contract length? <span class="faq-arrow">&#x25BC;</span></div>
+                <div class="faq-answer"><p>I recommend a 3-month minimum to see real traction, but there's no long-term lock-in. After the initial period, it's month-to-month. I earn your business every month — if you're not seeing value, you can cancel anytime with 30 days notice.</p></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Do you work with businesses in my industry? <span class="faq-arrow">&#x25BC;</span></div>
+                <div class="faq-answer"><p>I've worked across 15+ industries including SaaS, e-commerce, health & wellness, professional services, fintech, and more. Marketing fundamentals are universal — what changes is the strategy, messaging, and channels. I'll research your specific space during discovery.</p></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">What do I need to provide to get started? <span class="faq-arrow">&#x25BC;</span></div>
+                <div class="faq-answer"><p>Access to your social accounts, ad accounts, and analytics. Brand guidelines if you have them (if not, I'll help create them). Beyond that, just your time for a 60-minute kickoff call where we align on goals, audience, and voice. I handle everything else.</p></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">How do you measure and report results? <span class="faq-arrow">&#x25BC;</span></div>
+                <div class="faq-answer"><p>Weekly performance snapshots and monthly deep-dive reports covering all KPIs we agreed on: engagement, reach, leads, conversions, ROAS, and more. Every metric tied back to business impact, not vanity numbers. Plus a monthly strategy call to review and adjust.</p></div>
+            </div>
         </div>
     </div>
 
@@ -756,6 +867,23 @@
         }, { threshold: 0.3 });
         var statsBar = document.querySelector('.stats-bar');
         if (statsBar) counterObserver.observe(statsBar);
+
+        // FAQ accordion
+        function toggleFaq(el) {
+            var item = el.parentElement;
+            var answer = item.querySelector('.faq-answer');
+            var isOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item').forEach(function(i) {
+                i.classList.remove('open');
+                i.querySelector('.faq-answer').style.maxHeight = null;
+            });
+            // Open clicked if it was closed
+            if (!isOpen) {
+                item.classList.add('open');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+        }
 
         // Contact form
         function handleSubmit(e) {
