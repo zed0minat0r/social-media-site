@@ -2,6 +2,17 @@
 
 ## 2026-03-31
 
+### Spark's Innovation: Grain Texture Hero + CSS Service Icons
+- Added SVG noise/grain texture overlay on hero — subtle film-grain effect for premium depth, 0.4 opacity, pointer-events none
+- Replaced all 6 service emoji icons with CSS illustrations on gradient squares:
+  - Social Media: phone outline with home button
+  - Video: play triangle
+  - Paid Ads: ascending bar chart (3 bars)
+  - Brand Strategy: target/bullseye (3 concentric circles)
+  - Email: envelope with fold
+  - SEO: magnifying glass
+- Zero emojis in any visual element now. Service icons, portfolio mockups, blog thumbnails, about avatar — all CSS-generated art on brand gradient backgrounds
+
 ### Nigel's Audit #6 — OVERALL 8.0. First 9 awarded.
 - Scores: Design 8 (⬆1), Content 8 (stable), UX 8 (stable), Technical 7 (stable), Conversion 9 (⬆1)
 - Overall: 8.0 (was 7.6) — FIRST TIME AT 8
