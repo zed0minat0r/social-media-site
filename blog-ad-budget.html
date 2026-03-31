@@ -11,27 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
     <title>Why Most Brands Waste 60% of Their Ad Budget — MediaPro</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .article-hero { background: linear-gradient(135deg, #667eea, #764ba2); padding: 80px 24px 60px; text-align: center; color: #fff; }
-        .article-hero h1 { font-size: 36px; max-width: 700px; margin: 0 auto 16px; line-height: 1.3; }
-        .article-meta { font-size: 14px; opacity: 0.8; }
-        .article-body { max-width: 700px; margin: 48px auto; padding: 0 24px; }
-        .article-body h2 { font-size: 24px; margin: 40px 0 16px; }
-        .article-body p { color: var(--text-secondary); line-height: 1.9; margin-bottom: 20px; font-size: 16px; }
-        .article-body blockquote { border-left: 4px solid var(--primary); padding: 16px 24px; margin: 24px 0; background: var(--hover-bg); border-radius: 0 8px 8px 0; font-style: italic; }
-        .article-body ul { color: var(--text-secondary); padding-left: 24px; margin-bottom: 20px; line-height: 1.9; }
-        .article-body li { margin-bottom: 8px; }
-        .article-cta { background: var(--hover-bg); border-radius: 12px; padding: 32px; text-align: center; margin: 48px 0; }
-        .article-cta h3 { margin-bottom: 8px; }
-        .article-cta p { margin-bottom: 16px; }
-        .back-link { display: inline-block; margin: 24px; color: var(--primary); text-decoration: none; font-weight: 600; }
-        .back-link:hover { text-decoration: underline; }
-        @media (max-width: 768px) { .article-hero h1 { font-size: 28px; } .article-hero { padding: 60px 16px 40px; } }
-    </style>
 </head>
 <body id="top">
     <header>
-        <a href="index.html" class="logo" style="text-decoration:none">MediaPro</a>
+        <a href="index.html" class="logo">MediaPro</a>
         <div class="header-right">
             <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">&#x2600;&#xFE0F;</button>
         </div>
@@ -126,24 +109,6 @@
         <p>&copy; 2026 MediaPro. All rights reserved. | <a href="index.html">Home</a></p>
     </footer>
 
-    <script>
-    function toggleTheme() {
-        var body = document.body;
-        var btn = document.querySelector('.theme-toggle');
-        if (body.getAttribute('data-theme') === 'dark') {
-            body.removeAttribute('data-theme');
-            btn.innerHTML = '&#x2600;&#xFE0F;';
-            localStorage.setItem('theme', 'light');
-        } else {
-            body.setAttribute('data-theme', 'dark');
-            btn.innerHTML = '&#x1F319;';
-            localStorage.setItem('theme', 'dark');
-        }
-    }
-    if (localStorage.getItem('theme') === 'dark') {
-        document.body.setAttribute('data-theme', 'dark');
-        document.querySelector('.theme-toggle').innerHTML = '&#x1F319;';
-    }
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>

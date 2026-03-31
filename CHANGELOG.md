@@ -2,6 +2,19 @@
 
 ## 2026-03-30
 
+### Razor: CSS & JS Cleanup — Deduplicate, Consolidate, Guard
+- Merged duplicate `.service-card` selectors (base + 3D tilt) into one rule; merged duplicate hover rules
+- Merged duplicate `.testimonial` selectors (base + perspective/preserve-3d) into one rule
+- Extracted 18-line inline `<style>` block from blog-ad-budget.html into style.css (article-hero, article-body, article-cta, etc.)
+- Moved inline `style="text-decoration:none"` on blog logo link into `.logo` class in CSS
+- Replaced 17-line duplicated toggleTheme inline `<script>` in blog-ad-budget.html with shared `<script src="main.js">`
+- Replaced 2 inline styles in index.html with utility classes: `.calc-cta` (calculator CTA wrapper) and `.clients-row--flush` (zero-padding variant)
+- Added null guards in main.js for elements missing on blog page: typewriter, hero parallax, scroll handler, back-to-top, sticky CTA
+- blog-ad-budget.html: 149 lines down to 131 (12% smaller), zero inline CSS/JS remaining
+- style.css: +18 lines (article styles moved in), -3 lines (deduplication) = net +15
+- Inline styles in index.html: 2 removed (21 remaining are per-element illustration art — acceptable)
+- Zero functional changes. All pages tested safe.
+
 ### Refiner: Reduced Motion, Keyboard Parity & Passive Scroll Performance
 - Added comprehensive `prefers-reduced-motion: reduce` media query in CSS — disables all animations, transitions, parallax particles, floating avatar, typewriter cursor blink, and scroll-behavior for users who prefer stillness
 - Added reduced-motion guard in JS: typewriter effect shows static first word instead of animating; hero parallax scroll handler is skipped entirely

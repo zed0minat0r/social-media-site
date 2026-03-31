@@ -71,6 +71,7 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
 (function() {
     var words = ['Drives Results', 'Builds Brands', 'Goes Viral', 'Converts Clicks', 'Tells Stories', 'Breaks Records'];
     var el = document.getElementById('typewriter');
+    if (!el) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         el.textContent = words[0];
         return;
@@ -148,22 +149,27 @@ function closeMenu() {
 var stickyCta = document.getElementById('stickyCta');
 var backToTop = document.getElementById('backToTop');
 var scrollProgress = document.getElementById('scrollProgress');
-var heroHeight = document.querySelector('.hero').offsetHeight;
+var heroEl = document.querySelector('.hero');
+var heroHeight = heroEl ? heroEl.offsetHeight : 0;
 var contactSection = document.getElementById('contact');
-window.addEventListener('scroll', function() {
+if (scrollProgress) window.addEventListener('scroll', function() {
     var scrollY = window.scrollY;
     var docHeight = document.documentElement.scrollHeight - window.innerHeight;
     // Progress bar
     scrollProgress.style.width = (scrollY / docHeight) * 100 + '%';
     // Back-to-top
-    if (scrollY > 600) { backToTop.classList.add('visible'); }
-    else { backToTop.classList.remove('visible'); }
+    if (backToTop) {
+        if (scrollY > 600) { backToTop.classList.add('visible'); }
+        else { backToTop.classList.remove('visible'); }
+    }
     // Sticky CTA
-    var contactTop = contactSection.getBoundingClientRect().top + scrollY;
-    if (scrollY > heroHeight && scrollY < contactTop - window.innerHeight) {
-        stickyCta.classList.add('visible');
-    } else {
-        stickyCta.classList.remove('visible');
+    if (stickyCta && contactSection) {
+        var contactTop = contactSection.getBoundingClientRect().top + scrollY;
+        if (scrollY > heroHeight && scrollY < contactTop - window.innerHeight) {
+            stickyCta.classList.add('visible');
+        } else {
+            stickyCta.classList.remove('visible');
+        }
     }
 }, { passive: true });
 
@@ -343,7 +349,7 @@ document.querySelectorAll('a[href$=".html"]').forEach(function(link) {
 var heroContent = document.getElementById('heroContent');
 var heroSection = document.querySelector('.hero');
 var particles = document.querySelector('.particles');
-if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+if (heroSection && heroContent && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     window.addEventListener('scroll', function() {
         var scrollY = window.scrollY;
         var heroH = heroSection.offsetHeight;
