@@ -3,307 +3,415 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SocialConnect</title>
+    <title>MediaPro — Digital Marketing & Media Services</title>
     <style>
         :root {
-            --bg: #f0f2f5;
+            --bg: #f8f9fa;
             --card-bg: #ffffff;
-            --text-primary: #1c1e21;
-            --text-secondary: #606770;
-            --border: #e4e6eb;
-            --hover-bg: #f0f2f5;
-            --primary: #1877f2;
-            --primary-hover: #166fe5;
-            --green: #42b72a;
-            --shadow: 0 1px 2px rgba(0,0,0,0.1);
-            --shadow-hover: 0 2px 8px rgba(0,0,0,0.15);
-            --comment-bg: #f0f2f5;
+            --text-primary: #1a1a2e;
+            --text-secondary: #6c757d;
+            --border: #e9ecef;
+            --hover-bg: #f1f3f5;
+            --primary: #4361ee;
+            --primary-hover: #3a56d4;
+            --accent: #f72585;
+            --gradient-1: #4361ee;
+            --gradient-2: #7209b7;
+            --shadow: 0 2px 8px rgba(0,0,0,0.08);
+            --shadow-hover: 0 8px 24px rgba(0,0,0,0.12);
             --input-bg: #ffffff;
         }
         [data-theme="dark"] {
-            --bg: #18191a;
-            --card-bg: #242526;
+            --bg: #0f0f1a;
+            --card-bg: #1a1a2e;
             --text-primary: #e4e6eb;
-            --text-secondary: #b0b3b8;
-            --border: #3e4042;
-            --hover-bg: #3a3b3c;
-            --shadow: 0 1px 2px rgba(0,0,0,0.3);
-            --shadow-hover: 0 2px 8px rgba(0,0,0,0.4);
-            --comment-bg: #3a3b3c;
-            --input-bg: #3a3b3c;
+            --text-secondary: #a0a4b8;
+            --border: #2d2d44;
+            --hover-bg: #252540;
+            --shadow: 0 2px 8px rgba(0,0,0,0.3);
+            --shadow-hover: 0 8px 24px rgba(0,0,0,0.4);
+            --input-bg: #252540;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text-primary); transition: background 0.3s, color 0.3s; }
-        header { background: var(--card-bg); padding: 12px 24px; box-shadow: var(--shadow); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; transition: background 0.3s; }
-        header h1 { font-size: 24px; color: var(--primary); }
-        .header-right { display: flex; align-items: center; gap: 12px; }
+
+        /* Header */
+        header { background: var(--card-bg); padding: 16px 32px; box-shadow: var(--shadow); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; transition: background 0.3s; }
+        .logo { font-size: 22px; font-weight: 800; background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .header-right { display: flex; align-items: center; gap: 8px; }
         nav { display: flex; gap: 4px; }
-        nav a { text-decoration: none; color: var(--text-secondary); font-weight: 500; padding: 8px 16px; border-radius: 6px; transition: background 0.2s, color 0.2s; }
-        nav a:hover { background: var(--hover-bg); color: var(--primary); }
-        nav a.active { color: var(--primary); border-bottom: 3px solid var(--primary); }
-        .theme-toggle { background: var(--hover-bg); border: none; font-size: 20px; cursor: pointer; padding: 8px; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; transition: background 0.2s, transform 0.3s; }
+        nav a { text-decoration: none; color: var(--text-secondary); font-weight: 500; padding: 8px 16px; border-radius: 6px; transition: all 0.2s; font-size: 14px; }
+        nav a:hover, nav a.active { background: var(--hover-bg); color: var(--primary); }
+        .theme-toggle { background: var(--hover-bg); border: none; font-size: 18px; cursor: pointer; padding: 8px; border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s; }
         .theme-toggle:hover { transform: rotate(30deg); }
-        .layout { max-width: 1024px; margin: 24px auto; padding: 0 16px; display: flex; gap: 24px; }
-        .feed { flex: 1; max-width: 680px; }
-        .sidebar { width: 300px; flex-shrink: 0; }
-        .profile-card { background: var(--card-bg); border-radius: 8px; padding: 20px; box-shadow: var(--shadow); margin-bottom: 16px; text-align: center; transition: background 0.3s, box-shadow 0.3s; }
-        .profile-card .avatar-large { width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--green)); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 28px; margin: 0 auto 12px; }
-        .profile-card h3 { font-size: 18px; margin-bottom: 4px; }
-        .profile-card .bio { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; }
-        .profile-stats { display: flex; justify-content: space-around; border-top: 1px solid var(--border); padding-top: 16px; }
-        .profile-stats .stat { text-align: center; }
-        .profile-stats .stat-number { font-size: 18px; font-weight: 700; color: var(--text-primary); }
-        .profile-stats .stat-label { font-size: 12px; color: var(--text-secondary); }
-        .create-post { background: var(--card-bg); border-radius: 8px; padding: 16px; margin-bottom: 16px; box-shadow: var(--shadow); transition: background 0.3s; }
-        .create-post textarea { width: 100%; border: none; resize: none; font-size: 16px; padding: 8px; outline: none; min-height: 60px; font-family: inherit; background: transparent; color: var(--text-primary); }
-        .create-post button { background: var(--primary); color: #fff; border: none; padding: 8px 24px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; margin-top: 8px; transition: background 0.2s, transform 0.1s; }
-        .create-post button:hover { background: var(--primary-hover); }
-        .create-post button:active { transform: scale(0.97); }
-        .post { background: var(--card-bg); border-radius: 8px; margin-bottom: 16px; box-shadow: var(--shadow); transition: box-shadow 0.3s, background 0.3s, transform 0.2s; animation: fadeInUp 0.4s ease-out; }
-        .post:hover { box-shadow: var(--shadow-hover); transform: translateY(-1px); }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(12px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes shimmer {
-            0% { background-position: -200px 0; }
-            100% { background-position: 200px 0; }
-        }
-        @keyframes popIn {
-            0% { transform: scale(0.8); opacity: 0; }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); opacity: 1; }
-        }
-        .post-header { padding: 16px; display: flex; align-items: center; }
-        .avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; margin-right: 12px; flex-shrink: 0; transition: transform 0.2s; }
-        .avatar:hover { transform: scale(1.1); }
-        .post-author { font-weight: 600; }
-        .post-time { font-size: 12px; color: var(--text-secondary); }
-        .post-content { padding: 0 16px 16px; font-size: 15px; line-height: 1.5; }
-        .post-actions { padding: 8px 16px; border-top: 1px solid var(--border); display: flex; justify-content: space-around; }
-        .post-actions button { background: none; border: none; padding: 8px 16px; color: var(--text-secondary); font-size: 14px; font-weight: 600; cursor: pointer; border-radius: 4px; transition: background 0.2s, color 0.2s, transform 0.1s; display: flex; align-items: center; gap: 6px; }
-        .post-actions button:hover { background: var(--hover-bg); }
-        .post-actions button:active { transform: scale(0.95); }
-        .post-actions button.liked { color: var(--primary); animation: popIn 0.3s ease-out; }
-        .like-count { font-size: 13px; color: var(--text-secondary); padding: 4px 16px 8px; }
-        .comments-section { padding: 0 16px 16px; max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out, padding 0.4s ease-out; }
-        .comments-section.open { max-height: 500px; padding: 0 16px 16px; }
-        .comment { display: flex; gap: 8px; margin-bottom: 12px; animation: fadeInUp 0.3s ease-out; }
-        .comment .avatar { width: 32px; height: 32px; font-size: 12px; }
-        .comment-body { background: var(--comment-bg); border-radius: 12px; padding: 8px 12px; flex: 1; transition: background 0.3s; }
-        .comment-author { font-weight: 600; font-size: 13px; }
-        .comment-text { font-size: 14px; line-height: 1.4; }
-        .comment-input { display: flex; gap: 8px; margin-top: 8px; }
-        .comment-input input { flex: 1; border: 1px solid var(--border); border-radius: 20px; padding: 8px 16px; font-size: 14px; outline: none; font-family: inherit; background: var(--input-bg); color: var(--text-primary); transition: border-color 0.2s, background 0.3s; }
-        .comment-input input:focus { border-color: var(--primary); }
-        .comment-input button { background: var(--primary); color: #fff; border: none; border-radius: 20px; padding: 8px 16px; font-size: 13px; font-weight: 600; cursor: pointer; transition: background 0.2s, transform 0.1s; }
-        .comment-input button:active { transform: scale(0.95); }
-        .hero { background: linear-gradient(135deg, var(--primary), var(--green)); color: #fff; text-align: center; padding: 60px 24px; margin-bottom: 24px; border-radius: 8px; animation: fadeInUp 0.5s ease-out; }
-        .hero h2 { font-size: 32px; margin-bottom: 12px; }
-        .hero p { font-size: 18px; opacity: 0.9; }
-        footer { text-align: center; padding: 24px; color: var(--text-secondary); font-size: 13px; }
 
-        /* Loading skeleton */
-        .skeleton { display: none; }
-        .skeleton.loading { display: block; }
-        .skeleton-post { background: var(--card-bg); border-radius: 8px; margin-bottom: 16px; padding: 16px; box-shadow: var(--shadow); }
-        .skeleton-line { height: 14px; border-radius: 4px; margin-bottom: 10px; background: linear-gradient(90deg, var(--border) 25%, var(--hover-bg) 50%, var(--border) 75%); background-size: 400px 100%; animation: shimmer 1.5s infinite; }
-        .skeleton-line.short { width: 40%; }
-        .skeleton-line.medium { width: 70%; }
-        .skeleton-line.long { width: 100%; }
-        .skeleton-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(90deg, var(--border) 25%, var(--hover-bg) 50%, var(--border) 75%); background-size: 400px 100%; animation: shimmer 1.5s infinite; margin-bottom: 12px; }
-        .skeleton-header { display: flex; gap: 12px; align-items: center; margin-bottom: 16px; }
-        .skeleton-header-lines { flex: 1; }
+        /* Hero */
+        .hero { background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2)); color: #fff; text-align: center; padding: 100px 24px 80px; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%); animation: float 20s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(30px, -30px) rotate(180deg); } }
+        .hero h1 { font-size: 48px; font-weight: 800; margin-bottom: 16px; position: relative; }
+        .hero p { font-size: 20px; opacity: 0.9; max-width: 600px; margin: 0 auto 32px; line-height: 1.6; position: relative; }
+        .hero-cta { display: inline-flex; gap: 12px; position: relative; }
+        .btn { padding: 14px 32px; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; text-decoration: none; transition: all 0.2s; border: none; display: inline-block; }
+        .btn-white { background: #fff; color: var(--gradient-1); }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+        .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.5); }
+        .btn-outline:hover { border-color: #fff; transform: translateY(-2px); }
+        .btn-primary { background: var(--primary); color: #fff; }
+        .btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(67,97,238,0.4); }
 
+        /* Sections */
+        .section { max-width: 1100px; margin: 0 auto; padding: 80px 24px; }
+        .section-title { text-align: center; margin-bottom: 48px; }
+        .section-title h2 { font-size: 36px; font-weight: 700; margin-bottom: 12px; }
+        .section-title p { color: var(--text-secondary); font-size: 18px; max-width: 500px; margin: 0 auto; }
+        .section-label { display: inline-block; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--primary); margin-bottom: 8px; }
+
+        /* Stats bar */
+        .stats-bar { background: var(--card-bg); padding: 32px; display: flex; justify-content: space-around; max-width: 900px; margin: -40px auto 0; border-radius: 12px; box-shadow: var(--shadow); position: relative; z-index: 10; transition: background 0.3s; }
+        .stat { text-align: center; }
+        .stat-number { font-size: 36px; font-weight: 800; background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .stat-label { font-size: 14px; color: var(--text-secondary); margin-top: 4px; }
+
+        /* Services */
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .service-card { background: var(--card-bg); border-radius: 12px; padding: 32px; box-shadow: var(--shadow); transition: all 0.3s; text-align: center; }
+        .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+        .service-icon { font-size: 40px; margin-bottom: 16px; }
+        .service-card h3 { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+        .service-card p { color: var(--text-secondary); font-size: 14px; line-height: 1.6; }
+
+        /* Portfolio */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .portfolio-item { border-radius: 12px; overflow: hidden; position: relative; aspect-ratio: 4/3; background: linear-gradient(135deg, #667eea, #764ba2); cursor: pointer; transition: transform 0.3s; }
+        .portfolio-item:nth-child(2) { background: linear-gradient(135deg, #f72585, #b5179e); }
+        .portfolio-item:nth-child(3) { background: linear-gradient(135deg, #4cc9f0, #4361ee); }
+        .portfolio-item:nth-child(4) { background: linear-gradient(135deg, #06d6a0, #118ab2); }
+        .portfolio-item:nth-child(5) { background: linear-gradient(135deg, #ff6b6b, #ee5a24); }
+        .portfolio-item:nth-child(6) { background: linear-gradient(135deg, #a29bfe, #6c5ce7); }
+        .portfolio-item:hover { transform: scale(1.02); }
+        .portfolio-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.6); display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; opacity: 0; transition: opacity 0.3s; }
+        .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+        .portfolio-overlay h3 { color: #fff; font-size: 18px; margin-bottom: 4px; }
+        .portfolio-overlay p { color: rgba(255,255,255,0.8); font-size: 13px; }
+        .portfolio-overlay .tag { display: inline-block; background: rgba(255,255,255,0.2); color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 11px; margin-top: 8px; }
+
+        /* Testimonials */
+        .testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        .testimonial { background: var(--card-bg); border-radius: 12px; padding: 32px; box-shadow: var(--shadow); transition: all 0.3s; position: relative; }
+        .testimonial:hover { box-shadow: var(--shadow-hover); }
+        .testimonial::before { content: '\201C'; font-size: 60px; color: var(--primary); opacity: 0.2; position: absolute; top: 12px; left: 20px; font-family: Georgia, serif; }
+        .testimonial-text { font-size: 15px; line-height: 1.7; margin-bottom: 20px; font-style: italic; color: var(--text-secondary); }
+        .testimonial-author { display: flex; align-items: center; gap: 12px; }
+        .testimonial-avatar { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 16px; }
+        .testimonial-name { font-weight: 600; font-size: 14px; }
+        .testimonial-role { font-size: 12px; color: var(--text-secondary); }
+        .stars { color: #ffc107; font-size: 14px; margin-bottom: 12px; }
+
+        /* Clients */
+        .clients-row { display: flex; justify-content: center; align-items: center; gap: 48px; flex-wrap: wrap; padding: 20px 0; }
+        .client-logo { font-size: 24px; font-weight: 700; color: var(--text-secondary); opacity: 0.5; transition: opacity 0.3s; letter-spacing: -1px; }
+        .client-logo:hover { opacity: 1; }
+
+        /* CTA */
+        .cta-section { background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2)); color: #fff; text-align: center; padding: 80px 24px; border-radius: 16px; margin: 0 24px; }
+        .cta-section h2 { font-size: 36px; font-weight: 700; margin-bottom: 12px; }
+        .cta-section p { font-size: 18px; opacity: 0.9; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; margin-bottom: 32px; }
+
+        /* Contact */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+        .contact-info h3 { font-size: 24px; margin-bottom: 16px; }
+        .contact-info p { color: var(--text-secondary); line-height: 1.7; margin-bottom: 24px; }
+        .contact-detail { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; color: var(--text-secondary); font-size: 15px; }
+        .contact-detail span:first-child { font-size: 20px; }
+        .contact-form { display: flex; flex-direction: column; gap: 16px; }
+        .contact-form input, .contact-form textarea { padding: 14px 16px; border: 1px solid var(--border); border-radius: 8px; font-size: 15px; font-family: inherit; background: var(--input-bg); color: var(--text-primary); transition: border-color 0.2s, background 0.3s; outline: none; }
+        .contact-form input:focus, .contact-form textarea:focus { border-color: var(--primary); }
+        .contact-form textarea { min-height: 120px; resize: vertical; }
+
+        /* Footer */
+        footer { text-align: center; padding: 40px 24px; color: var(--text-secondary); font-size: 13px; border-top: 1px solid var(--border); margin-top: 80px; }
+        footer a { color: var(--primary); text-decoration: none; }
+
+        /* Animations */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate { animation: fadeInUp 0.6s ease-out forwards; }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .layout { flex-direction: column; }
-            .sidebar { width: 100%; order: -1; }
-            nav a { padding: 6px 8px; font-size: 13px; }
-            .hero h2 { font-size: 24px; }
-            .hero p { font-size: 15px; }
-            .hero { padding: 40px 16px; }
-            header { padding: 10px 16px; }
-            header h1 { font-size: 20px; }
-            .post-content { font-size: 14px; }
-            .profile-card .avatar-large { width: 56px; height: 56px; font-size: 22px; }
-            .create-post textarea { font-size: 15px; min-height: 48px; }
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 16px; }
+            .hero { padding: 60px 16px 50px; }
+            .hero-cta { flex-direction: column; align-items: center; }
+            .stats-bar { flex-wrap: wrap; gap: 24px; padding: 24px; }
+            .stat { min-width: 120px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .section { padding: 48px 16px; }
+            .section-title h2 { font-size: 28px; }
+            nav a { padding: 6px 8px; font-size: 12px; }
+            header { padding: 12px 16px; }
+            .clients-row { gap: 24px; }
         }
-
         @media (max-width: 480px) {
-            nav { gap: 0; }
-            nav a { padding: 6px 6px; font-size: 12px; }
-            .layout { padding: 0 8px; margin: 12px auto; }
-            .post-actions button { padding: 8px 8px; font-size: 12px; gap: 4px; }
+            .portfolio-grid { grid-template-columns: 1fr; }
+            .stats-bar { flex-direction: column; }
+            .hero h1 { font-size: 28px; }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>SocialConnect</h1>
+        <div class="logo">MediaPro</div>
         <div class="header-right">
             <nav>
                 <a href="#" class="active">Home</a>
-                <a href="#">Explore</a>
-                <a href="#">Messages</a>
-                <a href="#">Profile</a>
+                <a href="#services">Services</a>
+                <a href="#portfolio">Work</a>
+                <a href="#contact">Contact</a>
             </nav>
             <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">&#x2600;&#xFE0F;</button>
         </div>
     </header>
 
-    <!-- Loading skeleton -->
-    <div class="skeleton loading" id="skeleton">
-        <div style="max-width: 1024px; margin: 24px auto; padding: 0 16px;">
-            <div class="skeleton-post">
-                <div class="skeleton-header">
-                    <div class="skeleton-avatar"></div>
-                    <div class="skeleton-header-lines">
-                        <div class="skeleton-line short"></div>
-                        <div class="skeleton-line" style="width: 25%; height: 10px;"></div>
-                    </div>
-                </div>
-                <div class="skeleton-line long"></div>
-                <div class="skeleton-line medium"></div>
+    <section class="hero">
+        <h1>Digital Marketing<br>That Drives Results</h1>
+        <p>I help brands grow through strategic content, creative campaigns, and data-driven marketing across every platform.</p>
+        <div class="hero-cta">
+            <a href="#contact" class="btn btn-white">Let's Work Together</a>
+            <a href="#portfolio" class="btn btn-outline">View My Work</a>
+        </div>
+    </section>
+
+    <div class="stats-bar">
+        <div class="stat">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Clients Served</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">200%</div>
+            <div class="stat-label">Avg. ROI Increase</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">10M+</div>
+            <div class="stat-label">Impressions Generated</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">8+</div>
+            <div class="stat-label">Years Experience</div>
+        </div>
+    </div>
+
+    <!-- Trusted By -->
+    <div class="section" style="padding-bottom: 0;">
+        <div class="section-title">
+            <div class="section-label">Trusted By</div>
+        </div>
+        <div class="clients-row">
+            <div class="client-logo">TechFlow</div>
+            <div class="client-logo">NovaBrand</div>
+            <div class="client-logo">Meridian Co.</div>
+            <div class="client-logo">Pulse Digital</div>
+            <div class="client-logo">Vertex Labs</div>
+            <div class="client-logo">Bloom Health</div>
+        </div>
+    </div>
+
+    <!-- Services -->
+    <div class="section" id="services">
+        <div class="section-title">
+            <div class="section-label">Services</div>
+            <h2>What I Do</h2>
+            <p>Full-spectrum digital marketing services tailored to your brand's unique needs.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">&#x1F4F1;</div>
+                <h3>Social Media Marketing</h3>
+                <p>Strategic content creation and community management across Instagram, TikTok, LinkedIn, X, and Facebook. Organic growth and paid campaigns.</p>
             </div>
-            <div class="skeleton-post">
-                <div class="skeleton-header">
-                    <div class="skeleton-avatar"></div>
-                    <div class="skeleton-header-lines">
-                        <div class="skeleton-line short"></div>
-                        <div class="skeleton-line" style="width: 25%; height: 10px;"></div>
-                    </div>
-                </div>
-                <div class="skeleton-line long"></div>
-                <div class="skeleton-line medium"></div>
-                <div class="skeleton-line short"></div>
+            <div class="service-card">
+                <div class="service-icon">&#x1F3AC;</div>
+                <h3>Video & Content Production</h3>
+                <p>High-impact video content, reels, ads, and brand storytelling. From concept to final edit, optimized for every platform.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x1F4CA;</div>
+                <h3>Paid Advertising</h3>
+                <p>Data-driven ad campaigns on Meta, Google, TikTok, and LinkedIn. Maximize your ROAS with precision targeting and creative testing.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x1F3AF;</div>
+                <h3>Brand Strategy</h3>
+                <p>Brand positioning, messaging, visual identity, and go-to-market strategy. Build a brand that resonates and converts.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x2709;&#xFE0F;</div>
+                <h3>Email Marketing</h3>
+                <p>Automated sequences, newsletters, and lifecycle campaigns that nurture leads and drive repeat purchases.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#x1F50D;</div>
+                <h3>SEO & Analytics</h3>
+                <p>Technical SEO, content strategy, and comprehensive analytics. Know exactly what's working and why.</p>
             </div>
         </div>
     </div>
 
-    <div class="layout" id="content" style="display: none;">
-        <div class="feed">
-            <div class="hero">
-                <h2>Welcome to SocialConnect</h2>
-                <p>Share your thoughts, connect with friends, and discover what's happening.</p>
+    <!-- Portfolio -->
+    <div class="section" id="portfolio">
+        <div class="section-title">
+            <div class="section-label">Portfolio</div>
+            <h2>Recent Work</h2>
+            <p>A selection of campaigns and projects that delivered real results.</p>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <div class="portfolio-overlay">
+                    <h3>TechFlow Launch Campaign</h3>
+                    <p>Full digital launch across 5 platforms</p>
+                    <span class="tag">+340% engagement</span>
+                </div>
             </div>
-
-            <div class="create-post">
-                <textarea placeholder="What's on your mind?"></textarea>
-                <button>Post</button>
+            <div class="portfolio-item">
+                <div class="portfolio-overlay">
+                    <h3>NovaBrand Rebrand</h3>
+                    <p>Complete brand overhaul & social rollout</p>
+                    <span class="tag">2M impressions in 30 days</span>
+                </div>
             </div>
+            <div class="portfolio-item">
+                <div class="portfolio-overlay">
+                    <h3>Meridian Co. Paid Ads</h3>
+                    <p>Meta & Google Ads optimization</p>
+                    <span class="tag">4.2x ROAS</span>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-overlay">
+                    <h3>Bloom Health Content</h3>
+                    <p>Video series & influencer partnerships</p>
+                    <span class="tag">500K organic views</span>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-overlay">
+                    <h3>Pulse Digital SEO</h3>
+                    <p>SEO overhaul & content strategy</p>
+                    <span class="tag">#1 ranking in 90 days</span>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-overlay">
+                    <h3>Vertex Labs Email</h3>
+                    <p>Automated nurture sequence</p>
+                    <span class="tag">42% open rate</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
-            <div class="post" data-post-id="1">
-                <div class="post-header">
-                    <div class="avatar">A</div>
+    <!-- Testimonials -->
+    <div class="section" id="testimonials">
+        <div class="section-title">
+            <div class="section-label">Testimonials</div>
+            <h2>What Clients Say</h2>
+            <p>Don't take my word for it — hear from the brands I've worked with.</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <div class="stars">&#x2B50;&#x2B50;&#x2B50;&#x2B50;&#x2B50;</div>
+                <div class="testimonial-text">Absolutely transformed our digital presence. Within 3 months our engagement was up 400% and we were generating leads we never thought possible.</div>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar" style="background: linear-gradient(135deg, #667eea, #764ba2);">JR</div>
                     <div>
-                        <div class="post-author">Alex Johnson</div>
-                        <div class="post-time">2 hours ago</div>
-                    </div>
-                </div>
-                <div class="post-content">
-                    Just launched our new social media platform! Excited to see how the community grows. What features would you like to see next?
-                </div>
-                <div class="like-count"><span class="count">12</span> likes</div>
-                <div class="post-actions">
-                    <button onclick="toggleLike(this)">&#x1F44D; Like</button>
-                    <button onclick="toggleComments(this)">&#x1F4AC; Comment</button>
-                    <button>&#x1F517; Share</button>
-                </div>
-                <div class="comments-section">
-                    <div class="comment">
-                        <div class="avatar" style="background: #42b72a;">M</div>
-                        <div class="comment-body">
-                            <div class="comment-author">Maya Patel</div>
-                            <div class="comment-text">This looks amazing! Can't wait to see where this goes.</div>
-                        </div>
-                    </div>
-                    <div class="comment">
-                        <div class="avatar" style="background: #e74c3c;">R</div>
-                        <div class="comment-body">
-                            <div class="comment-author">Ryan Kim</div>
-                            <div class="comment-text">Would love to see a dark mode feature!</div>
-                        </div>
-                    </div>
-                    <div class="comment-input">
-                        <input type="text" placeholder="Write a comment...">
-                        <button onclick="addComment(this)">Post</button>
+                        <div class="testimonial-name">James Rodriguez</div>
+                        <div class="testimonial-role">CEO, TechFlow</div>
                     </div>
                 </div>
             </div>
-
-            <div class="post" data-post-id="2">
-                <div class="post-header">
-                    <div class="avatar" style="background: #e74c3c;">S</div>
+            <div class="testimonial">
+                <div class="stars">&#x2B50;&#x2B50;&#x2B50;&#x2B50;&#x2B50;</div>
+                <div class="testimonial-text">The rebrand was seamless. They understood our vision from day one and delivered something that truly represents who we are. Our audience loves it.</div>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar" style="background: linear-gradient(135deg, #f72585, #b5179e);">AL</div>
                     <div>
-                        <div class="post-author">Sarah Chen</div>
-                        <div class="post-time">5 hours ago</div>
+                        <div class="testimonial-name">Aisha Lee</div>
+                        <div class="testimonial-role">Marketing Director, NovaBrand</div>
                     </div>
                 </div>
-                <div class="post-content">
-                    Love the clean design! Looking forward to connecting with everyone here. The future of social media is all about authentic connections.
-                </div>
-                <div class="like-count"><span class="count">8</span> likes</div>
-                <div class="post-actions">
-                    <button onclick="toggleLike(this)">&#x1F44D; Like</button>
-                    <button onclick="toggleComments(this)">&#x1F4AC; Comment</button>
-                    <button>&#x1F517; Share</button>
-                </div>
-                <div class="comments-section">
-                    <div class="comment">
-                        <div class="avatar">A</div>
-                        <div class="comment-body">
-                            <div class="comment-author">Alex Johnson</div>
-                            <div class="comment-text">Thanks Sarah! We're just getting started.</div>
-                        </div>
+            </div>
+            <div class="testimonial">
+                <div class="stars">&#x2B50;&#x2B50;&#x2B50;&#x2B50;&#x2B50;</div>
+                <div class="testimonial-text">Our ROAS went from 1.2x to 4.2x in just 6 weeks. The level of strategic thinking and creative execution is unmatched. Worth every penny.</div>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar" style="background: linear-gradient(135deg, #06d6a0, #118ab2);">DK</div>
+                    <div>
+                        <div class="testimonial-name">Daniel Kim</div>
+                        <div class="testimonial-role">Founder, Meridian Co.</div>
                     </div>
-                    <div class="comment-input">
-                        <input type="text" placeholder="Write a comment...">
-                        <button onclick="addComment(this)">Post</button>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="stars">&#x2B50;&#x2B50;&#x2B50;&#x2B50;&#x2B50;</div>
+                <div class="testimonial-text">The video content strategy was a game changer. Half a million organic views and our brand awareness skyrocketed. Highly recommend.</div>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar" style="background: linear-gradient(135deg, #4cc9f0, #4361ee);">SP</div>
+                    <div>
+                        <div class="testimonial-name">Sarah Park</div>
+                        <div class="testimonial-role">Head of Growth, Bloom Health</div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="sidebar">
-            <div class="profile-card">
-                <div class="avatar-large">Y</div>
-                <h3>Your Name</h3>
-                <div class="bio">Welcome to SocialConnect! Update your profile to tell people about yourself.</div>
-                <div class="profile-stats">
-                    <div class="stat">
-                        <div class="stat-number">3</div>
-                        <div class="stat-label">Posts</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">128</div>
-                        <div class="stat-label">Followers</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">97</div>
-                        <div class="stat-label">Following</div>
-                    </div>
-                </div>
+    <!-- CTA -->
+    <div class="section">
+        <div class="cta-section">
+            <h2>Ready to Grow Your Brand?</h2>
+            <p>Let's build a marketing strategy that actually moves the needle. Get in touch today.</p>
+            <a href="#contact" class="btn btn-white">Start a Project</a>
+        </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="section" id="contact">
+        <div class="section-title">
+            <div class="section-label">Contact</div>
+            <h2>Let's Talk</h2>
+            <p>Ready to take your marketing to the next level?</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <p>Whether you need a full marketing strategy or help with a specific campaign, I'd love to hear about your project.</p>
+                <div class="contact-detail"><span>&#x1F4E7;</span> hello@mediapro.com</div>
+                <div class="contact-detail"><span>&#x1F4F1;</span> (555) 123-4567</div>
+                <div class="contact-detail"><span>&#x1F4CD;</span> Available worldwide — remote first</div>
+                <div class="contact-detail"><span>&#x1F554;</span> Response within 24 hours</div>
             </div>
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="text" placeholder="Company / Brand">
+                <textarea placeholder="Tell me about your project..."></textarea>
+                <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Send Message</button>
+            </form>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 SocialConnect. All rights reserved.</p>
+        <p>&copy; 2026 MediaPro. All rights reserved. | <a href="#">Privacy</a> | <a href="#">Terms</a></p>
     </footer>
 
     <script>
-        // Loading skeleton — show for 800ms then reveal content
-        window.addEventListener('DOMContentLoaded', function() {
-            setTimeout(function() {
-                document.getElementById('skeleton').classList.remove('loading');
-                document.getElementById('content').style.display = 'flex';
-            }, 800);
-        });
-
-        // Dark mode toggle with persistence
+        // Dark mode
         function toggleTheme() {
-            const body = document.body;
-            const btn = document.querySelector('.theme-toggle');
+            var body = document.body;
+            var btn = document.querySelector('.theme-toggle');
             if (body.getAttribute('data-theme') === 'dark') {
                 body.removeAttribute('data-theme');
                 btn.innerHTML = '&#x2600;&#xFE0F;';
@@ -314,40 +422,48 @@
                 localStorage.setItem('theme', 'dark');
             }
         }
-
-        // Restore saved theme
         (function() {
-            var saved = localStorage.getItem('theme');
-            if (saved === 'dark') {
+            if (localStorage.getItem('theme') === 'dark') {
                 document.body.setAttribute('data-theme', 'dark');
                 document.querySelector('.theme-toggle').innerHTML = '&#x1F319;';
             }
         })();
 
-        function toggleLike(btn) {
-            btn.classList.toggle('liked');
-            var post = btn.closest('.post');
-            var countEl = post.querySelector('.like-count .count');
-            var count = parseInt(countEl.textContent);
-            countEl.textContent = btn.classList.contains('liked') ? count + 1 : count - 1;
-        }
+        // Scroll animations
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
 
-        function toggleComments(btn) {
-            var post = btn.closest('.post');
-            var comments = post.querySelector('.comments-section');
-            comments.classList.toggle('open');
-        }
+        document.querySelectorAll('.service-card, .portfolio-item, .testimonial, .stat').forEach(function(el) {
+            el.style.opacity = '0';
+            observer.observe(el);
+        });
 
-        function addComment(btn) {
-            var input = btn.previousElementSibling;
-            var text = input.value.trim();
-            if (!text) return;
-            var section = btn.closest('.comments-section');
-            var commentDiv = document.createElement('div');
-            commentDiv.className = 'comment';
-            commentDiv.innerHTML = '<div class="avatar" style="background: #1877f2;">Y</div><div class="comment-body"><div class="comment-author">You</div><div class="comment-text">' + text.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</div></div>';
-            section.insertBefore(commentDiv, btn.closest('.comment-input'));
-            input.value = '';
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+            a.addEventListener('click', function(e) {
+                e.preventDefault();
+                var target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Contact form
+        function handleSubmit(e) {
+            e.preventDefault();
+            var btn = e.target.querySelector('button[type="submit"]');
+            btn.textContent = 'Sent!';
+            btn.style.background = '#06d6a0';
+            setTimeout(function() {
+                btn.textContent = 'Send Message';
+                btn.style.background = '';
+                e.target.reset();
+            }, 2000);
         }
     </script>
 </body>
