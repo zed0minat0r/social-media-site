@@ -2,6 +2,12 @@
 
 ## 2026-03-31
 
+### Nigel's Audit #2 — Recalibrated (Strict Standards)
+- Scores dropped across the board with honest grading: Design 4 (was 7), Content 5 (was 6), UX 6 (was 7), Technical 6 (was 7), Conversion 4 (was 6)
+- Overall: 5.0 (was 6.6)
+- 4 recurring issues flagged: portfolio imagery, testimonial authenticity, form qualification, urgency
+- Score history tracking now active in AUDIT.md
+
 ### Builder: Major Visual Upgrade — Font, Dividers, Process Section, Portfolio Content
 - Added Space Grotesk display font from Google Fonts for distinctive typography
 - Added wave SVG divider between hero and stats bar for visual depth
